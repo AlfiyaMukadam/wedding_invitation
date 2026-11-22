@@ -5,33 +5,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#073e35">
-  <meta name="description" content="With the blessings of Allah, join Alfiya and Danish as they begin their forever.">
-  <title>Alfiya & Danish | A Forever Written in Noor</title>
+  <meta name="description" content="Alfiya and Danish — a celebration of love, faith and forever.">
+  <title>Alfiya & Danish | Mehfil-e-Noor</title>
 
-  <!-- Elegant typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     :root {
+      /* Original green palette — retained */
       --green: #073e35;
       --green-deep: #042d28;
       --green-mid: #0b5548;
-      --green-light: #e8f0eb;
-      --gold: #c8a66a;
-      --gold-light: #e8d5a8;
-      --gold-pale: #f5ecd8;
+
+      /* Restrained antique gold accents */
+      --gold: #b99a62;
+      --gold-light: #d8c18f;
+      --gold-muted: rgba(216, 193, 143, .45);
+
       --ivory: #fbf9f2;
       --cream: #f4f0e5;
+      --white: #fffdf8;
       --ink: #23332d;
       --muted: #7b8178;
-      --white: #fffdf8;
+
       --script: "Great Vibes", cursive;
       --serif: "Cormorant Garamond", Georgia, serif;
       --sans: "DM Sans", sans-serif;
       --arabic: "Amiri", serif;
-      --shadow: 0 18px 55px rgba(5, 44, 37, .12);
+
+      --shadow: 0 18px 55px rgba(5, 44, 37, .10);
     }
 
     * {
@@ -75,14 +79,15 @@
     }
 
     .gold-line {
-      width: 68px;
+      width: 65px;
       height: 1px;
       margin: 17px auto;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: .8;
     }
 
     .section-kicker {
-      color: #a3834e;
+      color: #9b8050;
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -109,9 +114,9 @@
       margin-top: 12px;
     }
 
-    /* =====================================================
+    /* =========================================
        OPENING SCREEN
-    ===================================================== */
+    ========================================= */
 
     .opening {
       position: fixed;
@@ -122,10 +127,10 @@
       overflow: hidden;
       isolation: isolate;
       background:
-        radial-gradient(ellipse at 50% 42%, rgba(24, 103, 82, .6), transparent 52%),
-        radial-gradient(circle at 15% 15%, rgba(200, 166, 106, .13), transparent 28%),
-        radial-gradient(circle at 85% 85%, rgba(200, 166, 106, .12), transparent 30%),
-        linear-gradient(140deg, #042e28 0%, #075044 48%, #032c27 100%);
+        radial-gradient(ellipse at 50% 42%, rgba(11, 85, 72, .48), transparent 55%),
+        radial-gradient(circle at 12% 12%, rgba(216, 193, 143, .07), transparent 28%),
+        radial-gradient(circle at 88% 88%, rgba(216, 193, 143, .06), transparent 30%),
+        linear-gradient(140deg, var(--green-deep), var(--green) 52%, var(--green-deep));
       transition: opacity 1s ease, visibility 1s ease;
     }
 
@@ -134,7 +139,7 @@
       content: "";
       position: absolute;
       pointer-events: none;
-      border: 1px solid rgba(220, 190, 130, .2);
+      border: 1px solid rgba(216, 193, 143, .16);
       border-radius: 50%;
       z-index: 0;
     }
@@ -148,7 +153,7 @@
       width: min(70vw, 650px);
       height: min(70vw, 650px);
       border-style: dashed;
-      border-color: rgba(220, 190, 130, .15);
+      border-color: rgba(216, 193, 143, .12);
     }
 
     .opening.opened {
@@ -161,7 +166,7 @@
       position: absolute;
       inset: 18px;
       z-index: 1;
-      border: 1px solid rgba(220, 190, 130, .34);
+      border: 1px solid rgba(216, 193, 143, .25);
       pointer-events: none;
     }
 
@@ -170,8 +175,8 @@
       content: "✦";
       position: absolute;
       color: var(--gold-light);
-      font-size: 20px;
-      opacity: .8;
+      font-size: 16px;
+      opacity: .75;
     }
 
     .opening-ornament::before {
@@ -188,9 +193,9 @@
 
     .corner {
       position: absolute;
-      width: 42px;
-      height: 42px;
-      border-color: rgba(220, 190, 130, .65);
+      width: 38px;
+      height: 38px;
+      border-color: rgba(216, 193, 143, .55);
       border-style: solid;
     }
 
@@ -226,7 +231,7 @@
       overflow-y: auto;
       text-align: center;
       padding: 22px 20px;
-      color: var(--gold-pale);
+      color: var(--white);
       animation: openingAppear 1.3s ease both;
       scrollbar-width: none;
     }
@@ -251,18 +256,17 @@
       font-family: var(--arabic);
       font-size: clamp(27px, 5vw, 39px);
       margin-bottom: 8px;
-      text-shadow: 0 0 22px rgba(232, 213, 168, .22);
     }
 
     .opening-small {
-      color: rgba(245, 236, 216, .8);
+      color: rgba(255, 253, 248, .72);
       font-size: 9px;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 20px;
     }
 
-    /* Islamic-inspired monogram seal */
+    /* Monogram seal */
     .seal-wrap {
       position: relative;
       width: clamp(145px, 24vw, 190px);
@@ -275,7 +279,7 @@
 
     @keyframes sealFloat {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-7px); }
     }
 
     .seal-wrap::before,
@@ -283,15 +287,14 @@
       content: "";
       position: absolute;
       inset: 5px;
-      border: 1px solid rgba(232, 213, 168, .8);
+      border: 1px solid rgba(216, 193, 143, .75);
       border-radius: 26%;
       transform: rotate(45deg);
-      box-shadow: 0 0 24px rgba(200, 166, 106, .1);
     }
 
     .seal-wrap::after {
       inset: 16px;
-      border-color: rgba(232, 213, 168, .42);
+      border-color: rgba(216, 193, 143, .35);
       transform: rotate(0deg);
       border-radius: 50%;
     }
@@ -303,23 +306,23 @@
       height: 72%;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(232, 213, 168, .8);
+      border: 1px solid rgba(216, 193, 143, .65);
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(245, 236, 216, .12), rgba(4, 45, 40, .45));
-      box-shadow: 0 0 35px rgba(0, 0, 0, .15), inset 0 0 20px rgba(232, 213, 168, .08);
+      background: rgba(255, 255, 255, .035);
+      box-shadow: inset 0 0 20px rgba(216, 193, 143, .04);
     }
 
     .seal-inner img {
       width: 73%;
       height: 73%;
       object-fit: contain;
-      filter: drop-shadow(0 3px 9px rgba(0, 0, 0, .15));
+      filter: drop-shadow(0 3px 9px rgba(0, 0, 0, .16));
     }
 
     .seal-star {
       position: absolute;
       color: var(--gold-light);
-      font-size: 17px;
+      font-size: 15px;
       z-index: 3;
     }
 
@@ -349,7 +352,7 @@
 
     .opening-label {
       color: var(--gold-light);
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       font-size: 9px;
       margin-bottom: 8px;
@@ -367,24 +370,23 @@
     .opening-amp {
       color: var(--gold-light);
       font-family: var(--serif);
-      font-size: 27px;
+      font-size: 26px;
       font-style: italic;
       margin: -2px 0;
     }
 
     .opening-tagline {
-      color: rgba(245, 236, 216, .85);
+      color: rgba(255, 253, 248, .82);
       font-family: var(--serif);
       font-size: 19px;
       font-style: italic;
-      letter-spacing: .5px;
       margin-top: 9px;
     }
 
     .opening-instruction {
       color: var(--gold-light);
       font-size: 9px;
-      letter-spacing: 3px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       margin: 25px 0 15px;
       animation: instructionPulse 2.4s ease-in-out infinite;
@@ -396,7 +398,6 @@
     }
 
     .open-button {
-      position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -404,23 +405,24 @@
       min-width: 205px;
       padding: 15px 25px;
       border: 1px solid var(--gold-light);
-      background: linear-gradient(135deg, #e7d4a5, #c6a263);
-      color: #173b31;
+      background: var(--green-mid);
+      color: var(--white);
       font-size: 10px;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 2px;
       text-transform: uppercase;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, .2);
-      transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .18);
+      transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
     }
 
     .open-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, .28);
-      background: linear-gradient(135deg, #f3e5bf, #d4b474);
+      background: #0d6252;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .25);
     }
 
     .open-button span {
+      color: var(--gold-light);
       font-size: 17px;
       transition: transform .3s ease;
     }
@@ -430,14 +432,14 @@
     }
 
     .opening-footnote {
-      color: rgba(245, 236, 216, .62);
+      color: rgba(255, 253, 248, .62);
       font-family: var(--serif);
       font-size: 14px;
       font-style: italic;
       margin-top: 18px;
     }
 
-    /* Visible floating bubbles */
+    /* Floating bubbles */
     .bubbles {
       position: absolute;
       inset: 0;
@@ -449,14 +451,14 @@
     .bubble {
       position: absolute;
       bottom: -70px;
-      border: 1px solid rgba(232, 213, 168, .65);
+      border: 1px solid rgba(216, 193, 143, .5);
       border-radius: 50%;
       background:
-        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, .36), transparent 38%),
-        rgba(232, 213, 168, .055);
-      box-shadow: inset 0 0 13px rgba(255, 255, 255, .08), 0 0 12px rgba(232, 213, 168, .08);
+        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, .25), transparent 38%),
+        rgba(216, 193, 143, .035);
+      box-shadow: inset 0 0 13px rgba(255, 255, 255, .05);
       animation: bubbleRise linear infinite;
-      opacity: .55;
+      opacity: .5;
     }
 
     @keyframes bubbleRise {
@@ -464,8 +466,8 @@
         transform: translate3d(0, 0, 0) scale(.7);
         opacity: 0;
       }
-      12% { opacity: .5; }
-      75% { opacity: .32; }
+      12% { opacity: .48; }
+      75% { opacity: .3; }
       100% {
         transform: translate3d(var(--drift), -115vh, 0) scale(1.15);
         opacity: 0;
@@ -479,20 +481,18 @@
       width: 51%;
       z-index: 5;
       pointer-events: none;
-      background:
-        radial-gradient(ellipse at 50% 50%, rgba(22, 95, 76, .3), transparent 70%),
-        linear-gradient(135deg, #032c27, #075044 55%, #032c27);
+      background: linear-gradient(135deg, var(--green-deep), var(--green) 55%, var(--green-deep));
       transition: transform 1.45s cubic-bezier(.77, 0, .18, 1);
     }
 
     .opening-curtain.left {
       left: 0;
-      border-right: 1px solid rgba(232, 213, 168, .24);
+      border-right: 1px solid rgba(216, 193, 143, .2);
     }
 
     .opening-curtain.right {
       right: 0;
-      border-left: 1px solid rgba(232, 213, 168, .24);
+      border-left: 1px solid rgba(216, 193, 143, .2);
     }
 
     .opening.opening-away .opening-curtain.left {
@@ -509,16 +509,16 @@
       transition: opacity .55s ease, transform .8s ease;
     }
 
-    /* =====================================================
-       HEADER AND NAVIGATION
-    ===================================================== */
+    /* =========================================
+       NAVIGATION
+    ========================================= */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(251, 249, 242, .94);
-      border-bottom: 1px solid rgba(200, 166, 106, .22);
+      background: rgba(251, 249, 242, .96);
+      border-bottom: 1px solid rgba(185, 154, 98, .18);
       backdrop-filter: blur(14px);
     }
 
@@ -564,22 +564,22 @@
     }
 
     .nav-links a:hover {
-      color: #a3834e;
+      color: var(--gold);
     }
 
     .menu-toggle {
       display: none;
       width: 42px;
       height: 42px;
-      border: 1px solid rgba(200, 166, 106, .45);
+      border: 1px solid rgba(185, 154, 98, .45);
       background: transparent;
       color: var(--green);
       font-size: 22px;
     }
 
-    /* =====================================================
+    /* =========================================
        HERO
-    ===================================================== */
+    ========================================= */
 
     .hero {
       position: relative;
@@ -600,7 +600,7 @@
       content: "";
       position: absolute;
       inset: 18px;
-      border: 1px solid rgba(232, 213, 168, .45);
+      border: 1px solid rgba(216, 193, 143, .3);
       pointer-events: none;
     }
 
@@ -616,9 +616,9 @@
       margin: 0 auto 20px;
       object-fit: contain;
       padding: 8px;
-      border: 1px solid rgba(232, 213, 168, .7);
+      border: 1px solid rgba(216, 193, 143, .55);
       border-radius: 50%;
-      background: rgba(255, 255, 255, .08);
+      background: rgba(255, 255, 255, .04);
     }
 
     .hero-kicker {
@@ -685,9 +685,9 @@
       50% { transform: translateY(7px); }
     }
 
-    /* =====================================================
-       INTRO / QURAN
-    ===================================================== */
+    /* =========================================
+       INTRO / QURAN VERSE
+    ========================================= */
 
     .intro {
       padding: 100px 20px;
@@ -717,7 +717,7 @@
     }
 
     .intro-reference {
-      color: #a3834e;
+      color: #9b8050;
       font-size: 10px;
       letter-spacing: 2px;
       margin-top: 20px;
@@ -732,9 +732,9 @@
       line-height: 2;
     }
 
-    /* =====================================================
-       FAMILY
-    ===================================================== */
+    /* =========================================
+       FAMILIES
+    ========================================= */
 
     .family {
       padding: 90px 20px 100px;
@@ -754,8 +754,8 @@
       padding: 42px 30px;
       text-align: center;
       background: rgba(255, 253, 248, .85);
-      border: 1px solid rgba(200, 166, 106, .35);
-      box-shadow: 0 10px 35px rgba(5, 44, 37, .045);
+      border: 1px solid rgba(185, 154, 98, .24);
+      box-shadow: 0 10px 35px rgba(5, 44, 37, .04);
     }
 
     .family-card::before {
@@ -765,7 +765,7 @@
       left: 50%;
       transform: translateX(-50%);
       color: var(--gold);
-      font-size: 16px;
+      font-size: 14px;
     }
 
     .family-card h3 {
@@ -788,15 +788,15 @@
     }
 
     .family-divider {
-      color: #b18d53;
+      color: var(--gold);
       font-family: var(--serif);
       font-size: 20px;
       margin: 14px 0;
     }
 
-    /* =====================================================
+    /* =========================================
        COUNTDOWN
-    ===================================================== */
+    ========================================= */
 
     .countdown {
       position: relative;
@@ -805,8 +805,8 @@
       text-align: center;
       color: var(--white);
       background:
-        radial-gradient(circle at 50% 0%, rgba(200, 166, 106, .13), transparent 45%),
-        linear-gradient(135deg, #073e35, #042d28);
+        radial-gradient(circle at 50% 0%, rgba(185, 154, 98, .08), transparent 45%),
+        linear-gradient(135deg, var(--green), var(--green-deep));
     }
 
     .countdown .section-title {
@@ -827,8 +827,8 @@
 
     .count-box {
       padding: 22px 10px;
-      border: 1px solid rgba(232, 213, 168, .38);
-      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(216, 193, 143, .3);
+      background: rgba(255, 255, 255, .035);
     }
 
     .count-box strong {
@@ -849,9 +849,9 @@
       text-transform: uppercase;
     }
 
-    /* =====================================================
+    /* =========================================
        EVENTS
-    ===================================================== */
+    ========================================= */
 
     .events {
       padding: 100px 20px;
@@ -871,28 +871,28 @@
       min-width: 0;
       overflow: hidden;
       background: var(--white);
-      border: 1px solid rgba(200, 166, 106, .3);
+      border: 1px solid rgba(185, 154, 98, .23);
       box-shadow: var(--shadow);
       transition: transform .35s ease, box-shadow .35s ease;
     }
 
     .event-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 25px 60px rgba(5, 44, 37, .15);
+      transform: translateY(-5px);
+      box-shadow: 0 25px 60px rgba(5, 44, 37, .13);
     }
 
     .event-image-wrap {
       position: relative;
       height: 275px;
       overflow: hidden;
-      background: var(--green-light);
+      background: #e6e1d4;
     }
 
     .event-image-wrap::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, rgba(4, 45, 40, .2), transparent 45%);
+      background: linear-gradient(0deg, rgba(4, 45, 40, .16), transparent 45%);
       pointer-events: none;
     }
 
@@ -905,7 +905,7 @@
     }
 
     .event-card:hover .event-image {
-      transform: scale(1.045);
+      transform: scale(1.04);
     }
 
     .event-content {
@@ -914,7 +914,7 @@
     }
 
     .event-number {
-      color: #ad8a50;
+      color: #9b8050;
       font-size: 9px;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -930,7 +930,7 @@
     }
 
     .event-date {
-      color: #a3834e;
+      color: #9b8050;
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 1.5px;
@@ -951,16 +951,16 @@
     }
 
     .event-note {
-      color: #a3834e;
+      color: #9b8050;
       font-family: var(--serif);
       font-size: 17px;
       font-style: italic;
       margin-top: 16px;
     }
 
-    /* =====================================================
+    /* =========================================
        PHOTO WALL
-    ===================================================== */
+    ========================================= */
 
     .gallery {
       padding: 100px 20px;
@@ -1029,7 +1029,6 @@
       width: auto;
       height: auto;
       object-fit: contain;
-      box-shadow: 0 15px 50px rgba(0, 0, 0, .3);
     }
 
     .lightbox-close {
@@ -1043,9 +1042,9 @@
       line-height: 1;
     }
 
-    /* =====================================================
+    /* =========================================
        BLESSINGS FORM
-    ===================================================== */
+    ========================================= */
 
     .blessings {
       padding: 100px 20px;
@@ -1057,7 +1056,7 @@
       margin: auto;
       padding: clamp(25px, 5vw, 55px);
       background: var(--white);
-      border: 1px solid rgba(200, 166, 106, .38);
+      border: 1px solid rgba(185, 154, 98, .25);
       box-shadow: var(--shadow);
       text-align: center;
     }
@@ -1110,7 +1109,7 @@
     .blessing-form input:focus,
     .blessing-form textarea:focus {
       border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(200, 166, 106, .12);
+      box-shadow: 0 0 0 3px rgba(185, 154, 98, .09);
     }
 
     .blessing-form textarea {
@@ -1123,7 +1122,7 @@
       padding: 15px 20px;
       border: 1px solid var(--green);
       background: var(--green);
-      color: var(--gold-pale);
+      color: var(--white);
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 2px;
@@ -1132,8 +1131,7 @@
     }
 
     .blessing-submit:hover {
-      background: var(--gold-pale);
-      color: var(--green);
+      background: var(--green-mid);
     }
 
     .blessing-submit:disabled {
@@ -1149,18 +1147,18 @@
       text-align: center;
     }
 
-    /* =====================================================
+    /* =========================================
        FOOTER
-    ===================================================== */
+    ========================================= */
 
     .footer {
       position: relative;
       padding: 75px 20px 35px;
       overflow: hidden;
       text-align: center;
-      color: var(--gold-pale);
+      color: var(--white);
       background:
-        radial-gradient(circle at 50% 0%, rgba(200, 166, 106, .12), transparent 45%),
+        radial-gradient(circle at 50% 0%, rgba(185, 154, 98, .08), transparent 45%),
         var(--green-deep);
     }
 
@@ -1170,7 +1168,7 @@
       margin: 0 auto 17px;
       object-fit: contain;
       padding: 6px;
-      border: 1px solid rgba(232, 213, 168, .5);
+      border: 1px solid rgba(216, 193, 143, .45);
       border-radius: 50%;
     }
 
@@ -1183,7 +1181,7 @@
     }
 
     .footer p {
-      color: rgba(245, 236, 216, .7);
+      color: rgba(255, 253, 248, .72);
       font-family: var(--serif);
       font-size: 18px;
       font-style: italic;
@@ -1203,15 +1201,15 @@
     .footer-bottom {
       margin-top: 55px;
       padding-top: 20px;
-      border-top: 1px solid rgba(232, 213, 168, .17);
-      color: rgba(245, 236, 216, .48);
+      border-top: 1px solid rgba(216, 193, 143, .15);
+      color: rgba(255, 253, 248, .45);
       font-size: 9px;
       letter-spacing: 1px;
     }
 
-    /* =====================================================
+    /* =========================================
        SCROLL REVEALS
-    ===================================================== */
+    ========================================= */
 
     .reveal {
       opacity: 0;
@@ -1224,9 +1222,9 @@
       transform: translateY(0);
     }
 
-    /* =====================================================
-       RESPONSIVE: TABLETS AND SMALL LAPTOPS
-    ===================================================== */
+    /* =========================================
+       TABLET / SMALL LAPTOP
+    ========================================= */
 
     @media (max-width: 900px) {
       .nav {
@@ -1251,9 +1249,9 @@
       }
     }
 
-    /* =====================================================
-       RESPONSIVE: MOBILE
-    ===================================================== */
+    /* =========================================
+       MOBILE
+    ========================================= */
 
     @media (max-width: 680px) {
       html {
@@ -1288,7 +1286,7 @@
         gap: 0;
         padding: 8px 5% 16px;
         background: rgba(251, 249, 242, .98);
-        border-bottom: 1px solid rgba(200, 166, 106, .25);
+        border-bottom: 1px solid rgba(185, 154, 98, .2);
         box-shadow: 0 15px 25px rgba(5, 44, 37, .08);
       }
 
@@ -1299,7 +1297,7 @@
       .nav-links a {
         padding: 13px 5px;
         font-size: 10px;
-        border-bottom: 1px solid rgba(200, 166, 106, .13);
+        border-bottom: 1px solid rgba(185, 154, 98, .1);
       }
 
       .hero {
@@ -1489,7 +1487,6 @@
       }
     }
 
-    /* Accessibility */
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1514,11 +1511,9 @@
 
 <body class="locked">
 
-  <!-- =====================================================
-       OPENING INVITATION
-  ====================================================== -->
-
+  <!-- OPENING INVITATION -->
   <section class="opening" id="opening" aria-label="Wedding invitation opening screen">
+
     <div class="opening-ornament">
       <span class="corner tl"></span>
       <span class="corner tr"></span>
@@ -1529,7 +1524,11 @@
     <div class="bubbles" id="bubbles" aria-hidden="true"></div>
 
     <div class="opening-content" id="openingContent">
-      <div class="opening-bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+
+      <div class="opening-bismillah" lang="ar" dir="rtl">
+        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+      </div>
+
       <p class="opening-small">In the name of Allah, the Most Merciful</p>
 
       <div class="seal-wrap">
@@ -1537,12 +1536,14 @@
         <span class="seal-star bottom">✦</span>
         <span class="seal-star left">✧</span>
         <span class="seal-star right">✧</span>
+
         <div class="seal-inner">
           <img src="./AD-monogram.png" alt="Alfiya and Danish monogram">
         </div>
       </div>
 
       <p class="opening-label">Together with our families</p>
+
       <h1>Alfiya</h1>
       <div class="opening-amp">&</div>
       <h1>Danish</h1>
@@ -1562,23 +1563,22 @@
     <div class="opening-curtain right"></div>
   </section>
 
-  <!-- Background music: starts after the visitor opens the invitation -->
+  <!-- BACKGROUND MUSIC -->
   <audio id="backgroundMusic" loop preload="auto">
     <source src="./Guzarish%20Satinder%20Sartaj%20Instrumental.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- =====================================================
-       NAVIGATION
-  ====================================================== -->
-
+  <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="nav">
+
       <a class="nav-brand" href="#home" aria-label="Alfiya and Danish home">
         <img src="./AD-monogram.png" alt="">
         <span>A & D</span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="menu-toggle" id="menuToggle" type="button"
+        aria-label="Toggle navigation" aria-expanded="false">
         ☰
       </button>
 
@@ -1590,16 +1590,16 @@
         <a href="#gallery">Gallery</a>
         <a href="#blessings">Blessings</a>
       </div>
+
     </nav>
   </header>
 
   <main>
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
 
+    <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-content">
+
         <img class="hero-monogram" src="./AD-monogram.png" alt="A and D monogram">
 
         <p class="hero-kicker">With the blessings of Allah</p>
@@ -1608,25 +1608,28 @@
         <span class="hero-amp">&</span>
         <h1>Danish</h1>
 
-        <p class="hero-subtitle">Invite you to celebrate the beginning of their forever</p>
+        <p class="hero-subtitle">
+          Invite you to celebrate the beginning of their forever
+        </p>
 
         <div class="gold-line"></div>
 
-        <p class="hero-date">16 December 2026 &nbsp; · &nbsp; 7 Rajab 1448 AH</p>
+        <p class="hero-date">
+          16 December 2026 &nbsp; · &nbsp; 7 Rajab 1448 AH
+        </p>
 
         <a class="hero-scroll" href="#story">
           Discover our celebration
           <span>⌄</span>
         </a>
+
       </div>
     </section>
 
-    <!-- =====================================================
-         STORY / QURAN VERSE
-    ====================================================== -->
-
+    <!-- QURAN VERSE -->
     <section class="intro" id="story">
       <div class="intro-inner reveal">
+
         <p class="section-kicker">A verse close to our hearts</p>
         <div class="gold-line"></div>
 
@@ -1648,14 +1651,13 @@
           we invite you to be part of a beautiful new chapter as two families
           come together in faith, love and celebration.
         </p>
+
       </div>
     </section>
 
-    <!-- =====================================================
-         FAMILIES
-    ====================================================== -->
-
+    <!-- FAMILIES -->
     <section class="family" id="families">
+
       <div class="section-heading reveal">
         <p class="section-kicker">With love and duas</p>
         <div class="gold-line"></div>
@@ -1664,6 +1666,7 @@
       </div>
 
       <div class="family-grid">
+
         <article class="family-card reveal">
           <h3>The Bride</h3>
           <p>
@@ -1671,7 +1674,9 @@
             <br>
             <strong>Mrs. Rabiyabi & Mr. Ashfaque Mukadam</strong>
           </p>
+
           <div class="family-divider">✧</div>
+
           <p>
             With the blessings of her grandparents
             <br>
@@ -1688,21 +1693,22 @@
             <br>
             <strong>Mrs. Heena & Mr. Feroz Khan</strong>
           </p>
+
           <div class="family-divider">✧</div>
+
           <p>
             With the love, duas and blessings
             <br>
             of family and friends
           </p>
         </article>
+
       </div>
     </section>
 
-    <!-- =====================================================
-         COUNTDOWN
-    ====================================================== -->
-
+    <!-- COUNTDOWN -->
     <section class="countdown">
+
       <div class="section-heading reveal">
         <p class="section-kicker">Counting every moment</p>
         <div class="gold-line"></div>
@@ -1711,35 +1717,41 @@
       </div>
 
       <div class="countdown-grid reveal" id="countdown">
+
         <div class="count-box">
           <strong id="days">--</strong>
           <span>Days</span>
         </div>
+
         <div class="count-box">
           <strong id="hours">--</strong>
           <span>Hours</span>
         </div>
+
         <div class="count-box">
           <strong id="minutes">--</strong>
           <span>Minutes</span>
         </div>
+
         <div class="count-box">
           <strong id="seconds">--</strong>
           <span>Seconds</span>
         </div>
+
       </div>
     </section>
 
-    <!-- =====================================================
-         EVENTS
-    ====================================================== -->
-
+    <!-- EVENTS -->
     <section class="events" id="events">
+
       <div class="section-heading reveal">
         <p class="section-kicker">Save the dates</p>
         <div class="gold-line"></div>
         <h2 class="section-title">The Celebrations</h2>
-        <p>Every gathering holds a special place in our hearts. We would love to celebrate with you.</p>
+        <p>
+          Every gathering holds a special place in our hearts.
+          We would love to celebrate with you.
+        </p>
       </div>
 
       <div class="event-grid">
@@ -1747,12 +1759,15 @@
         <!-- HALDI -->
         <article class="event-card reveal">
           <div class="event-image-wrap">
-            <img class="event-image" src="./haldi_image.jpg" alt="Haldi celebration" loading="lazy">
+            <img class="event-image" src="./haldi_image.jpg"
+              alt="Haldi celebration" loading="lazy">
           </div>
+
           <div class="event-content">
             <p class="event-number">01 · A little sunshine</p>
             <h3>Haldi & Sangeet</h3>
             <p class="event-date">Monday · 14 December 2026</p>
+
             <p class="event-detail">
               <strong>For the bride, Alfiya</strong>
               <br>
@@ -1760,19 +1775,25 @@
               <br>
               Bride's Residence
             </p>
-            <p class="event-note">A little haldi, a lot of love & endless dancing.</p>
+
+            <p class="event-note">
+              A little haldi, a lot of love & endless dancing.
+            </p>
           </div>
         </article>
 
         <!-- MEHENDI -->
         <article class="event-card reveal">
           <div class="event-image-wrap">
-            <img class="event-image" src="./mehendi_image.jpg" alt="Mehendi celebration" loading="lazy">
+            <img class="event-image" src="./mehendi_image.jpg"
+              alt="Mehendi celebration" loading="lazy">
           </div>
+
           <div class="event-content">
             <p class="event-number">02 · Henna & happily ever after</p>
             <h3>Mehendi</h3>
             <p class="event-date">Tuesday · 15 December 2026</p>
+
             <p class="event-detail">
               <strong>For the bride, Alfiya</strong>
               <br>
@@ -1782,25 +1803,30 @@
               <br>
               Followed by dinner
             </p>
-            <p class="event-note">An evening of henna, laughter & cherished memories.</p>
+
+            <p class="event-note">
+              An evening of henna, laughter & cherished memories.
+            </p>
           </div>
         </article>
 
         <!-- NIKAH -->
         <article class="event-card reveal">
           <div class="event-image-wrap">
-            <img class="event-image" src="./nikah_image.jpeg" alt="Nikah celebration" loading="lazy">
+            <img class="event-image" src="./nikah_image.jpeg"
+              alt="Nikah celebration" loading="lazy">
           </div>
+
           <div class="event-content">
             <p class="event-number">03 · Mehfil-e-Noor</p>
             <h3>Inshallah Nikah</h3>
             <p class="event-date">Wednesday · 16 December 2026</p>
+
             <p class="event-detail">
               <strong>7 Rajab 1448 AH</strong>
               <br>
               6:30 PM onwards
-              <br>
-              <br>
+              <br><br>
               <strong>Noor Baug Hall</strong>
               <br>
               Behind Shimla Park,
@@ -1809,23 +1835,28 @@
               <br>
               Kausa, Mumbra – 400612
             </p>
-            <p class="event-note">A gathering of light, faith & blessings.</p>
+
+            <p class="event-note">
+              A gathering of light, faith & blessings.
+            </p>
           </div>
         </article>
 
         <!-- WALIMA -->
         <article class="event-card reveal">
           <div class="event-image-wrap">
-            <img class="event-image" src="./walima_image.png" alt="Walima celebration" loading="lazy">
+            <img class="event-image" src="./walima_image.png"
+              alt="Walima celebration" loading="lazy">
           </div>
+
           <div class="event-content">
             <p class="event-number">04 · The wedding feast</p>
             <h3>Ta'am-al-Walima</h3>
             <p class="event-date">Friday · 18 December 2026</p>
+
             <p class="event-detail">
               <strong>7:00 PM onwards</strong>
-              <br>
-              <br>
+              <br><br>
               <strong>Noori Hall</strong>
               <br>
               Noori Baba Dargah Road /
@@ -1836,18 +1867,19 @@
               <br>
               Maharashtra – 400601
             </p>
-            <p class="event-note">Join us for an evening of joy, food & togetherness.</p>
+
+            <p class="event-note">
+              Join us for an evening of joy, food & togetherness.
+            </p>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- =====================================================
-         PHOTO WALL
-    ====================================================== -->
-
+    <!-- PHOTO WALL -->
     <section class="gallery" id="gallery">
+
       <div class="section-heading reveal">
         <p class="section-kicker">Little moments, lasting memories</p>
         <div class="gold-line"></div>
@@ -1856,87 +1888,98 @@
       </div>
 
       <div class="gallery-grid reveal">
+
         <div class="gallery-item">
           <img src="./engagement1.jpg" alt="Alfiya and Danish memory one" loading="lazy">
         </div>
+
         <div class="gallery-item">
           <img src="./engagement2.jpg" alt="Alfiya and Danish memory two" loading="lazy">
         </div>
+
         <div class="gallery-item">
           <img src="./engagement3.jpg" alt="Alfiya and Danish memory three" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="./handpicture.jpg" alt="Wedding detail" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="./AD-monogram.png" alt="Alfiya and Danish wedding monogram" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- Gallery image viewer -->
-    <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+    <!-- PHOTO LIGHTBOX -->
+    <div class="gallery-lightbox" id="galleryLightbox"
+      role="dialog" aria-modal="true" aria-label="Photo viewer">
+
+      <button class="lightbox-close" id="lightboxClose"
+        type="button" aria-label="Close image">×</button>
+
       <img id="lightboxImage" src="" alt="Selected wedding photograph">
     </div>
 
-    <!-- =====================================================
-         BLESSINGS
-    ====================================================== -->
-
+    <!-- BLESSINGS -->
     <section class="blessings" id="blessings">
+
       <div class="blessings-inner reveal">
+
         <p class="section-kicker">Your duas mean the world to us</p>
         <div class="gold-line"></div>
+
         <h2>Send Your Blessings</h2>
+
         <p>
           Share a little love, a heartfelt message or a dua for our new beginning.
           We would be delighted to keep your wishes close to our hearts.
         </p>
 
         <form class="blessing-form" id="blessingForm">
+
           <div>
             <label for="guestName">Your Name</label>
-            <input id="guestName" name="name" type="text" placeholder="Enter your name" required>
+            <input id="guestName" name="name" type="text"
+              placeholder="Enter your name" required>
           </div>
 
           <div>
             <label for="guestMessage">Your Blessing / Dua</label>
-            <textarea id="guestMessage" name="message" placeholder="Write your heartfelt message here..." required></textarea>
+            <textarea id="guestMessage" name="message"
+              placeholder="Write your heartfelt message here..." required></textarea>
           </div>
 
           <button class="blessing-submit" id="blessingSubmit" type="submit">
             Send Your Blessing
           </button>
 
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <p class="form-status" id="formStatus"
+            role="status" aria-live="polite"></p>
+
         </form>
       </div>
     </section>
+
   </main>
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
+  <!-- FOOTER -->
   <footer class="footer">
+
     <img class="footer-monogram" src="./AD-monogram.png" alt="A and D monogram">
 
     <h2>Alfiya & Danish</h2>
+
     <p>May our forever always be written in love and faith.</p>
-    <p class="footer-date">16 · 12 · 2026 &nbsp; | &nbsp; 7 Rajab 1448 AH</p>
+
+    <p class="footer-date">
+      16 · 12 · 2026 &nbsp; | &nbsp; 7 Rajab 1448 AH
+    </p>
 
     <div class="gold-line"></div>
 
     <div class="footer-bottom">
       MADE WITH LOVE & DUAS · ALFIYA & DANISH
     </div>
+
   </footer>
 
   <script>
-    /* =====================================================
-       OPENING SCREEN + MUSIC
-    ====================================================== */
+    /* =========================================
+       OPENING SCREEN AND MUSIC
+    ========================================= */
 
     const opening = document.getElementById("opening");
     const openButton = document.getElementById("openInvitation");
@@ -1946,10 +1989,8 @@
 
     openButton.addEventListener("click", async () => {
       if (invitationOpened) return;
-      invitationOpened = true;
 
-      // Start music directly from the visitor's click.
-      // Browsers may still block playback if the audio file is unavailable.
+      invitationOpened = true;
       backgroundMusic.volume = 0.35;
 
       try {
@@ -1966,12 +2007,13 @@
       }, 1450);
     });
 
-    /* =====================================================
+    /* =========================================
        FLOATING BUBBLES
-    ====================================================== */
+    ========================================= */
 
     const bubblesContainer = document.getElementById("bubbles");
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion =
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     function createBubbles() {
       if (!bubblesContainer) return;
@@ -1998,7 +2040,7 @@
         if (prefersReducedMotion) {
           bubble.style.bottom = "auto";
           bubble.style.top = (Math.random() * 90) + "%";
-          bubble.style.opacity = ".25";
+          bubble.style.opacity = ".22";
         }
 
         bubblesContainer.appendChild(bubble);
@@ -2007,15 +2049,16 @@
 
     createBubbles();
 
-    /* =====================================================
+    /* =========================================
        MOBILE NAVIGATION
-    ====================================================== */
+    ========================================= */
 
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
     menuToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("show");
+
       menuToggle.setAttribute("aria-expanded", String(isOpen));
       menuToggle.textContent = isOpen ? "×" : "☰";
     });
@@ -2028,15 +2071,15 @@
       });
     });
 
-    /* =====================================================
+    /* =========================================
        COUNTDOWN
-    ====================================================== */
+    ========================================= */
 
-    const nikahDate = new Date("2026-12-16T18:30:00+05:30").getTime();
+    const nikahDate =
+      new Date("2026-12-16T18:30:00+05:30").getTime();
 
     function updateCountdown() {
-      const now = Date.now();
-      const distance = nikahDate - now;
+      const distance = nikahDate - Date.now();
 
       const daysElement = document.getElementById("days");
       const hoursElement = document.getElementById("hours");
@@ -2065,9 +2108,9 @@
     updateCountdown();
     window.setInterval(updateCountdown, 1000);
 
-    /* =====================================================
+    /* =========================================
        SCROLL REVEAL
-    ====================================================== */
+    ========================================= */
 
     const revealElements = document.querySelectorAll(".reveal");
 
@@ -2089,9 +2132,9 @@
       revealElements.forEach(element => element.classList.add("visible"));
     }
 
-    /* =====================================================
+    /* =========================================
        PHOTO WALL LIGHTBOX
-    ====================================================== */
+    ========================================= */
 
     const galleryItems = document.querySelectorAll(".gallery-item img");
     const galleryLightbox = document.getElementById("galleryLightbox");
@@ -2122,14 +2165,15 @@
     });
 
     document.addEventListener("keydown", event => {
-      if (event.key === "Escape" && galleryLightbox.classList.contains("active")) {
+      if (event.key === "Escape" &&
+          galleryLightbox.classList.contains("active")) {
         closeLightbox();
       }
     });
 
-    /* =====================================================
+    /* =========================================
        BLESSINGS FORM - GOOGLE SHEETS
-    ====================================================== */
+    ========================================= */
 
     const GOOGLE_SCRIPT_URL =
       "https://script.google.com/macros/s/AKfycbz5VARKb8wvnHrgr6s-xeXsVaWk6pSsVd2Okqg766o3h3ZgX-Y35yMWOztOR-MpdycH/exec";
@@ -2145,7 +2189,8 @@
       const message = document.getElementById("guestMessage").value.trim();
 
       if (!name || !message) {
-        formStatus.textContent = "Please enter your name and blessing.";
+        formStatus.textContent =
+          "Please enter your name and blessing.";
         return;
       }
 
@@ -2155,6 +2200,7 @@
 
       try {
         const formData = new URLSearchParams();
+
         formData.append("name", name);
         formData.append("message", message);
         formData.append("timestamp", new Date().toISOString());
@@ -2165,24 +2211,23 @@
           body: formData
         });
 
-        /*
-          no-cors responses are opaque, so the browser cannot confirm
-          whether Google Apps Script saved the entry. This message means
-          the request was sent, not that the sheet has verified the row.
-        */
         formStatus.textContent =
           "Thank you for your beautiful wishes. Your message has been sent.";
 
         blessingForm.reset();
+
       } catch (error) {
         console.error("Blessings submission failed:", error);
+
         formStatus.textContent =
           "We couldn't send your message. Please try again in a moment.";
+
       } finally {
         blessingSubmit.disabled = false;
         blessingSubmit.textContent = "Send Your Blessing";
       }
     });
   </script>
+
 </body>
 </html>
