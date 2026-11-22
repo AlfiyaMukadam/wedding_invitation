@@ -2,1541 +2,1129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#073d42">
-<title>Alfiya ♡ Danish | Mehfil-e-Noor — Our Forever Begins</title>
-<meta name="description" content="A celebration of love, faith and forever. Join Alfiya and Danish, 14–18 December 2026.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --teal: #073d42;
-  --teal-light: #10585b;
-  --gold: #c6a36a;
-  --gold-light: #ead8b1;
-  --paper: #fbf6eb;
-  --ink: #183c39;
-  --muted: #71817a;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'Manrope', sans-serif;
-}
-
-button, a {
-  font: inherit;
-}
-
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* OPENING COVER */
-
-.hero {
-  min-height: 100svh;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  padding: 35px 20px;
-  text-align: center;
-  color: #f9f3e7;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(3, 25, 29, .62),
-      rgba(3, 35, 37, .34),
-      rgba(3, 25, 29, .64)
-    ),
-    url("./handpicture.jpg") center 42% / cover no-repeat;
-}
-
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #d9bd83aa;
-  border-radius: 46% 46% 48% 48%;
-  width: min(76vw, 720px);
-  height: min(76vw, 720px);
-  pointer-events: none;
-  animation: rotate 55s linear infinite;
-}
-
-.hero::after {
-  width: min(66vw, 620px);
-  height: min(66vw, 620px);
-  border-style: dashed;
-  opacity: .55;
-  animation-direction: reverse;
-  animation-duration: 70s;
-}
-
-.hero-inner {
-  width: 100%;
-  max-width: 760px;
-  position: relative;
-  z-index: 2;
-  animation: rise 1.2s ease both;
-}
-
-.eyebrow {
-  color: var(--gold-light);
-  font-size: 10px;
-  letter-spacing: .25em;
-  line-height: 2;
-  text-transform: uppercase;
-}
-
-.brand-mark {
-  width: clamp(115px, 20vw, 165px);
-  height: clamp(115px, 20vw, 165px);
-  margin: 24px auto;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  background: radial-gradient(circle, #fffaf0, #ead9b8 75%, #c4a36a);
-  border: 1px solid #e7d5ac;
-  box-shadow: 0 0 0 9px #d6bb8020, 0 18px 55px #0005;
-}
-
-.brand-mark img {
-  width: 86%;
-  height: 86%;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-}
-
-.script {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(65px, 13vw, 116px);
-  line-height: 1.12;
-  color: #f7e8d0;
-  text-shadow: 0 3px 25px #0008;
-  margin: 10px 0;
-}
-
-.amp {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: .55em;
-  color: var(--gold-light);
-  font-style: italic;
-}
-
-.hero-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(16px, 3vw, 23px);
-  letter-spacing: .18em;
-  color: #f0dfbd;
-  margin: 18px 0;
-}
-
-.seal {
-  position: relative;
-  width: 94px;
-  height: 94px;
-  display: grid;
-  place-items: center;
-  margin: 30px auto 14px;
-  border: 1px solid #f2dfb3;
-  border-radius: 50%;
-  color: #173d3e;
-  background: linear-gradient(145deg, #f1dfb2, #b18a4e);
-  box-shadow: 0 0 0 8px #c5a46d20, 0 12px 38px #0005;
-  cursor: pointer;
-  transition: transform .3s ease;
-}
-
-.seal:hover {
-  transform: scale(1.06) rotate(-5deg);
-}
-
-.seal::after {
-  content: "";
-  position: absolute;
-  inset: -9px;
-  border: 1px solid #e8d4a366;
-  border-radius: 50%;
-  animation: pulse 2.8s ease-out infinite;
-}
-
-.seal span {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  line-height: 1.5;
-  letter-spacing: .1em;
-}
-
-.open-note {
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #e9d9b9;
-}
-
-.hero-hint {
-  margin-top: 20px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-style: italic;
-  color: #f0dfbd;
-}
-
-/* HIDDEN MUSIC */
-
-#weddingMusic {
-  display: none;
-}
-
-/* MAIN CONTENT */
-
-main {
-  display: none;
-}
-
-main.open {
-  display: block;
-}
-
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(12px, 3vw, 32px);
-  padding: 17px 12px;
-  background: #fbf6ebed;
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid #d7c69e;
-  box-shadow: 0 5px 22px #163c3510;
-}
-
-.nav a {
-  color: var(--teal);
-  text-decoration: none;
-  font-size: 10px;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-}
-
-.nav a:hover {
-  color: #a17d47;
-}
-
-section {
-  max-width: 1120px;
-  margin: auto;
-  padding: 85px 24px;
-}
-
-.kicker {
-  color: #a17d47;
-  font-size: 10px;
-  letter-spacing: .23em;
-  text-transform: uppercase;
-}
-
-.section-title {
-  margin: 12px 0 20px;
-  color: var(--teal);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(40px, 7vw, 65px);
-  font-weight: 500;
-  line-height: 1.1;
-}
-
-.body-copy {
-  max-width: 680px;
-  margin: auto;
-  color: #60736d;
-  font-size: 14px;
-  line-height: 2;
-}
-
-.ornament {
-  margin: 22px;
-  color: var(--gold);
-  font-size: 25px;
-}
-
-/* INTRODUCTION */
-
-.intro {
-  position: relative;
-  text-align: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.intro::before {
-  content: "";
-  position: absolute;
-  inset: 28px 12px;
-  border: 1px solid #c7a66c55;
-  pointer-events: none;
-}
-
-.names {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  margin: 45px 0 30px;
-}
-
-.person {
-  min-width: 210px;
-}
-
-.person h3 {
-  margin: 0;
-  color: var(--teal);
-  font-family: 'Great Vibes', cursive;
-  font-size: 60px;
-  font-weight: 400;
-}
-
-.person p {
-  margin: 5px;
-  color: #71817a;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.and {
-  color: var(--gold);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
-}
-
-/* CELEBRATIONS */
-
-.events {
-  max-width: none;
-  background: linear-gradient(180deg, #073d42, #0b4a4d);
-}
-
-.events-inner {
-  max-width: 1120px;
-  margin: auto;
-}
-
-.events .section-title {
-  color: #f7ead2;
-}
-
-.events .kicker {
-  color: #dfc28c;
-}
-
-.events .body-copy {
-  color: #e0d5bd;
-}
-
-.event-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 42px;
-}
-
-.event {
-  position: relative;
-  overflow: hidden;
-  padding: 18px 18px 32px;
-  text-align: center;
-  border-radius: 3px;
-  box-shadow: 0 18px 50px #001b1b38;
-  transition: transform .4s ease, box-shadow .4s ease;
-}
-
-.event:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 24px 55px #001b1b55;
-}
-
-.event::before {
-  content: "";
-  position: absolute;
-  inset: 9px;
-  border: 2px double currentColor;
-  opacity: .22;
-  pointer-events: none;
-}
-
-.event-photo {
-  width: 100%;
-  height: 280px;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  margin: 0 auto 24px;
-  border: 1px solid #c6a36a99;
-  background: #e8e0d0;
-  transition: transform .5s ease;
-}
-
-.event:hover .event-photo {
-  transform: scale(1.025);
-}
-
-.event-icon {
-  font-size: 34px;
-  margin-bottom: 12px;
-}
-
-.event .date {
-  font-size: 10px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.event h3 {
-  margin: 10px 0 5px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(32px, 4vw, 43px);
-  font-weight: 500;
-}
-
-.event .tagline {
-  min-height: 48px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-style: italic;
-}
-
-.event p {
-  margin: 11px 0 0;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.event .time {
-  font-weight: 700;
-}
-
-.event-haldi {
-  color: #765018;
-  background: linear-gradient(155deg, #fff9e9, #f4dfad);
-}
-
-.event-haldi .date {
-  color: #a66c14;
-}
-
-.event-haldi .tagline {
-  color: #b17b28;
-}
-
-.event-mehendi {
-  color: #234c38;
-  background: linear-gradient(155deg, #f3f4e8, #d4e2cc);
-}
-
-.event-mehendi .date {
-  color: #426b50;
-}
-
-.event-mehendi .tagline {
-  color: #648365;
-}
-
-.event-nikah {
-  color: #173d3c;
-  background: linear-gradient(155deg, #fff9ef, #e8dcc3);
-}
-
-.event-nikah .date {
-  color: #9b7846;
-}
-
-.event-nikah .tagline {
-  color: #a77d76;
-}
-
-.event-walima {
-  color: #493d2c;
-  background: linear-gradient(155deg, #f8f0e2, #e6d5b8);
-}
-
-.event-walima .date {
-  color: #9b7846;
-}
-
-.event-walima .tagline {
-  color: #987b64;
-}
-
-/* COUNTDOWN */
-
-.countdown {
-  max-width: none;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  color: #f8f1e4;
-  background: linear-gradient(135deg, #082f35, #0c5355 55%, #073b40);
-}
-
-.countdown .section-title {
-  color: #f6e9d0;
-}
-
-.count-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: clamp(12px, 4vw, 42px);
-  margin: 35px auto 15px;
-}
-
-.count-unit {
-  min-width: 100px;
-  padding: 17px 20px;
-  border: 1px solid #d7c08c55;
-  background: #ffffff08;
-}
-
-.count-unit strong {
-  display: block;
-  color: var(--gold-light);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(38px, 7vw, 58px);
-  font-weight: 400;
-}
-
-.count-unit span {
-  color: #d7c9ad;
-  font-size: 9px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
-
-/* SCHEDULE */
-
-.schedule-list {
-  max-width: 760px;
-  margin: 35px auto 0;
-  border-top: 1px solid #d7c69e;
-}
-
-.schedule-row {
-  display: grid;
-  grid-template-columns: 155px 1fr;
-  gap: 22px;
-  padding: 22px 10px;
-  border-bottom: 1px solid #d7c69e;
-  transition: background .25s;
-}
-
-.schedule-row:hover {
-  background: #f8f4eb;
-}
-
-.schedule-row time {
-  color: #a17d47;
-  font-size: 11px;
-  letter-spacing: .1em;
-}
-
-.schedule-row h4 {
-  margin: 0 0 5px;
-  color: var(--teal);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 25px;
-  font-weight: 500;
-}
-
-.schedule-row p {
-  margin: 0;
-  color: #687a72;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-/* VENUES */
-
-.venue {
-  max-width: none;
-  background: #f1e9d9;
-}
-
-.venue-inner {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-.venue-card {
-  max-width: 720px;
-  margin: 30px auto;
-  padding: 35px 24px;
-  background: #fffdf8;
-  border: 1px solid #c9ad78;
-  box-shadow: 0 18px 45px #4d3b2012;
-}
-
-.venue-card h3 {
-  margin: 8px 0;
-  color: var(--teal);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-  font-weight: 500;
-}
-
-.venue-card p {
-  color: #687a72;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.map-frame {
-  height: 240px;
-  margin: 20px 0 12px;
-  overflow: hidden;
-  border: 1px solid #d8c79f;
-  background: #e8e2d4;
-}
-
-.map-frame iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.pill {
-  display: inline-block;
-  margin: 8px;
-  padding: 12px 20px;
-  border: 1px solid var(--gold);
-  color: var(--teal);
-  background: #fffdf8;
-  text-decoration: none;
-  font-size: 10px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  transition: .25s;
-}
-
-.pill:hover {
-  color: white;
-  background: var(--teal);
-  transform: translateY(-2px);
-}
-
-/* BLESSINGS */
-
-.blessing {
-  text-align: center;
-  background: radial-gradient(ellipse at top, #fffdf8, #f5efe3);
-}
-
-.blessing form {
-  display: grid;
-  gap: 13px;
-  max-width: 580px;
-  margin: 30px auto 0;
-  text-align: left;
-}
-
-.blessing input,
-.blessing select,
-.blessing textarea {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #d8c79f;
-  background: #fffdf8;
-  color: var(--ink);
-  font: 13px 'Manrope', sans-serif;
-}
-
-.blessing textarea {
-  min-height: 115px;
-  resize: vertical;
-}
-
-.gold-btn {
-  padding: 16px 20px;
-  border: 1px solid var(--gold);
-  color: #f7ecd6;
-  background: var(--teal);
-  font-size: 10px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: .25s;
-}
-
-.gold-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 9px 22px #0b4b5230;
-}
-
-.small-note {
-  margin-top: 18px;
-  color: #87948c;
-  font-size: 10px;
-  line-height: 1.7;
-}
-
-/* FOOTER */
-
-footer {
-  position: relative;
-  overflow: hidden;
-  padding: 55px 20px;
-  text-align: center;
-  color: #e9ddc4;
-  background: radial-gradient(ellipse at center, #12575a, #062f35);
-}
-
-footer::before {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border: 1px solid #c6a36a55;
-  pointer-events: none;
-}
-
-footer .script {
-  font-size: 55px;
-}
-
-footer p {
-  color: #d5c6a5;
-  font-size: 10px;
-  letter-spacing: .14em;
-}
-
-/* ANIMATIONS */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity .8s ease, transform .8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes rise {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes rotate {
-  to { rotate: 360deg; }
-}
-
-@keyframes pulse {
-  0% { transform: scale(.94); opacity: .8; }
-  100% { transform: scale(1.25); opacity: 0; }
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 800px) {
-  section {
-    padding: 70px 20px;
-  }
-
-  .event-grid {
-    grid-template-columns: 1fr;
-    max-width: 550px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .event-photo {
-    height: 260px;
-  }
-
-  .event .tagline {
-    min-height: 0;
-  }
-
-  .schedule-row {
-    grid-template-columns: 1fr;
-    gap: 7px;
-  }
-
-  .brand-mark {
-    width: 135px;
-    height: 135px;
-  }
-
-  .nav {
-    gap: 14px;
-  }
-
-  .nav a {
-    font-size: 9px;
-  }
-
-  .map-frame {
-    height: 215px;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero {
-    padding: 24px 15px;
-    background-position: center center;
-  }
-
-  .hero::before {
-    width: 94vw;
-    height: 94vw;
-  }
-
-  .hero::after {
-    width: 82vw;
-    height: 82vw;
-  }
-
-  .hero-sub {
-    font-size: 15px;
-  }
-
-  .section-title {
-    font-size: 42px;
-  }
-
-  .count-unit {
-    min-width: 75px;
-    padding: 12px;
-  }
-
-  .event-photo {
-    height: 230px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    animation: none !important;
-    transition: none !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#073e48">
+  <meta name="description" content="With love and blessings, join Alfiya and Danish as they begin their forever.">
+  <title>Alfiya ♡ Danish | Our Forever Begins</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --teal: #073e48;
+      --teal-dark: #052e36;
+      --teal-light: #0c5961;
+      --gold: #c9a66b;
+      --gold-light: #ead8b4;
+      --cream: #fbf8f1;
+      --blush: #e9c8c2;
+      --ink: #263638;
+      --muted: #777d78;
+      --white: #fffefa;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --script: "Great Vibes", cursive;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 82px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    body.locked { overflow: hidden; }
+
+    button, input, textarea, select { font: inherit; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .opening {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background:
+        linear-gradient(180deg, rgba(3,35,41,.48), rgba(3,35,41,.76)),
+        url("./handpicture.jpg") center 45% / cover no-repeat,
+        var(--teal-dark);
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    .opening.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .opening-card {
+      width: min(100%, 520px);
+      padding: 46px 28px;
+      text-align: center;
+      color: var(--white);
+      border: 1px solid rgba(234,216,180,.7);
+      outline: 1px solid rgba(234,216,180,.28);
+      outline-offset: 8px;
+      background: rgba(4,43,49,.42);
+      backdrop-filter: blur(5px);
+    }
+
+    .opening-monogram {
+      width: 92px;
+      height: 92px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 3px 10px rgba(0,0,0,.2));
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .opening h1 {
+      margin: 18px 0 8px;
+      font-family: var(--serif);
+      font-size: clamp(43px, 9vw, 66px);
+      line-height: .98;
+      font-weight: 400;
+    }
+
+    .opening .script {
+      display: block;
+      margin: 4px 0 18px;
+      font-family: var(--script);
+      font-size: 42px;
+      color: var(--gold-light);
+    }
+
+    .opening p {
+      margin: 0 auto 26px;
+      max-width: 330px;
+      color: rgba(255,255,255,.84);
+      font-size: 12px;
+      line-height: 1.9;
+      letter-spacing: .08em;
+    }
+
+    .open-button, .submit-button {
+      border: 1px solid var(--gold-light);
+      background: var(--gold);
+      color: var(--teal-dark);
+      padding: 14px 29px;
+      cursor: pointer;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 10px;
+      transition: .25s ease;
+    }
+
+    .open-button:hover, .submit-button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .opening-note {
+      margin-top: 22px;
+      color: rgba(255,255,255,.68);
+      font-size: 9px;
+      letter-spacing: .15em;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 13px clamp(18px, 5vw, 72px);
+      background: rgba(251,248,241,.94);
+      border-bottom: 1px solid rgba(201,166,107,.28);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: 22px;
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(12px, 2.4vw, 30px);
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--teal);
+      font-size: 9px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .nav a:hover { color: #a77b3f; }
+
+    .hero {
+      position: relative;
+      min-height: min(790px, 88vh);
+      display: grid;
+      place-items: center;
+      padding: 90px 20px;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(rgba(4,38,44,.42), rgba(4,38,44,.72)),
+        url("./handpicture.jpg") center 45% / cover no-repeat,
+        var(--teal);
+    }
+
+    .hero-content {
+      width: min(100%, 780px);
+      padding: 35px 15px;
+    }
+
+    .hero-monogram {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 22px;
+      filter: drop-shadow(0 3px 12px rgba(0,0,0,.25));
+    }
+
+    .hero h1 {
+      margin: 16px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(58px, 11vw, 112px);
+      line-height: .92;
+      font-weight: 400;
+      letter-spacing: -.035em;
+      text-shadow: 0 3px 18px rgba(0,0,0,.18);
+    }
+
+    .hero .ampersand {
+      display: block;
+      margin: 2px 0;
+      font-family: var(--script);
+      font-size: clamp(48px, 8vw, 76px);
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      margin: 30px 0 12px;
+      font-size: 10px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    .hero-date {
+      font-family: var(--serif);
+      font-size: clamp(20px, 4vw, 28px);
+      letter-spacing: .1em;
+    }
+
+    .hero-divider {
+      width: 100px;
+      height: 1px;
+      margin: 24px auto;
+      background: var(--gold-light);
+    }
+
+    .hero-blessing {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-style: italic;
+      color: rgba(255,255,255,.9);
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    section { padding: 90px 22px; }
+
+    .section-inner {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 13px;
+      color: #a77b3f;
+      font-size: 9px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: clamp(39px, 6vw, 62px);
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .section-heading p {
+      max-width: 580px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 2;
+    }
+
+    .intro {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .intro-quote {
+      max-width: 760px;
+      margin: 34px auto 0;
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: clamp(22px, 4vw, 32px);
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    .quran {
+      margin-top: 23px;
+      color: #a77b3f;
+      font-family: var(--serif);
+      font-size: 17px;
+      letter-spacing: .04em;
+    }
+
+    .countdown-section {
+      padding: 70px 20px;
+      color: var(--white);
+      text-align: center;
+      background:
+        linear-gradient(rgba(4,48,55,.94), rgba(4,48,55,.96)),
+        url("./handpicture.jpg") center / cover;
+    }
+
+    .countdown-section .section-heading h2 { color: var(--white); }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: clamp(13px, 4vw, 45px);
+      margin: 38px auto 0;
+      flex-wrap: wrap;
+    }
+
+    .count-item { min-width: 72px; }
+
+    .count-number {
+      display: block;
+      color: var(--gold-light);
+      font-family: var(--serif);
+      font-size: clamp(40px, 7vw, 64px);
+      line-height: 1;
+    }
+
+    .count-label {
+      display: block;
+      margin-top: 9px;
+      color: rgba(255,255,255,.72);
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .events { background: #f5f0e7; }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .event-card {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid rgba(201,166,107,.34);
+      box-shadow: 0 12px 35px rgba(30,45,42,.06);
+    }
+
+    .event-image-wrap {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      background: #e6ded0;
+    }
+
+    .event-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .event-card:hover .event-image { transform: scale(1.045); }
+
+    .event-content {
+      padding: 27px clamp(20px, 3vw, 34px) 32px;
+      text-align: center;
+    }
+
+    .event-number {
+      color: #a77b3f;
+      font-size: 9px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    .event-content h3 {
+      margin: 10px 0 6px;
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: clamp(31px, 4vw, 43px);
+      font-weight: 500;
+    }
+
+    .event-tagline {
+      margin: 0 0 20px;
+      color: #a77b3f;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-style: italic;
+    }
+
+    .event-detail {
+      margin: 9px 0;
+      color: #58615e;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .event-detail strong {
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    .event-content .event-venue {
+      max-width: 360px;
+      margin: 10px auto 0;
+    }
+
+    .event-map {
+      display: inline-block;
+      margin-top: 17px;
+      padding-bottom: 4px;
+      color: #986e37;
+      border-bottom: 1px solid var(--gold);
+      font-size: 9px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .program {
+      margin: 20px auto 0;
+      padding: 16px 12px;
+      max-width: 340px;
+      border-top: 1px solid rgba(201,166,107,.4);
+      border-bottom: 1px solid rgba(201,166,107,.4);
+    }
+
+    .program span {
+      display: inline-block;
+      margin: 5px 8px;
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: 17px;
+    }
+
+    .program small {
+      display: block;
+      margin-top: 8px;
+      color: #9a784e;
+      font-family: var(--serif);
+      font-size: 16px;
+    }
+
+    .details-note {
+      margin: 32px auto 0;
+      max-width: 720px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.9;
+    }
+
+    .gallery {
+      background: var(--cream);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 230px 230px;
+      gap: 14px;
+      margin-top: 42px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #e8dfd0;
+    }
+
+    .gallery-grid img:first-child { grid-row: span 2; }
+
+    .blessings {
+      background:
+        linear-gradient(rgba(5,53,60,.94), rgba(5,53,60,.96)),
+        url("./handpicture.jpg") center / cover;
+      color: white;
+    }
+
+    .blessings .section-heading h2 { color: white; }
+
+    .blessings .section-heading p { color: rgba(255,255,255,.72); }
+
+    .blessing-form {
+      width: min(620px, 100%);
+      margin: 38px auto 0;
+      padding: clamp(22px, 5vw, 42px);
+      border: 1px solid rgba(234,216,180,.55);
+      background: rgba(255,255,255,.045);
+    }
+
+    .form-row { margin-bottom: 19px; }
+
+    .blessing-form label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold-light);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .blessing-form input,
+    .blessing-form select,
+    .blessing-form textarea {
+      width: 100%;
+      padding: 13px 14px;
+      color: white;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(234,216,180,.34);
+      border-radius: 0;
+      outline: none;
+      font-size: 12px;
+    }
+
+    .blessing-form input::placeholder,
+    .blessing-form textarea::placeholder {
+      color: rgba(255,255,255,.48);
+    }
+
+    .blessing-form select option {
+      color: var(--teal-dark);
+      background: white;
+    }
+
+    .blessing-form input:focus,
+    .blessing-form select:focus,
+    .blessing-form textarea:focus {
+      border-color: var(--gold-light);
+    }
+
+    .blessing-form textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .form-status {
+      min-height: 22px;
+      margin: 17px 0 0;
+      color: var(--gold-light);
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .blessing-footnote {
+      margin: 14px 0 0;
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      font-size: 9px;
+      line-height: 1.7;
+    }
+
+    .footer {
+      padding: 55px 20px 35px;
+      text-align: center;
+      color: var(--white);
+      background: var(--teal-dark);
+    }
+
+    .footer-monogram {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .footer h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 43px;
+      font-weight: 400;
+    }
+
+    .footer-script {
+      margin: 2px 0 18px;
+      color: var(--gold-light);
+      font-family: var(--script);
+      font-size: 35px;
+    }
+
+    .footer p {
+      margin: 7px 0;
+      color: rgba(255,255,255,.68);
+      font-size: 10px;
+      letter-spacing: .1em;
+    }
+
+    .footer .copyright {
+      margin-top: 35px;
+      color: rgba(255,255,255,.38);
+      font-size: 8px;
+      letter-spacing: .12em;
+    }
+
+    .ornament {
+      width: 90px;
+      height: 1px;
+      margin: 22px auto;
+      background: var(--gold);
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        padding: 10px 14px;
+        align-items: flex-start;
+      }
+
+      .brand { font-size: 19px; }
+      .brand img { width: 31px; height: 31px; }
+
+      .nav {
+        gap: 8px 13px;
+        max-width: 65%;
+      }
+
+      .nav a {
+        font-size: 8px;
+        letter-spacing: .08em;
+      }
+
+      .hero { min-height: 80vh; }
+
+      section { padding: 70px 17px; }
+
+      .event-grid { grid-template-columns: 1fr; gap: 22px; }
+
+      .event-image-wrap { height: 270px; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 170px;
+      }
+
+      .gallery-grid img:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .site-header { display: block; }
+
+      .brand { justify-content: center; margin-bottom: 8px; }
+
+      .nav {
+        max-width: 100%;
+        justify-content: center;
+      }
+
+      .hero h1 { font-size: 61px; }
+
+      .opening-card { padding: 38px 19px; }
+
+      .event-image-wrap { height: 235px; }
+
+      .count-item { min-width: 62px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="locked">
 
-<!-- HIDDEN BACKGROUND MUSIC -->
-<audio id="weddingMusic" preload="auto" loop playsinline>
-  <source src="./Guzarish%20Satinder%20Sartaj%20Instrumental.mp3" type="audio/mpeg">
-</audio>
-
-<!-- OPENING COVER -->
-<header class="hero" id="cover">
-  <div class="hero-inner">
-
-    <div class="eyebrow">
-      With love, duas & blessings from the bride’s family
+  <!-- Opening screen -->
+  <div class="opening" id="opening">
+    <div class="opening-card">
+      <img class="opening-monogram" src="./AD-monogram.png" alt="A and D monogram">
+      <div class="eyebrow">A celebration of love & faith</div>
+      <h1>Alfiya <span style="color:#ead8b4">&</span> Danish</h1>
+      <span class="script">Together, InshaAllah</span>
+      <p>
+        With the blessings of Allah and our beloved families,
+        we invite you to be a part of our special celebration.
+      </p>
+      <button class="open-button" id="openInvite" type="button">Open Invitation</button>
+      <div class="opening-note">A LITTLE CELEBRATION OF OUR FOREVER</div>
     </div>
-
-    <div class="brand-mark">
-      <img src="./AD-monogram.png" alt="Alfiya and Danish monogram">
-    </div>
-
-    <div class="script">
-      Alfiya <span class="amp">&</span> Danish
-    </div>
-
-    <div class="hero-sub">
-      A CELEBRATION OF LOVE, FAITH & FOREVER
-    </div>
-
-    <div class="eyebrow">
-      14 — 18 December 2026
-    </div>
-
-    <button class="seal" id="openInvite" aria-label="Open invitation">
-      <span>OPEN<br>INVITATION</span>
-    </button>
-
-    <div class="open-note">
-      A beautiful celebration awaits
-    </div>
-
-    <div class="hero-hint">
-      A little celebration, wrapped in love
-    </div>
-
   </div>
-</header>
 
-<main id="invitation">
+  <!-- Background music: no visible music player -->
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="./Guzarish%20Satinder%20Sartaj%20Instrumental.mp3" type="audio/mpeg">
+  </audio>
 
-  <!-- NAVIGATION -->
-  <nav class="nav">
-    <a href="#invitation-intro">Invitation</a>
-    <a href="#celebrations">Celebrations</a>
-    <a href="#countdown">Countdown</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#venues">Venues</a>
-    <a href="#blessings">Blessings</a>
-  </nav>
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <img src="./AD-monogram.png" alt="">
+      <span>Alfiya & Danish</span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#story">Our Story</a>
+      <a href="#events">Celebrations</a>
+      <a href="#gallery">Moments</a>
+      <a href="#blessings">Blessings</a>
+    </nav>
+  </header>
 
-  <!-- INVITATION -->
-  <section class="intro reveal" id="invitation-intro">
-
-    <div class="kicker">
-      With the blessings of our families
-    </div>
-
-    <h1 class="section-title">
-      With joyful hearts, we invite you
-    </h1>
-
-    <div class="ornament">✦ ❀ ✦</div>
-
-    <p class="body-copy">
-      With hearts full of gratitude and joy, we invite you to join our
-      family as we celebrate the beautiful journey of Alfiya and Danish.
-      Your presence, prayers and warm wishes will make each gathering
-      more meaningful as we come together for moments of love,
-      laughter and barakah.
-    </p>
-
-    <div class="names">
-      <div class="person">
-        <h3>Alfiya</h3>
-        <p>D/o Mrs. &amp; Mr. Rabiyabi<br>&amp; Ashfaque Mukadam</p>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <img class="hero-monogram" src="./AD-monogram.png" alt="Alfiya and Danish monogram">
+        <div class="eyebrow">Bismillah • A new chapter begins</div>
+        <h1>Alfiya <span class="ampersand">&</span> Danish</h1>
+        <div class="hero-subtitle">The beginning of our forever</div>
+        <div class="hero-divider"></div>
+        <div class="hero-date">16 December 2026</div>
+        <p class="hero-blessing">Two hearts, one beautiful journey, InshaAllah.</p>
       </div>
+      <div class="scroll-cue">Scroll to explore ↓</div>
+    </section>
 
-      <div class="and">&</div>
-
-      <div class="person">
-        <h3>Danish</h3>
-        <p>S/o Mrs. &amp; Mr. Heena<br>&amp; Feroz Ismail Khan</p>
-      </div>
-    </div>
-
-    <div class="ornament">❧</div>
-
-    <p class="body-copy" style="font-family:'Cormorant Garamond';font-size:21px;font-style:italic;color:#a17d47">
-      “And He placed between you affection and mercy.”
-      <br>
-      <span style="font-size:14px">— Qur’an 30:21</span>
-    </p>
-
-  </section>
-
-  <!-- CELEBRATIONS -->
-  <section class="events" id="celebrations">
-
-    <div class="events-inner">
-
-      <div style="text-align:center">
-        <div class="kicker">Four beautiful occasions · One unforgettable beginning</div>
-
-        <h2 class="section-title">The Wedding Festivities</h2>
-
-        <p class="body-copy">
-          From the colours of Haldi to the joy of Mehendi, the blessings
-          of Nikah and the warmth of Walima — we would love to celebrate
-          every moment with you.
+    <!-- Introduction -->
+    <section class="intro" id="story">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="section-kicker">A little note from us</span>
+          <h2>Our Forever Begins</h2>
+        </div>
+        <p class="intro-quote">
+          “And among His signs is that He created for you spouses
+          that you may find tranquillity in them; and He placed
+          between you affection and mercy.”
+        </p>
+        <div class="quran">Qur’an 30:21</div>
+        <div class="ornament"></div>
+        <p style="max-width:650px;margin:0 auto;color:#777d78;font-size:12px;line-height:2.1">
+          With grateful hearts and the love of our families,
+          we are delighted to invite you to celebrate the beginning
+          of our new journey. Your presence, duas and blessings
+          will make these moments even more special.
         </p>
       </div>
+    </section>
 
-      <div class="event-grid">
+    <!-- Countdown -->
+    <section class="countdown-section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="section-kicker">The countdown is on</span>
+          <h2>Until Our Big Day</h2>
+        </div>
+        <div class="countdown" aria-live="polite">
+          <div class="count-item">
+            <span class="count-number" id="days">--</span>
+            <span class="count-label">Days</span>
+          </div>
+          <div class="count-item">
+            <span class="count-number" id="hours">--</span>
+            <span class="count-label">Hours</span>
+          </div>
+          <div class="count-item">
+            <span class="count-number" id="minutes">--</span>
+            <span class="count-label">Minutes</span>
+          </div>
+          <div class="count-item">
+            <span class="count-number" id="seconds">--</span>
+            <span class="count-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- HALDI -->
-        <article class="event event-haldi reveal">
+    <!-- Events -->
+    <section class="events" id="events">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="section-kicker">Save the dates</span>
+          <h2>The Celebrations</h2>
+          <p>
+            Every celebration, every smile and every dua —
+            we cannot wait to share these beautiful moments with you.
+          </p>
+        </div>
 
-          <img
-            class="event-photo"
-            src="./haldi_image.jpg"
-            alt="Haldi celebration"
-            loading="lazy"
-          >
+        <div class="event-grid">
 
-          <div class="event-icon">✺</div>
+          <!-- Haldi -->
+          <article class="event-card">
+            <div class="event-image-wrap">
+              <img class="event-image" src="./haldi_image.jpg" alt="Haldi and Sangeet celebration with turmeric and marigold flowers">
+            </div>
+            <div class="event-content">
+              <div class="event-number">Celebration 01</div>
+              <h3>Haldi & Sangeet</h3>
+              <p class="event-tagline">In My Haldi Era</p>
+              <p class="event-detail"><strong>For:</strong> Danish</p>
+              <p class="event-detail"><strong>Date:</strong> Sunday, 13 December 2026</p>
+              <p class="event-detail"><strong>Venue:</strong></p>
+              <p class="event-detail event-venue">
+                Shree Sai Bhavan, Budhaji Nagar,<br>
+                Kalwa West, Thane,<br>
+                Maharashtra 400605
+              </p>
+              <a class="event-map" href="https://www.google.com/maps/search/?api=1&query=Shree+Sai+Bhavan+Budhaji+Nagar+Kalwa+West+Thane+400605" target="_blank" rel="noopener">View Venue</a>
+            </div>
+          </article>
 
-          <div class="date">Monday · 14 December 2026</div>
+          <!-- Mehendi -->
+          <article class="event-card">
+            <div class="event-image-wrap">
+              <img class="event-image" src="./mehendi_image.jpg" alt="Mehendi henna celebration">
+            </div>
+            <div class="event-content">
+              <div class="event-number">Celebration 02</div>
+              <h3>Henna & Happily Ever After</h3>
+              <p class="event-tagline">A little mehendi, a lot of memories</p>
+              <p class="event-detail"><strong>For:</strong> Alfiya</p>
+              <p class="event-detail"><strong>Date:</strong> Tuesday, 15 December 2026</p>
+              <p class="event-detail"><strong>Time:</strong> Baad Namaz-e-Maghrib</p>
+              <p class="event-detail"><strong>Followed by:</strong> Dinner</p>
+              <p class="event-detail"><strong>Venue:</strong> Bride's Residence</p>
+            </div>
+          </article>
 
-          <h3>Haldi</h3>
+          <!-- Nikah -->
+          <article class="event-card">
+            <div class="event-image-wrap">
+              <img class="event-image" src="./nikah_image.jpeg" alt="Elegant Islamic Nikah wedding ceremony">
+            </div>
+            <div class="event-content">
+              <div class="event-number">The Main Celebration</div>
+              <h3>Mehfil-e-Noor</h3>
+              <p class="event-tagline">A Gathering of Light, Faith & Blessings</p>
+              <p class="event-detail"><strong>Alfiya & Danish</strong></p>
+              <p class="event-detail"><strong>Date:</strong> Wednesday, 16 December 2026</p>
+              <p class="event-detail"><strong>Hijri Date:</strong> 7 Rajab 1448 AH</p>
+              <p class="event-detail"><strong>Time:</strong> 6:30 PM onwards</p>
+              <p class="event-detail"><strong>Venue:</strong></p>
+              <p class="event-detail event-venue">
+                Noor Baug Hall, Behind Shimla Park,<br>
+                Opposite Talao Pali, Kausa,<br>
+                Mumbra – 400612
+              </p>
+              <div class="program">
+                <span>Bayaan</span>
+                <span>Naat</span>
+                <span>Nikah</span>
+                <span>Dinner</span>
+                <small>محفلِ نور</small>
+              </div>
+              <a class="event-map" href="https://www.google.com/maps/search/?api=1&query=Noor+Baug+Hall+Kausa+Mumbra+Thane" target="_blank" rel="noopener">View Venue</a>
+            </div>
+          </article>
 
-          <div class="tagline">
-            In My Haldi Era — Haldi, Hype & Dance Floor Diaries
+          <!-- Walima -->
+          <article class="event-card">
+            <div class="event-image-wrap">
+              <img class="event-image" src="./walima_image.png" alt="Elegant Walima reception decor">
+            </div>
+            <div class="event-content">
+              <div class="event-number">The Grand Reception</div>
+              <h3>Ta’am-al-Walima</h3>
+              <p class="event-tagline">A celebration of togetherness</p>
+              <p class="event-detail"><strong>Date:</strong> Friday, 18 December 2026</p>
+              <p class="event-detail"><strong>Time:</strong> 7:00 PM onwards</p>
+              <p class="event-detail"><strong>Venue:</strong></p>
+              <p class="event-detail event-venue">
+                Noori Hall, Noori Baba Dargah Road,<br>
+                Makhmali Tank Road, Thane West,<br>
+                Thane, Maharashtra 400601
+              </p>
+              <a class="event-map" href="https://www.google.com/maps/search/?api=1&query=Noori+Hall+Noori+Baba+Dargah+Road+Thane+West+400601" target="_blank" rel="noopener">View Venue</a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="details-note">
+          We look forward to celebrating with you. Please refer to your
+          invitation for any additional family or venue-specific details.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="section-kicker">Little glimpses of us</span>
+          <h2>Moments to Remember</h2>
+          <p>A few memories from our journey to this beautiful new beginning.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="./engagement1.jpg" alt="Alfiya and Danish engagement memory" loading="lazy">
+          <img src="./engagement2.jpg" alt="A special moment together" loading="lazy">
+          <img src="./engagement3.jpg" alt="A cherished celebration" loading="lazy">
+          <img src="./handpicture.jpg" alt="Wedding hands detail" loading="lazy">
+          <img src="./AD-monogram.png" alt="Alfiya and Danish monogram" loading="lazy" style="object-fit:contain;padding:28px;background:#f0e7d8">
+        </div>
+      </div>
+    </section>
+
+    <!-- Blessings -->
+    <section class="blessings" id="blessings">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="section-kicker">Your duas mean the world</span>
+          <h2>Leave Us Your Blessings</h2>
+          <p>
+            Share a heartfelt message, a dua or a few words of love.
+            We would be delighted to read your wishes.
+          </p>
+        </div>
+
+        <form class="blessing-form" id="blessingForm">
+          <div class="form-row">
+            <label for="guestName">Your Name *</label>
+            <input id="guestName" name="name" type="text" placeholder="Enter your name" maxlength="100" required>
           </div>
 
-          <p><span class="time">Time:</span> Baad Namaz-e-Asar</p>
-
-          <p><span class="time">Venue:</span> Bride’s residence</p>
-
-          <p>
-            Al-Madina Building, Kadar Palace,
-            Kausa, Mumbra – 400612
-          </p>
-
-        </article>
-
-        <!-- MEHENDI -->
-        <article class="event event-mehendi reveal">
-
-          <img
-            class="event-photo"
-            src="./mehendi_image.jpg"
-            alt="Mehendi celebration"
-            loading="lazy"
-          >
-
-          <div class="event-icon">❧</div>
-
-          <div class="date">Tuesday · 15 December 2026</div>
-
-          <h3>Mehendi</h3>
-
-          <div class="tagline">
-            Henna & Happily Ever After
+          <div class="form-row">
+            <label for="relation">You are</label>
+            <select id="relation" name="relation">
+              <option value="">Select (optional)</option>
+              <option>Family</option>
+              <option>Friend</option>
+              <option>Colleague</option>
+              <option>Relative</option>
+              <option>Well-wisher</option>
+              <option>Other</option>
+            </select>
           </div>
 
-          <p>
-            <span class="time">Time:</span>
-            Baad Namaz-e-Maghrib, followed by dinner
-          </p>
-
-          <p><span class="time">Venue:</span> Bride’s residence</p>
-
-          <p>
-            Al-Madina Building, Kadar Palace,
-            Kausa, Mumbra – 400612
-          </p>
-
-        </article>
-
-        <!-- NIKAH -->
-        <article class="event event-nikah reveal">
-
-          <img
-            class="event-photo"
-            src="./nikah_image.jpeg"
-            alt="Nikah celebration"
-            loading="lazy"
-          >
-
-          <div class="event-icon">۞</div>
-
-          <div class="date">Wednesday · 16 December 2026</div>
-
-          <h3>Nikah · Mehfil-e-Noor</h3>
-
-          <div class="tagline">
-            A Gathering of Light, Faith & Blessings
+          <div class="form-row">
+            <label for="message">Your Blessing *</label>
+            <textarea id="message" name="blessing" placeholder="Write your heartfelt wishes for Alfiya & Danish..." maxlength="1500" required></textarea>
           </div>
 
-          <p>
-            <span class="time">Time:</span>
-            Post Namaz-e-Maghrib
+          <button class="submit-button" id="blessingSubmit" type="submit">Send Your Blessing</button>
+          <p class="form-status" id="blessingStatus" role="status" aria-live="polite"></p>
+          <p class="blessing-footnote">
+            Your message will be submitted to our private wedding blessings collection.
           </p>
-
-          <p>
-            <span class="time">Programme:</span>
-            Bayaan · Naat · Nikah · Dinner
-          </p>
-
-          <p>
-            <span class="time">Venue:</span>
-            Noor Baug Hall, Behind Shimla Park,
-            Opposite Talao Pali, Kausa, Mumbra – 400612
-          </p>
-
-        </article>
-
-        <!-- WALIMA -->
-        <article class="event event-walima reveal">
-
-          <img
-            class="event-photo"
-            src="./walima_image.png"
-            alt="Ta'am-al-Walima celebration"
-            loading="lazy"
-          >
-
-          <div class="event-icon">✧</div>
-
-          <div class="date">Friday · 18 December 2026</div>
-
-          <h3>Ta’am-al-Walima</h3>
-
-          <div class="tagline">
-            A Feast of Love, Togetherness & Barakah
-          </div>
-
-          <p>
-            <span class="time">Time:</span>
-            7:00 PM onwards
-          </p>
-
-          <p>
-            <span class="time">Venue:</span>
-            Noori Hall
-          </p>
-
-          <p>
-            Noori Baba Dargah Road / Makhmali Tank Road,
-            Thane West, Thane, Maharashtra 400601
-          </p>
-
-        </article>
-
+        </form>
       </div>
-    </div>
-  </section>
-
-  <!-- COUNTDOWN -->
-  <section class="countdown" id="countdown">
-
-    <div class="kicker" style="color:#dfc99b">
-      The beautiful beginning
-    </div>
-
-    <h2 class="section-title">
-      Counting down to our Nikah day
-    </h2>
-
-    <div class="count-grid">
-
-      <div class="count-unit">
-        <strong id="days">00</strong>
-        <span>Days</span>
-      </div>
-
-      <div class="count-unit">
-        <strong id="hours">00</strong>
-        <span>Hours</span>
-      </div>
-
-      <div class="count-unit">
-        <strong id="minutes">00</strong>
-        <span>Minutes</span>
-      </div>
-
-      <div class="count-unit">
-        <strong id="seconds">00</strong>
-        <span>Seconds</span>
-      </div>
-
-    </div>
-
-    <p style="font-family:'Cormorant Garamond';font-size:19px;color:#e5d6b8">
-      16 December 2026 · Post Namaz-e-Maghrib
-    </p>
-
-  </section>
-
-  <!-- SCHEDULE -->
-  <section id="schedule" class="reveal">
-
-    <div style="text-align:center">
-
-      <div class="kicker">Save these beautiful dates</div>
-
-      <h2 class="section-title">
-        The Celebration Diary
-      </h2>
-
-      <p class="body-copy">
-        Four special gatherings, each filled with its own colour,
-        joy and blessings.
-      </p>
-
-    </div>
-
-    <div class="schedule-list">
-
-      <div class="schedule-row">
-        <time>14 DEC · MONDAY</time>
-        <div>
-          <h4>Haldi</h4>
-          <p>Baad Namaz-e-Asar at the bride’s residence.</p>
-        </div>
-      </div>
-
-      <div class="schedule-row">
-        <time>15 DEC · TUESDAY</time>
-        <div>
-          <h4>Mehendi</h4>
-          <p>
-            Baad Namaz-e-Maghrib at the bride’s residence,
-            followed by dinner.
-          </p>
-        </div>
-      </div>
-
-      <div class="schedule-row">
-        <time>16 DEC · WEDNESDAY</time>
-        <div>
-          <h4>Nikah · Mehfil-e-Noor</h4>
-          <p>
-            Post Namaz-e-Maghrib · Noor Baug Hall ·
-            Bayaan · Naat · Nikah · Dinner.
-          </p>
-        </div>
-      </div>
-
-      <div class="schedule-row">
-        <time>18 DEC · FRIDAY</time>
-        <div>
-          <h4>Ta’am-al-Walima</h4>
-          <p>
-            7:00 PM onwards at Noori Hall, Thane West.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- VENUES -->
-  <section class="venue" id="venues">
-
-    <div class="venue-inner">
-
-      <div class="kicker">We can't wait to welcome you</div>
-
-      <h2 class="section-title">The Venues</h2>
-
-      <!-- HALDI -->
-      <div class="venue-card">
-
-        <div class="kicker">Haldi · 14 December</div>
-
-        <h3>At the Bride’s Residence</h3>
-
-        <p>
-          Al-Madina Building, Kadar Palace,
-          Kausa, Mumbra – 400612
-        </p>
-
-        <div class="map-frame">
-          <iframe
-            title="Map to the bride's residence"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://maps.google.com/maps?q=Al-Madina%20Building%2C%20Kadar%20Palace%2C%20Kausa%2C%20Mumbra%20400612&z=15&output=embed">
-          </iframe>
-        </div>
-
-        <a class="pill" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/dir/?api=1&destination=Al-Madina%20Building%2C%20Kadar%20Palace%2C%20Kausa%2C%20Mumbra%20400612">
-          Get directions ↗
-        </a>
-
-      </div>
-
-      <!-- MEHENDI -->
-      <div class="venue-card">
-
-        <div class="kicker">Mehendi · 15 December</div>
-
-        <h3>At the Bride’s Residence</h3>
-
-        <p>
-          Al-Madina Building, Kadar Palace,
-          Kausa, Mumbra – 400612
-        </p>
-
-        <div class="map-frame">
-          <iframe
-            title="Map to the bride's residence"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://maps.google.com/maps?q=Al-Madina%20Building%2C%20Kadar%20Palace%2C%20Kausa%2C%20Mumbra%20400612&z=15&output=embed">
-          </iframe>
-        </div>
-
-        <a class="pill" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/dir/?api=1&destination=Al-Madina%20Building%2C%20Kadar%20Palace%2C%20Kausa%2C%20Mumbra%20400612">
-          Get directions ↗
-        </a>
-
-      </div>
-
-      <!-- NIKAH -->
-      <div class="venue-card">
-
-        <div class="kicker">Nikah · 16 December</div>
-
-        <h3>Noor Baug Hall</h3>
-
-        <p>
-          Behind Shimla Park, Opposite Talao Pali,
-          Kausa, Mumbra – 400612
-        </p>
-
-        <p>Post Namaz-e-Maghrib</p>
-
-        <div class="map-frame">
-          <iframe
-            title="Map to Noor Baug Hall"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://maps.google.com/maps?q=Noor%20Baug%20Hall%2C%20Behind%20Shimla%20Park%2C%20Opposite%20Talao%20Pali%2C%20Kausa%2C%20Mumbra%20400612&z=15&output=embed">
-          </iframe>
-        </div>
-
-        <a class="pill" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/dir/?api=1&destination=Noor%20Baug%20Hall%2C%20Behind%20Shimla%20Park%2C%20Opposite%20Talao%20Pali%2C%20Kausa%2C%20Mumbra%20400612">
-          Get directions ↗
-        </a>
-
-      </div>
-
-      <!-- WALIMA -->
-      <div class="venue-card">
-
-        <div class="kicker">Ta’am-al-Walima · 18 December</div>
-
-        <h3>Noori Hall</h3>
-
-        <p>
-          Noori Baba Dargah Road / Makhmali Tank Road,
-          Thane West, Thane, Maharashtra 400601
-        </p>
-
-        <p>7:00 PM onwards</p>
-
-        <div class="map-frame">
-          <iframe
-            title="Map to Noori Hall"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://maps.google.com/maps?q=Noori%20Hall%2C%20Noori%20Baba%20Dargah%20Road%2C%20Makhmali%20Tank%20Road%2C%20Thane%20West%2C%20Maharashtra%20400601&z=15&output=embed">
-          </iframe>
-        </div>
-
-        <a class="pill" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/dir/?api=1&destination=Noori%20Hall%2C%20Noori%20Baba%20Dargah%20Road%2C%20Makhmali%20Tank%20Road%2C%20Thane%20West%2C%20Maharashtra%20400601">
-          Get directions ↗
-        </a>
-
-      </div>
-
-      <p class="small-note">
-        We look forward to celebrating these beautiful moments with you.
-      </p>
-
-    </div>
-  </section>
-
-  <!-- BLESSINGS -->
-  <section class="blessing reveal" id="blessings">
-
-    <div class="kicker">Shower your love & good wishes</div>
-
-    <h2 class="section-title">
-      A Wall of Blessings
-    </h2>
-
-    <p class="body-copy">
-      Leave us a little note, a dua or your warm wishes.
-      It would mean the world to us.
-    </p>
-
-    <form id="blessingForm">
-
-      <input
-        id="guestName"
-        placeholder="Your name"
-        required
-      >
-
-      <select id="relation">
-        <option value="">Your relation / side (optional)</option>
-        <option>Alfiya's family</option>
-        <option>Danish's family</option>
-        <option>Friends</option>
-        <option>Colleagues</option>
-        <option>Other</option>
-      </select>
-
-      <textarea
-        id="message"
-        placeholder="Your blessing or message"
-        required></textarea>
-
-      <button class="gold-btn" type="submit">
-        Send your blessings via WhatsApp
-      </button>
-
-    </form>
-
-    <p class="small-note">
-      The WhatsApp button requires the family WhatsApp number
-      to be configured in the website code.
-    </p>
-
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-
-    <div class="eyebrow">With love & duas</div>
-
-    <div class="script">Alfiya & Danish</div>
-
-    <p>14 — 18 DECEMBER 2026</p>
-
-    <p>
-      MEHFIL-E-NOOR · A GATHERING OF LIGHT, FAITH & BLESSINGS
-    </p>
-
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img class="footer-monogram" src="./AD-monogram.png" alt="A and D monogram">
+    <h2>Alfiya & Danish</h2>
+    <div class="footer-script">Forever, InshaAllah</div>
+    <div class="ornament"></div>
+    <p>16 DECEMBER 2026 · 7 RAJAB 1448 AH</p>
+    <p>With love, duas & gratitude</p>
+    <p class="copyright">MADE WITH LOVE FOR OUR FAVOURITE PEOPLE</p>
   </footer>
 
-</main>
+  <script>
+    /*
+      IMPORTANT:
+      Paste your deployed Google Apps Script Web App URL below.
+      It should end in /exec.
+    */
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxAYorCIiqCKMWa4y-MgHeQIFKeT1z6DlgrnWhKWSV7vNw611X6W0_HVm-K3G45WfpT/exec";
 
-<script>
+    // Open invitation and start the background music after the guest taps.
+    const openButton = document.getElementById("openInvite");
+    const openingScreen = document.getElementById("opening");
+    const weddingMusic = document.getElementById("weddingMusic");
 
-/* OPEN INVITATION AND START BACKGROUND MUSIC */
+    openButton.addEventListener("click", async () => {
+      openingScreen.classList.add("hidden");
+      document.body.classList.remove("locked");
 
-const openBtn = document.getElementById('openInvite');
-const weddingMusic = document.getElementById('weddingMusic');
-const invitation = document.getElementById('invitation');
+      try {
+        weddingMusic.volume = 0.55;
+        await weddingMusic.play();
+      } catch (error) {
+        console.warn("Background music could not start:", error);
+      }
+    });
 
-openBtn.addEventListener('click', async () => {
+    // Countdown to Nikah: 16 December 2026, 6:30 PM IST.
+    const weddingDate = new Date("2026-12-16T18:30:00+05:30").getTime();
 
-  invitation.classList.add('open');
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = weddingDate - now;
 
-  try {
-    weddingMusic.volume = 0.65;
-    await weddingMusic.play();
-  } catch (error) {
-    console.warn('Background music could not start:', error);
-  }
+      if (distance <= 0) {
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        return;
+      }
 
-  invitation.scrollIntoView({
-    behavior: 'smooth'
-  });
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
 
-});
-
-/* REVEAL ANIMATIONS */
-
-const revealObserver = new IntersectionObserver(entries => {
-
-  entries.forEach(entry => {
-
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
     }
 
-  });
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
-}, {
-  threshold: 0.12
-});
+    // Submit blessings to the Google Apps Script Web App.
+    const blessingForm = document.getElementById("blessingForm");
+    const blessingStatus = document.getElementById("blessingStatus");
+    const blessingSubmit = document.getElementById("blessingSubmit");
 
-document.querySelectorAll('.reveal').forEach(element => {
-  revealObserver.observe(element);
-});
+    blessingForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-/* COUNTDOWN — INDIAN STANDARD TIME */
+      if (!blessingForm.reportValidity()) return;
 
-const target = new Date('2026-12-16T00:00:00+05:30').getTime();
+      if (
+        !GOOGLE_SCRIPT_URL ||
+        GOOGLE_SCRIPT_URL === "https://script.google.com/macros/s/AKfycbxAYorCIiqCKMWa4y-MgHeQIFKeT1z6DlgrnWhKWSV7vNw611X6W0_HVm-K3G45WfpT/exec"
+      ) {
+        blessingStatus.textContent =
+          "The blessings form is not connected yet. Please add the Google Apps Script Web App URL.";
+        return;
+      }
 
-function tick() {
+      const name = document.getElementById("guestName").value.trim();
+      const relation = document.getElementById("relation").value;
+      const blessing = document.getElementById("message").value.trim();
 
-  const diff = Math.max(0, target - Date.now());
+      if (!name || !blessing) {
+        blessingStatus.textContent = "Please enter your name and blessing.";
+        return;
+      }
 
-  const values = {
-    days: Math.floor(diff / 86400000),
-    hours: Math.floor((diff % 86400000) / 3600000),
-    minutes: Math.floor((diff % 3600000) / 60000),
-    seconds: Math.floor((diff % 60000) / 1000)
-  };
+      const formData = new URLSearchParams();
+      formData.append("name", name);
+      formData.append("relation", relation);
+      formData.append("blessing", blessing);
 
-  Object.entries(values).forEach(([key, value]) => {
+      blessingSubmit.disabled = true;
+      blessingSubmit.textContent = "Sending...";
+      blessingStatus.textContent = "";
 
-    const element = document.getElementById(key);
+      try {
+        /*
+          Apps Script commonly requires no-cors for a simple browser form POST.
+          The browser cannot read the response in no-cors mode, so this confirms
+          the request was sent, not independently that the Sheet saved it.
+        */
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        });
 
-    if (element) {
-      element.textContent = String(value).padStart(2, '0');
-    }
-
-  });
-
-}
-
-tick();
-setInterval(tick, 1000);
-
-/* WHATSAPP BLESSING FORM */
-
-document.getElementById('blessingForm').addEventListener('submit', event => {
-
-  event.preventDefault();
-
-  // Replace with the family WhatsApp number, including country code.
-  const phone = 'ADD_WHATSAPP_NUMBER';
-
-  if (phone === 'ADD_WHATSAPP_NUMBER') {
-    alert('Please add the family WhatsApp number in the website setup before using this feature.');
-    return;
-  }
-
-  const name = document.getElementById('guestName').value;
-  const relation = document.getElementById('relation').value;
-  const message = document.getElementById('message').value;
-
-  const text = encodeURIComponent(
-    `Wedding Blessing for Alfiya & Danish\n` +
-    `From: ${name}\n` +
-    `Relation: ${relation}\n` +
-    `${message}`
-  );
-
-  window.open(
-    `https://wa.me/${phone}?text=${text}`,
-    '_blank',
-    'noopener'
-  );
-
-});
-
-</script>
+        blessingStatus.textContent =
+          "Thank you for your beautiful wishes! Your blessing has been submitted.";
+        blessingForm.reset();
+      } catch (error) {
+        console.error("Blessing submission error:", error);
+        blessingStatus.textContent =
+          "We couldn't submit your message. Please try again in a moment.";
+      } finally {
+        blessingSubmit.disabled = false;
+        blessingSubmit.textContent = "Send Your Blessing";
+      }
+    });
+  </script>
 
 </body>
 </html>
