@@ -9,7 +9,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Bodoni+Moda:opsz,wght@6..96,400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Italianno&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Bodoni+Moda:opsz,wght@6..96,400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Italianno&family=Alex+Brush&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -1982,6 +1982,23 @@ body {font-family:var(--sans)}
 @media(max-height:650px) {
   .opening h1.opening-couple {font-size:clamp(57px,8vh,76px)}
   .opening-couple .name-amp {font-size:clamp(36px,6vh,48px)}
+}
+
+
+/* COUPLE NAME SCRIPT — opening cover and revealed hero only */
+.opening-couple .person-name,
+.hero h1 {
+  font-family:"Alex Brush","Script MT Bold","Brush Script MT",cursive !important;
+  font-weight:400;
+  letter-spacing:0;
+}
+.opening-couple .person-name {
+  line-height:1.02;
+  text-shadow:0 3px 24px rgba(0,0,0,.24);
+}
+.hero h1 {
+  line-height:1.12;
+  text-shadow:0 3px 24px rgba(0,0,0,.25);
 }
 
 </style>
