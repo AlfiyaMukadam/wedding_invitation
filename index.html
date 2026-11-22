@@ -1917,6 +1917,73 @@ body {font-family:var(--sans)}
   .opening-card {animation:none}
 }
 
+
+/* CLASSIC SCRIPT NAMES + QUIET-LUXURY FRAME DETAILS */
+.opening-card {
+  position:relative;
+  isolation:isolate;
+  border:1px solid rgba(234,217,185,.58);
+  outline:1px solid rgba(234,217,185,.2);
+  outline-offset:6px;
+  box-shadow:0 24px 90px rgba(0,0,0,.24), inset 0 0 0 5px rgba(234,217,185,.035);
+}
+.opening-card::before,
+.opening-card::after {
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  z-index:0;
+}
+.opening-card::before {
+  inset:9px;
+  border:1px solid rgba(234,217,185,.24);
+}
+.opening-card::after {
+  inset:15px;
+  border:1px solid rgba(234,217,185,.09);
+}
+.opening-card > * {position:relative;z-index:1}
+.opening h1.opening-couple {
+  align-items:center;
+  gap:0 clamp(13px,2.1vw,25px);
+  font-family:var(--script);
+  font-size:clamp(76px,9vw,112px);
+  font-weight:400;
+  letter-spacing:.005em;
+  line-height:.92;
+  color:#f1dfbd;
+  text-shadow:0 3px 24px rgba(0,0,0,.28);
+}
+.opening-couple .person-name {
+  font-family:var(--script);
+  font-weight:400;
+  white-space:nowrap;
+}
+.opening-couple .name-amp {
+  font-family:var(--script);
+  font-size:clamp(48px,6vw,70px);
+  color:#d7bd91;
+  line-height:.9;
+}
+@media(max-width:650px) {
+  .opening-card::before {inset:7px}
+  .opening-card::after {inset:12px}
+  .opening h1.opening-couple {
+    font-size:clamp(62px,16vw,82px);
+    line-height:.82;
+    gap:0;
+  }
+  .opening-couple .name-amp {
+    font-size:clamp(39px,10vw,52px);
+    line-height:.78;
+    margin:0;
+  }
+}
+@media(max-height:650px) {
+  .opening h1.opening-couple {font-size:clamp(57px,8vh,76px)}
+  .opening-couple .name-amp {font-size:clamp(36px,6vh,48px)}
+}
+
 </style>
 </head>
 
