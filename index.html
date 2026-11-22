@@ -112,6 +112,29 @@ button,input,textarea,select {font:inherit}
   100% {transform:translateY(110vh) rotate(360deg);opacity:0}
 }
 
+/* NEW: wax seal animations */
+
+@keyframes sealReveal {
+  0% {opacity:0;transform:translateY(15px) scale(.65) rotate(-12deg)}
+  70% {opacity:1;transform:translateY(-3px) scale(1.06) rotate(3deg)}
+  100% {opacity:1;transform:translateY(0) scale(1) rotate(0)}
+}
+
+@keyframes sealGlow {
+  0%,100% {box-shadow:0 0 14px rgba(234,216,181,.12),inset 0 0 12px rgba(255,255,255,.1)}
+  50% {box-shadow:0 0 30px rgba(234,216,181,.35),inset 0 0 18px rgba(255,255,255,.2)}
+}
+
+@keyframes sealShine {
+  0% {transform:translateX(-160%) rotate(25deg)}
+  45%,100% {transform:translateX(180%) rotate(25deg)}
+}
+
+@keyframes sparkle {
+  0%,100% {opacity:.15;transform:scale(.6)}
+  50% {opacity:1;transform:scale(1.2)}
+}
+
 .reveal {
   opacity:0;
   transform:translateY(28px);
@@ -278,8 +301,94 @@ button,input,textarea,select {font:inherit}
   box-shadow:0 8px 30px rgba(234,216,181,.28);
 }
 
+/* NEW: decorative monogram wax seal beneath the open button */
+
+.opening-seal-wrap {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:9px;
+  margin:24px auto 0;
+  animation:sealReveal 1.2s .8s both;
+}
+
+.opening-seal {
+  position:relative;
+  width:76px;
+  height:76px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-radius:50%;
+  border:1px solid #f0d9a8;
+  outline:1px solid rgba(234,216,181,.48);
+  outline-offset:5px;
+  background:
+    radial-gradient(circle at 30% 25%,rgba(255,255,255,.35),transparent 32%),
+    radial-gradient(circle at 70% 80%,rgba(95,57,25,.25),transparent 42%),
+    linear-gradient(145deg,#e6c78e,#a77c42 52%,#d9b77d);
+  animation:sealGlow 3.5s ease-in-out infinite;
+}
+
+.opening-seal::before {
+  content:"";
+  position:absolute;
+  inset:6px;
+  border:1px solid rgba(255,248,225,.78);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.opening-seal::after {
+  content:"";
+  position:absolute;
+  top:-30%;
+  left:0;
+  width:35%;
+  height:160%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.48),transparent);
+  animation:sealShine 5s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.opening-seal img {
+  position:relative;
+  z-index:1;
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  opacity:.95;
+}
+
+.seal-caption {
+  color:var(--gold-light);
+  font:italic 16px var(--serif);
+  letter-spacing:.07em;
+}
+
+.seal-stars {
+  position:absolute;
+  z-index:2;
+  color:var(--gold-light);
+  font-size:12px;
+  pointer-events:none;
+  animation:sparkle 2.5s ease-in-out infinite;
+}
+
+.seal-stars.left {
+  left:calc(50% - 57px);
+  top:17px;
+}
+
+.seal-stars.right {
+  right:calc(50% - 57px);
+  top:17px;
+  animation-delay:1.2s;
+}
+
 .opening-note {
-  margin-top:24px;
+  margin-top:20px;
   color:#ddd;
   font-size:8px;
   letter-spacing:.22em;
@@ -331,6 +440,18 @@ button,input,textarea,select {font:inherit}
   background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.28),rgba(234,216,181,.035) 65%);
   box-shadow:inset 0 0 12px rgba(255,255,255,.12),0 0 16px rgba(234,216,181,.08);
   animation:floatBubble var(--duration) linear var(--delay) infinite;
+}
+
+.bubble::after {
+  content:"";
+  position:absolute;
+  top:20%;
+  left:24%;
+  width:18%;
+  height:18%;
+  border-radius:50%;
+  background:rgba(255,255,255,.55);
+  filter:blur(1px);
 }
 
 /* MUSIC */
@@ -1081,17 +1202,22 @@ footer .copyright {
   .photo-wall figure:first-child {grid-column:span 2}
 
   .hosts {padding:29px 18px}
-  .opening-card {padding:38px 20px}
+  .opening-card {padding:34px 20px}
   .bismillah {font-size:32px}
+  .opening-seal {width:68px;height:68px}
+  .opening-seal img {width:42px;height:42px}
+  .opening-seal-wrap {margin-top:20px}
 }
 
 @media(max-width:380px) {
   nav {gap:9px 11px}
   nav a {font-size:7px}
-  .opening-card {padding:32px 15px}
+  .opening-card {padding:29px 15px}
   .hero h1 {font-size:53px}
   .count-item {min-width:58px}
   .event-image-frame {height:300px}
+  .opening-seal {width:62px;height:62px}
+  .opening-seal img {width:38px;height:38px}
 }
 
 @media(prefers-reduced-motion:reduce) {
@@ -1118,7 +1244,6 @@ footer .copyright {
 
   <div class="opening-card" id="openingCard">
 
-    <!-- Arabic calligraphy appears ONLY here -->
     <div class="bismillah">﷽</div>
 
     <img class="opening-monogram"
@@ -1139,6 +1264,20 @@ footer .copyright {
     <button class="open-button" id="openInvite" type="button">
       Open Invitation
     </button>
+
+    <!-- Decorative monogram wax seal -->
+
+    <div class="opening-seal-wrap">
+      <span class="seal-stars left">✦</span>
+
+      <div class="opening-seal">
+        <img src="./AD-monogram.png" alt="A and D monogram seal">
+      </div>
+
+      <span class="seal-stars right">✦</span>
+
+      <span class="seal-caption">Sealed with love</span>
+    </div>
 
     <div class="opening-note">
       A LITTLE CELEBRATION OF OUR FOREVER
@@ -1262,7 +1401,7 @@ footer .copyright {
         of those who mean the world to us.
       </p>
     </div>
-    
+
     <div class="hosts reveal">
 
       <div class="host-title">
@@ -1278,7 +1417,6 @@ footer .copyright {
       <p>Mrs. Roshanbi & Late Mr. Abdul Latif Thakur</p>
 
     </div>
-
 
     <div class="family-grid">
 
@@ -1522,7 +1660,7 @@ footer .copyright {
 
       </article>
 
-      <!-- WALIMA -->
+      <!-- TA'AM-AL-WALIMA -->
 
       <article class="event-card reveal">
 
@@ -1613,7 +1751,6 @@ footer .copyright {
              alt="Engagement memory three"
              loading="lazy">
       </figure>
-
 
     </div>
 
@@ -1759,7 +1896,7 @@ const reduceMotion = window.matchMedia(
 /* Create floating bubbles */
 
 if (!reduceMotion) {
-  for (let i = 0; i < 24; i++) {
+  for (let i = 0; i < 30; i++) {
     const bubble = document.createElement("span");
     bubble.className = "bubble";
 
