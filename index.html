@@ -383,7 +383,7 @@ footer .copyright{margin-top:35px;font-size:8px;color:#999;letter-spacing:.12em}
     <form class="blessing-form" id="blessingForm"
           method="POST"
           target="blessingResponse"
-          action="PASTE_YOUR_WEB_APP_URL_HERE">
+          action="https://script.google.com/macros/s/AKfycbxAne0nD-TE84rQu93ulKXYE7HuagQZ9GTNfNdqZTtoksmGGnRCkD95AGa1wzb4t-1k/exec">
 
       <div class="form-row">
         <label for="guestName">Your Name *</label>
@@ -510,7 +510,7 @@ form.addEventListener("submit", (event) => {
   if (!form.reportValidity()) return;
 
   const endpoint = form.action;
-  if (!endpoint || endpoint.includes("PASTE_YOUR_WEB_APP_URL_HERE")) {
+  if (!endpoint || endpoint.includes("https://script.google.com/macros/s/AKfycbxAne0nD-TE84rQu93ulKXYE7HuagQZ9GTNfNdqZTtoksmGGnRCkD95AGa1wzb4t-1k/exec")) {
     statusMessage.textContent =
       "Please add your Google Apps Script Web App URL to connect the blessings form.";
     return;
