@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#073e48">
-
-<title>Alfiya ♡ Danish | Mehfil-e-Noor</title>
+<title>Alfiya & Danish | Mehfil-e-Noor</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,9 +25,7 @@
   --script:"Great Vibes",cursive;
 }
 
-* {
-  box-sizing:border-box;
-}
+* { box-sizing:border-box; }
 
 html {
   scroll-behavior:smooth;
@@ -44,23 +41,11 @@ body {
   overflow-x:hidden;
 }
 
-body.locked {
-  overflow:hidden;
-}
+body.locked { overflow:hidden; }
 
-img {
-  display:block;
-  max-width:100%;
-}
-
-a {
-  color:inherit;
-  text-decoration:none;
-}
-
-button,input,textarea,select {
-  font:inherit;
-}
+img { display:block; max-width:100%; }
+a { color:inherit; text-decoration:none; }
+button,input,textarea,select { font:inherit; }
 
 /* OPENING SCREEN */
 
@@ -129,8 +114,7 @@ button,input,textarea,select {
   max-width:340px;
 }
 
-.open-button,
-.submit-button {
+.open-button,.submit-button {
   border:1px solid var(--gold-light);
   background:var(--gold);
   color:var(--dark);
@@ -142,8 +126,7 @@ button,input,textarea,select {
   transition:.2s;
 }
 
-.open-button:hover,
-.submit-button:hover {
+.open-button:hover,.submit-button:hover {
   background:var(--gold-light);
   transform:translateY(-2px);
 }
@@ -166,7 +149,7 @@ header {
   justify-content:space-between;
   gap:18px;
   padding:12px clamp(16px,5vw,70px);
-  background:rgba(251,248,241,.95);
+  background:rgba(251,248,241,.96);
   border-bottom:1px solid rgba(201,166,107,.3);
   backdrop-filter:blur(12px);
 }
@@ -200,9 +183,7 @@ nav a {
   color:var(--teal);
 }
 
-nav a:hover {
-  color:#a77b3f;
-}
+nav a:hover { color:#a77b3f; }
 
 /* HERO */
 
@@ -220,9 +201,7 @@ nav a:hover {
     var(--teal);
 }
 
-.hero-content {
-  width:min(100%,780px);
-}
+.hero-content { width:min(100%,780px); }
 
 .hero-monogram {
   width:100px;
@@ -263,9 +242,7 @@ nav a:hover {
   margin:24px auto;
 }
 
-.hero-blessing {
-  font:italic 19px var(--serif);
-}
+.hero-blessing { font:italic 19px var(--serif); }
 
 .scroll-cue {
   position:absolute;
@@ -277,11 +254,9 @@ nav a:hover {
   color:var(--gold-light);
 }
 
-/* COMMON SECTION STYLES */
+/* COMMON SECTIONS */
 
-section {
-  padding:85px 22px;
-}
+section { padding:85px 22px; }
 
 .inner {
   width:min(1100px,100%);
@@ -318,10 +293,7 @@ section {
 
 /* STORY */
 
-.intro {
-  text-align:center;
-  background:var(--cream);
-}
+.intro { text-align:center; background:var(--cream); }
 
 .quote {
   max-width:760px;
@@ -347,9 +319,7 @@ section {
   padding:70px 20px;
 }
 
-.countdown-section .heading h2 {
-  color:white;
-}
+.countdown-section .heading h2 { color:white; }
 
 .countdown {
   display:flex;
@@ -359,9 +329,7 @@ section {
   margin-top:38px;
 }
 
-.count-item {
-  min-width:70px;
-}
+.count-item { min-width:70px; }
 
 .count-number {
   display:block;
@@ -380,9 +348,7 @@ section {
 
 /* EVENT CARDS */
 
-.events {
-  background:#f5f0e7;
-}
+.events { background:#f5f0e7; }
 
 .event-grid {
   display:grid;
@@ -501,16 +467,14 @@ section {
   color:var(--muted);
 }
 
-/* PHOTO WALL */
+/* PHOTO WALL - REAL PHOTOS ONLY */
 
-.gallery {
-  background:var(--cream);
-}
+.gallery { background:var(--cream); }
 
 .photo-wall {
   display:grid;
   grid-template-columns:repeat(12,1fr);
-  grid-auto-rows:clamp(95px,13vw,170px);
+  grid-auto-rows:clamp(100px,13vw,175px);
   gap:12px;
   margin-top:42px;
 }
@@ -518,8 +482,8 @@ section {
 .photo-wall figure {
   margin:0;
   overflow:hidden;
-  background:#e9dfcf;
   position:relative;
+  background:#e9dfcf;
 }
 
 .photo-wall figure:nth-child(1) {
@@ -554,17 +518,9 @@ section {
   transition:transform .6s;
 }
 
-.photo-wall figure:hover img {
-  transform:scale(1.05);
-}
+.photo-wall figure:hover img { transform:scale(1.05); }
 
-.photo-wall .monogram-photo {
-  object-fit:contain;
-  padding:22px;
-  background:#eee5d6;
-}
-
-/* BLESSINGS */
+/* BLESSINGS FORM */
 
 .blessings {
   background:
@@ -573,13 +529,8 @@ section {
   color:white;
 }
 
-.blessings .heading h2 {
-  color:white;
-}
-
-.blessings .heading p {
-  color:#ddd;
-}
+.blessings .heading h2 { color:white; }
+.blessings .heading p { color:#ddd; }
 
 .blessing-form {
   width:min(620px,100%);
@@ -589,9 +540,7 @@ section {
   background:rgba(255,255,255,.045);
 }
 
-.form-row {
-  margin-bottom:19px;
-}
+.form-row { margin-bottom:19px; }
 
 .blessing-form label {
   display:block;
@@ -721,9 +670,7 @@ footer .copyright {
     align-items:flex-start;
   }
 
-  .brand {
-    font-size:20px;
-  }
+  .brand { font-size:20px; }
 
   .brand img {
     width:31px;
@@ -740,22 +687,16 @@ footer .copyright {
     letter-spacing:.07em;
   }
 
-  .hero {
-    min-height:80vh;
-  }
+  .hero { min-height:80vh; }
 
-  section {
-    padding:68px 17px;
-  }
+  section { padding:68px 17px; }
 
   .event-grid {
     grid-template-columns:1fr;
     gap:22px;
   }
 
-  .event-image-frame {
-    aspect-ratio:16/10;
-  }
+  .event-image-frame { aspect-ratio:16/10; }
 
   .photo-wall {
     grid-template-columns:repeat(2,1fr);
@@ -768,16 +709,11 @@ footer .copyright {
     grid-row:auto;
   }
 
-  .photo-wall figure:first-child {
-    grid-column:span 2;
-    grid-row:span 1;
-  }
+  .photo-wall figure:first-child { grid-column:span 2; }
 }
 
 @media(max-width:420px) {
-  header {
-    display:block;
-  }
+  header { display:block; }
 
   .brand {
     justify-content:center;
@@ -789,27 +725,17 @@ footer .copyright {
     justify-content:center;
   }
 
-  .hero h1 {
-    font-size:61px;
-  }
+  .hero h1 { font-size:61px; }
 
-  .opening-card {
-    padding:36px 18px;
-  }
+  .opening-card { padding:36px 18px; }
 
-  .event-image-frame {
-    aspect-ratio:4/3;
-  }
+  .event-image-frame { aspect-ratio:4/3; }
 
-  .count-item {
-    min-width:60px;
-  }
+  .count-item { min-width:60px; }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  *,
-  *::before,
-  *::after {
+  *,*::before,*::after {
     scroll-behavior:auto!important;
     transition-duration:.01ms!important;
   }
@@ -833,7 +759,7 @@ footer .copyright {
   </div>
 </div>
 
-<!-- BACKGROUND MUSIC -->
+<!-- HIDDEN BACKGROUND MUSIC -->
 
 <audio id="weddingMusic" loop preload="auto">
   <source src="./Guzarish%20Satinder%20Sartaj%20Instrumental.mp3" type="audio/mpeg">
@@ -908,17 +834,14 @@ footer .copyright {
         <span class="count-number" id="days">--</span>
         <span class="count-label">Days</span>
       </div>
-
       <div class="count-item">
         <span class="count-number" id="hours">--</span>
         <span class="count-label">Hours</span>
       </div>
-
       <div class="count-item">
         <span class="count-number" id="minutes">--</span>
         <span class="count-label">Minutes</span>
       </div>
-
       <div class="count-item">
         <span class="count-number" id="seconds">--</span>
         <span class="count-label">Seconds</span>
@@ -931,57 +854,42 @@ footer .copyright {
 
 <section class="events" id="events">
   <div class="inner">
-
     <div class="heading">
       <span class="kicker">Save the dates</span>
       <h2>The Celebrations</h2>
-      <p>
-        Every celebration, every smile and every dua — we cannot wait to share these beautiful moments with you.
-      </p>
+      <p>Every celebration, every smile and every dua — we cannot wait to share these beautiful moments with you.</p>
     </div>
 
     <div class="event-grid">
-
-      <!-- HALDI -->
 
       <article class="event-card">
         <div class="event-image-frame">
           <img src="./haldi_image.jpg" alt="Haldi and Sangeet celebration" loading="lazy">
         </div>
-
         <div class="event-content">
           <div class="event-number">Celebration 01</div>
           <h3>Haldi & Sangeet</h3>
           <p class="event-tagline">In My Haldi Era</p>
-
           <p class="event-detail"><strong>For:</strong> Danish</p>
           <p class="event-detail"><strong>Date:</strong> Sunday, 13 December 2026</p>
           <p class="event-detail"><strong>Venue:</strong></p>
-
           <p class="event-detail event-venue">
             Shree Sai Bhavan, Budhaji Nagar,<br>
             Kalwa West, Thane,<br>
             Maharashtra 400605
           </p>
-
-          <a class="event-map"
-             href="https://www.google.com/maps/search/?api=1&query=Shree+Sai+Bhavan+Budhaji+Nagar+Kalwa+West+Thane+400605"
-             target="_blank" rel="noopener">View Venue</a>
+          <a class="event-map" href="https://www.google.com/maps/search/?api=1&query=Shree+Sai+Bhavan+Budhaji+Nagar+Kalwa+West+Thane+400605" target="_blank" rel="noopener">View Venue</a>
         </div>
       </article>
-
-      <!-- MEHENDI -->
 
       <article class="event-card">
         <div class="event-image-frame">
           <img src="./mehendi_image.jpg" alt="Mehendi henna celebration" loading="lazy">
         </div>
-
         <div class="event-content">
           <div class="event-number">Celebration 02</div>
           <h3>Henna & Happily Ever After</h3>
           <p class="event-tagline">A little mehendi, a lot of memories</p>
-
           <p class="event-detail"><strong>For:</strong> Alfiya</p>
           <p class="event-detail"><strong>Date:</strong> Tuesday, 15 December 2026</p>
           <p class="event-detail"><strong>Time:</strong> Baad Namaz-e-Maghrib</p>
@@ -990,30 +898,24 @@ footer .copyright {
         </div>
       </article>
 
-      <!-- NIKAH -->
-
       <article class="event-card">
         <div class="event-image-frame">
           <img src="./nikah_image.jpeg" alt="Nikah wedding ceremony" loading="lazy">
         </div>
-
         <div class="event-content">
           <div class="event-number">The Main Celebration</div>
           <h3>Mehfil-e-Noor</h3>
           <p class="event-tagline">A Gathering of Light, Faith & Blessings</p>
-
           <p class="event-detail"><strong>Alfiya & Danish</strong></p>
           <p class="event-detail"><strong>Date:</strong> Wednesday, 16 December 2026</p>
           <p class="event-detail"><strong>Hijri Date:</strong> 7 Rajab 1448 AH</p>
           <p class="event-detail"><strong>Time:</strong> 6:30 PM onwards</p>
           <p class="event-detail"><strong>Venue:</strong></p>
-
           <p class="event-detail event-venue">
             Noor Baug Hall, Behind Shimla Park,<br>
             Opposite Talao Pali, Kausa,<br>
             Mumbra – 400612
           </p>
-
           <div class="program">
             <span>Bayaan</span>
             <span>Naat</span>
@@ -1021,38 +923,27 @@ footer .copyright {
             <span>Dinner</span>
             <small>محفلِ نور</small>
           </div>
-
-          <a class="event-map"
-             href="https://www.google.com/maps/search/?api=1&query=Noor+Baug+Hall+Kausa+Mumbra+Thane"
-             target="_blank" rel="noopener">View Venue</a>
+          <a class="event-map" href="https://www.google.com/maps/search/?api=1&query=Noor+Baug+Hall+Kausa+Mumbra+Thane" target="_blank" rel="noopener">View Venue</a>
         </div>
       </article>
-
-      <!-- WALIMA -->
 
       <article class="event-card">
         <div class="event-image-frame">
           <img src="./walima_image.png" alt="Walima reception celebration" loading="lazy">
         </div>
-
         <div class="event-content">
           <div class="event-number">The Grand Reception</div>
           <h3>Ta’am-al-Walima</h3>
           <p class="event-tagline">A celebration of togetherness</p>
-
           <p class="event-detail"><strong>Date:</strong> Friday, 18 December 2026</p>
           <p class="event-detail"><strong>Time:</strong> 7:00 PM onwards</p>
           <p class="event-detail"><strong>Venue:</strong></p>
-
           <p class="event-detail event-venue">
             Noori Hall, Noori Baba Dargah Road,<br>
             Makhmali Tank Road, Thane West,<br>
             Thane, Maharashtra 400601
           </p>
-
-          <a class="event-map"
-             href="https://www.google.com/maps/search/?api=1&query=Noori+Hall+Noori+Baba+Dargah+Road+Thane+West+400601"
-             target="_blank" rel="noopener">View Venue</a>
+          <a class="event-map" href="https://www.google.com/maps/search/?api=1&query=Noori+Hall+Noori+Baba+Dargah+Road+Thane+West+400601" target="_blank" rel="noopener">View Venue</a>
         </div>
       </article>
 
@@ -1061,15 +952,13 @@ footer .copyright {
     <p class="details-note">
       We look forward to celebrating with you. Please refer to your invitation for any additional family or venue-specific details.
     </p>
-
   </div>
 </section>
 
-<!-- PHOTO WALL -->
+<!-- PHOTO WALL: NO MONOGRAM -->
 
 <section class="gallery" id="gallery">
   <div class="inner">
-
     <div class="heading">
       <span class="kicker">Our little collection of memories</span>
       <h2>The Photo Wall</h2>
@@ -1077,62 +966,41 @@ footer .copyright {
     </div>
 
     <div class="photo-wall">
-
       <figure>
-        <img src="./engagement1.jpg" alt="Alfiya and Danish memory one" loading="lazy">
+        <img src="./engagement1.jpg" alt="Alfiya and Danish engagement photograph one" loading="lazy">
       </figure>
-
       <figure>
-        <img src="./engagement2.jpg" alt="Alfiya and Danish memory two" loading="lazy">
+        <img src="./engagement2.jpg" alt="Alfiya and Danish engagement photograph two" loading="lazy">
       </figure>
-
       <figure>
-        <img src="./engagement3.jpg" alt="Alfiya and Danish memory three" loading="lazy">
+        <img src="./engagement3.jpg" alt="Alfiya and Danish engagement photograph three" loading="lazy">
       </figure>
-
       <figure>
-        <img src="./handpicture.jpg" alt="A detail from our wedding preparations" loading="lazy">
+        <img src="./handpicture.jpg" alt="Wedding detail photograph" loading="lazy">
       </figure>
-      
     </div>
   </div>
 </section>
 
-<!-- BLESSINGS FORM -->
+<!-- BLESSINGS -->
 
 <section class="blessings" id="blessings">
   <div class="inner">
-
     <div class="heading">
       <span class="kicker">Your duas mean the world</span>
       <h2>Leave Us Your Blessings</h2>
-      <p>
-        Share a heartfelt message, a dua or a few words of love. We would be delighted to read your wishes.
-      </p>
+      <p>Share a heartfelt message, a dua or a few words of love. We would be delighted to read your wishes.</p>
     </div>
 
-    <form
-      class="blessing-form"
-      id="blessingForm"
-      method="POST"
-      target="blessingResponse"
-      action="https://script.google.com/macros/s/AKfycbz5VARKb8wvnHrgr6s-xeXsVaWk6pSsVd2Okqg766o3h3ZgX-Y35yMWOztOR-MpdycH/exec"
-    >
+    <form class="blessing-form" id="blessingForm" method="POST" target="blessingResponse">
 
       <div class="form-row">
         <label for="guestName">Your Name *</label>
-        <input
-          id="guestName"
-          name="name"
-          type="text"
-          placeholder="Enter your name"
-          maxlength="100"
-          required
-        >
+        <input id="guestName" name="name" type="text" placeholder="Enter your name" maxlength="100" required>
       </div>
 
       <div class="form-row">
-        <label for="relation">You are</label>
+        <label for="relation">You Are</label>
         <select id="relation" name="relation">
           <option value="">Select (optional)</option>
           <option>Family</option>
@@ -1146,47 +1014,21 @@ footer .copyright {
 
       <div class="form-row">
         <label for="message">Your Blessing *</label>
-        <textarea
-          id="message"
-          name="blessing"
-          placeholder="Write your heartfelt wishes for Alfiya & Danish..."
-          maxlength="1500"
-          required
-        ></textarea>
+        <textarea id="message" name="blessing" placeholder="Write your heartfelt wishes for Alfiya & Danish..." maxlength="1500" required></textarea>
       </div>
-
-      <!-- Hidden spam prevention field -->
 
       <div class="honeypot" aria-hidden="true">
         <label for="website">Leave this field empty</label>
-        <input
-          id="website"
-          name="website"
-          type="text"
-          tabindex="-1"
-          autocomplete="off"
-        >
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
       </div>
 
-      <button class="submit-button" id="blessingSubmit" type="submit">
-        Send
-      </button>
+      <button class="submit-button" id="blessingSubmit" type="submit">Send</button>
 
       <p class="form-status" id="blessingStatus" role="status" aria-live="polite"></p>
-
-      <p class="form-note">
-        Thank you for being part of our special journey.
-      </p>
-
+      <p class="form-note">Thank you for being part of our special journey.</p>
     </form>
 
-    <iframe
-      name="blessingResponse"
-      id="blessingResponse"
-      title="Blessing submission response"
-      style="display:none"
-    ></iframe>
-
+    <iframe name="blessingResponse" id="blessingResponse" title="Blessing submission response" style="display:none"></iframe>
   </div>
 </section>
 
@@ -1205,8 +1047,12 @@ footer .copyright {
 </footer>
 
 <script>
+/* GOOGLE APPS SCRIPT URL - YOUR WORKING DEPLOYMENT */
 
-// OPEN INVITATION AND BACKGROUND MUSIC
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbz5VARKb8wvnHrgr6s-xeXsVaWk6pSsVd2Okqg766o3h3ZgX-Y35yMWOztOR-MpdycH/exec";
+
+/* OPEN INVITATION AND BACKGROUND MUSIC */
 
 const openButton = document.getElementById("openInvite");
 const opening = document.getElementById("opening");
@@ -1224,18 +1070,17 @@ openButton.addEventListener("click", async () => {
   }
 });
 
-
-// COUNTDOWN TO NIKAH
+/* COUNTDOWN */
 
 const weddingDate = new Date("2026-12-16T18:30:00+05:30").getTime();
 
 function updateCountdown() {
   const distance = weddingDate - Date.now();
 
-  const fields = ["days", "hours", "minutes", "seconds"];
+  const ids = ["days", "hours", "minutes", "seconds"];
 
   if (distance <= 0) {
-    fields.forEach(id => {
+    ids.forEach(id => {
       document.getElementById(id).textContent = "00";
     });
     return;
@@ -1248,7 +1093,7 @@ function updateCountdown() {
     Math.floor((distance / 1000) % 60)
   ];
 
-  fields.forEach((id, index) => {
+  ids.forEach((id, index) => {
     document.getElementById(id).textContent =
       String(values[index]).padStart(2, "0");
   });
@@ -1257,8 +1102,7 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-
-// GOOGLE SHEETS BLESSINGS FORM
+/* GOOGLE SHEETS BLESSINGS SUBMISSION */
 
 const form = document.getElementById("blessingForm");
 const statusMessage = document.getElementById("blessingStatus");
@@ -1266,64 +1110,55 @@ const submitButton = document.getElementById("blessingSubmit");
 const responseFrame = document.getElementById("blessingResponse");
 
 let submissionPending = false;
+let responseTimeout;
 
-responseFrame.addEventListener("load", () => {
-  if (!submissionPending) return;
-
-  submissionPending = false;
-
-  statusMessage.textContent =
-    "Your request has been sent. Thank you for your beautiful wishes!";
-
-  submitButton.disabled = false;
-  submitButton.textContent = "Send";
-
-  // Keep the entered message until the guest verifies it was saved.
-  // This avoids losing a blessing if the sheet has a server-side error.
-});
-
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", event => {
   event.preventDefault();
 
   if (!form.reportValidity()) return;
 
-  const endpoint = form.action;
-
-  if (!endpoint || !endpoint.endsWith("/exec")) {
-    statusMessage.textContent =
-      "The Google Sheets connection URL is missing or invalid.";
-    return;
-  }
-
-  if (document.getElementById("website").value.trim()) {
-    return;
-  }
+  if (document.getElementById("website").value.trim()) return;
 
   if (submissionPending) return;
 
+  if (!GOOGLE_SCRIPT_URL || !GOOGLE_SCRIPT_URL.endsWith("/exec")) {
+    statusMessage.textContent = "The Google Sheets connection is not configured.";
+    return;
+  }
+
+  form.action = GOOGLE_SCRIPT_URL;
+
+  submissionPending = true;
   submitButton.disabled = true;
   submitButton.textContent = "Sending...";
   statusMessage.textContent = "Sending your blessing...";
 
-  submissionPending = true;
+  responseFrame.onload = () => {
+    if (!submissionPending) return;
 
-  // Submit to Apps Script in a hidden iframe.
-  // No WhatsApp, no visible Google page.
-  HTMLFormElement.prototype.submit.call(form);
+    clearTimeout(responseTimeout);
+    submissionPending = false;
 
-  // Avoid leaving the button disabled indefinitely if the iframe
-  // does not report a response.
-  setTimeout(() => {
-    if (submissionPending) {
-      submissionPending = false;
-      submitButton.disabled = false;
-      submitButton.textContent = "Send";
-      statusMessage.textContent =
-        "Please check your Google Sheet before trying again. Your submission may have reached the sheet.";
-    }
+    submitButton.disabled = false;
+    submitButton.textContent = "Send";
+
+    statusMessage.textContent =
+      "Your blessing has been sent. Thank you! Please check the Google Sheet to confirm it was received.";
+  };
+
+  responseTimeout = setTimeout(() => {
+    if (!submissionPending) return;
+
+    submissionPending = false;
+    submitButton.disabled = false;
+    submitButton.textContent = "Send";
+
+    statusMessage.textContent =
+      "We could not confirm the submission. Please check the Google Sheet before trying again.";
   }, 15000);
-});
 
+  HTMLFormElement.prototype.submit.call(form);
+});
 </script>
 
 </body>
