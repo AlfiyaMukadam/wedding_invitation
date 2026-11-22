@@ -1,13 +1,11 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#073e48">
-
-<title>Mehfil-e-Noor | Alfiya & Danish — A Promise of Forever</title>
-<meta name="description" content="With the blessings of Allah and our families, join Alfiya and Danish for Mehfil-e-Noor, their wedding celebration.">
+<title>Alfiya & Danish | Mehfil-e-Noor — Forever, InshaAllah</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,27 +14,24 @@
 <style>
 :root {
   --teal:#073e48;
-  --deep:#032b32;
-  --deep2:#052f37;
-  --gold:#c4a16a;
-  --gold2:#e8d4ac;
-  --gold3:#a78047;
+  --deep:#032c33;
+  --gold:#c6a36b;
+  --gold-light:#ead8b5;
   --cream:#faf7f0;
   --paper:#fffdf8;
-  --sage:#dce3d5;
-  --ink:#354541;
-  --muted:#777d75;
+  --ink:#293d3c;
+  --muted:#777d77;
   --serif:"Cormorant Garamond",Georgia,serif;
   --sans:"DM Sans",Arial,sans-serif;
   --script:"Parisienne",cursive;
   --arabic:"Amiri",serif;
 }
 
-* { box-sizing:border-box; }
+* {box-sizing:border-box}
 
 html {
   scroll-behavior:smooth;
-  scroll-padding-top:95px;
+  scroll-padding-top:90px;
 }
 
 body {
@@ -48,63 +43,79 @@ body {
   font-weight:300;
 }
 
-body.locked { overflow:hidden; }
+body.locked {overflow:hidden}
 
-img { display:block; max-width:100%; }
-a { color:inherit; text-decoration:none; }
-button,input,textarea,select { font:inherit; }
+img {display:block;max-width:100%}
+a {color:inherit;text-decoration:none}
+button,input,textarea,select {font:inherit}
 
-::selection {
-  background:var(--gold);
-  color:var(--deep);
-}
-
-/* ANIMATIONS */
+::selection {background:var(--gold-light);color:var(--deep)}
 
 @keyframes fadeUp {
-  from { opacity:0; transform:translateY(30px); }
-  to { opacity:1; transform:translateY(0); }
+  from {opacity:0;transform:translateY(30px)}
+  to {opacity:1;transform:translateY(0)}
 }
 
-@keyframes fadeIn {
-  from { opacity:0; }
-  to { opacity:1; }
+@keyframes softZoom {
+  from {transform:scale(1.09)}
+  to {transform:scale(1)}
 }
 
-@keyframes slowZoom {
-  from { transform:scale(1.09); }
-  to { transform:scale(1); }
-}
-
-@keyframes float {
-  0%,100% { transform:translateY(0); }
-  50% { transform:translateY(-9px); }
+@keyframes floatBubble {
+  0% {transform:translateY(110vh) translateX(0) scale(.7);opacity:0}
+  10% {opacity:.7}
+  50% {transform:translateY(50vh) translateX(25px) scale(1)}
+  90% {opacity:.5}
+  100% {transform:translateY(-15vh) translateX(-20px) scale(.8);opacity:0}
 }
 
 @keyframes shimmer {
-  0% { background-position:-200% center; }
-  100% { background-position:200% center; }
+  0%,100% {opacity:.5}
+  50% {opacity:1}
 }
 
-@keyframes rotateSlow {
-  from { transform:rotate(0); }
-  to { transform:rotate(360deg); }
+@keyframes rotateOrnament {
+  from {transform:rotate(0)}
+  to {transform:rotate(360deg)}
 }
 
-@keyframes pulse {
-  0%,100% { opacity:.5; }
-  50% { opacity:1; }
+@keyframes nameReveal {
+  0% {opacity:0;transform:translateY(35px) scale(.94);filter:blur(8px)}
+  100% {opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
 }
 
-@keyframes curtain {
-  from { opacity:1; }
-  to { opacity:0; visibility:hidden; }
+@keyframes goldSweep {
+  0% {background-position:-200% center}
+  100% {background-position:200% center}
+}
+
+@keyframes curtainOpenLeft {
+  to {transform:translateX(-105%)}
+}
+
+@keyframes curtainOpenRight {
+  to {transform:translateX(105%)}
+}
+
+@keyframes cardDisappear {
+  to {opacity:0;transform:scale(1.12);filter:blur(8px)}
+}
+
+@keyframes gentleFloat {
+  0%,100% {transform:translateY(0)}
+  50% {transform:translateY(-9px)}
+}
+
+@keyframes petalFall {
+  0% {transform:translateY(-10vh) rotate(0);opacity:0}
+  15% {opacity:.75}
+  100% {transform:translateY(110vh) rotate(360deg);opacity:0}
 }
 
 .reveal {
   opacity:0;
   transform:translateY(28px);
-  transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1);
+  transition:opacity .85s ease,transform .85s ease;
 }
 
 .reveal.visible {
@@ -112,90 +123,37 @@ button,input,textarea,select { font:inherit; }
   transform:translateY(0);
 }
 
-.reveal-delay-1 { transition-delay:.12s; }
-.reveal-delay-2 { transition-delay:.24s; }
-.reveal-delay-3 { transition-delay:.36s; }
-
-/* ORNAMENTAL DETAILS */
-
-.ornament {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:13px;
-  width:min(300px,80%);
-  margin:25px auto;
-  color:var(--gold);
-}
-
-.ornament::before,
-.ornament::after {
-  content:"";
-  flex:1;
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold));
-}
-
-.ornament::after {
-  background:linear-gradient(90deg,var(--gold),transparent);
-}
-
-.ornament span {
-  font-size:17px;
-}
-
-.arabic {
-  font-family:var(--arabic);
-  direction:rtl;
-}
-
-.gold-text {
-  color:var(--gold2);
-  background:linear-gradient(100deg,#b18c54,#f2dfb7,#b18c54);
-  background-size:200% auto;
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-  animation:shimmer 7s linear infinite;
-}
-
-.section-frame {
-  position:relative;
-}
-
-.section-frame::before {
-  content:"";
-  position:absolute;
-  inset:12px;
-  border:1px solid rgba(196,161,106,.23);
-  pointer-events:none;
-}
-
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    animation:none!important;
-    transition:none!important;
-    scroll-behavior:auto!important;
-  }
-  .reveal { opacity:1; transform:none; }
-}
-
-/* OPENING */
+/* OPENING SCREEN */
 
 .opening {
   position:fixed;
   inset:0;
-  z-index:1000;
+  z-index:2000;
   display:grid;
   place-items:center;
-  padding:25px;
   overflow:hidden;
+  padding:24px;
   color:white;
   background:
-    linear-gradient(rgba(3,34,40,.47),rgba(3,34,40,.82)),
+    linear-gradient(135deg,rgba(3,31,36,.83),rgba(3,49,55,.72)),
     url("./handpicture.jpg") center/cover no-repeat,
     var(--deep);
   transition:opacity 1s ease,visibility 1s ease;
+}
+
+.opening::before,
+.opening::after {
+  content:"";
+  position:absolute;
+  inset:15px;
+  border:1px solid rgba(234,216,181,.65);
+  pointer-events:none;
+  z-index:3;
+}
+
+.opening::after {
+  inset:23px;
+  border:1px solid rgba(234,216,181,.2);
 }
 
 .opening.hidden {
@@ -204,118 +162,182 @@ button,input,textarea,select { font:inherit; }
   pointer-events:none;
 }
 
-.opening::before {
-  content:"";
+.opening-curtain {
   position:absolute;
-  inset:13px;
-  border:1px solid rgba(232,212,172,.7);
+  top:0;
+  bottom:0;
+  width:50.5%;
+  z-index:10;
   pointer-events:none;
+  background:
+    repeating-linear-gradient(90deg,transparent 0,rgba(234,216,181,.04) 3px,transparent 8px),
+    linear-gradient(135deg,#073e48,#032d35 75%,#092e32);
+  transition:transform 1.45s cubic-bezier(.77,0,.18,1);
 }
 
-.opening::after {
-  content:"";
-  position:absolute;
-  inset:21px;
-  border:1px solid rgba(232,212,172,.3);
-  pointer-events:none;
+.opening-curtain.left {
+  left:0;
+  border-right:1px solid rgba(234,216,181,.5);
+}
+
+.opening-curtain.right {
+  right:0;
+  border-left:1px solid rgba(234,216,181,.5);
+}
+
+.opening.opened .opening-curtain.left {
+  transform:translateX(-105%);
+}
+
+.opening.opened .opening-curtain.right {
+  transform:translateX(105%);
 }
 
 .opening-card {
   position:relative;
-  z-index:2;
-  width:min(100%,550px);
-  padding:40px 25px;
+  z-index:5;
+  width:min(100%,540px);
+  padding:clamp(34px,6vw,60px) 25px;
   text-align:center;
-  border:1px solid rgba(232,212,172,.55);
-  outline:1px solid rgba(232,212,172,.22);
+  border:1px solid rgba(234,216,181,.8);
+  outline:1px solid rgba(234,216,181,.3);
   outline-offset:8px;
-  background:rgba(3,43,49,.52);
-  backdrop-filter:blur(7px);
-  animation:fadeUp 1.3s ease both;
+  background:rgba(3,40,46,.68);
+  backdrop-filter:blur(9px);
+  box-shadow:0 25px 90px rgba(0,0,0,.25);
+  animation:fadeUp 1.4s ease both;
+  transition:opacity .6s ease,transform .8s ease,filter .8s ease;
 }
 
-.opening-card::before,
-.opening-card::after {
-  content:"✧";
-  position:absolute;
-  color:var(--gold2);
-  font-size:24px;
-}
-
-.opening-card::before { top:12px; left:15px; }
-.opening-card::after { bottom:12px; right:15px; }
-
-.opening-card img {
-  width:83px;
-  height:83px;
-  object-fit:contain;
-  margin:0 auto 15px;
-  animation:float 5s ease-in-out infinite;
+.opening.opened .opening-card {
+  animation:cardDisappear .75s ease forwards;
 }
 
 .bismillah {
-  margin:0 auto 15px;
-  color:var(--gold2);
+  margin-bottom:18px;
+  color:var(--gold-light);
   font:36px var(--arabic);
-  line-height:1.7;
+  direction:rtl;
+  text-shadow:0 0 22px rgba(234,216,181,.45);
 }
 
-.opening-card .eyebrow {
-  color:var(--gold2);
+.opening-monogram {
+  width:76px;
+  height:76px;
+  object-fit:contain;
+  margin:0 auto 20px;
+  animation:gentleFloat 4s ease-in-out infinite;
+}
+
+.eyebrow {
+  color:var(--gold-light);
   font-size:9px;
-  letter-spacing:.32em;
+  letter-spacing:.3em;
   text-transform:uppercase;
 }
 
 .opening h1 {
-  margin:19px 0 0;
-  font:400 clamp(43px,9vw,70px)/1.05 var(--serif);
+  margin:20px 0 0;
+  color:white;
+  font:400 clamp(43px,9vw,68px)/1.15 var(--serif);
 }
 
-.script {
+.opening-script {
   display:block;
   margin-top:8px;
-  color:var(--gold2);
-  font:38px var(--script);
+  color:var(--gold-light);
+  font:clamp(32px,7vw,43px) var(--script);
 }
 
 .opening-card p {
   max-width:365px;
   margin:24px auto;
   color:#eee9df;
-  font:12px/2 var(--sans);
+  font-size:11px;
+  line-height:2;
 }
 
 .open-button {
-  padding:15px 35px;
-  color:var(--deep);
-  background:linear-gradient(120deg,#b99055,#ead7b0,#b99055);
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--gold-light);
+  background:linear-gradient(110deg,var(--gold),#f1dfba,var(--gold));
   background-size:200% auto;
-  border:1px solid var(--gold2);
+  color:var(--deep);
+  padding:16px 34px;
   cursor:pointer;
   font-size:9px;
   letter-spacing:.23em;
   text-transform:uppercase;
-  transition:transform .3s,background-position .6s;
+  transition:transform .35s ease,box-shadow .35s ease;
+  animation:goldSweep 5s linear infinite;
 }
 
 .open-button:hover {
   transform:translateY(-3px);
-  background-position:right center;
+  box-shadow:0 8px 30px rgba(234,216,181,.28);
 }
 
 .opening-note {
-  margin-top:23px;
+  margin-top:24px;
   color:#ddd;
   font-size:8px;
-  letter-spacing:.2em;
+  letter-spacing:.22em;
 }
 
-/* HIDDEN MUSIC */
+.opening-ornament {
+  position:absolute;
+  width:210px;
+  height:210px;
+  border:1px solid rgba(234,216,181,.13);
+  border-radius:50%;
+  animation:rotateOrnament 45s linear infinite;
+  pointer-events:none;
+}
 
-audio { display:none; }
+.opening-ornament::before,
+.opening-ornament::after {
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(234,216,181,.13);
+  border-radius:50%;
+}
 
-/* NAVIGATION */
+.opening-ornament::after {
+  inset:38px;
+  border-style:dashed;
+}
+
+.opening-ornament.one {top:-100px;left:-90px}
+.opening-ornament.two {bottom:-100px;right:-90px;animation-direction:reverse}
+
+.bubbles {
+  position:absolute;
+  inset:0;
+  z-index:2;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.bubble {
+  position:absolute;
+  bottom:-100px;
+  width:var(--size);
+  height:var(--size);
+  left:var(--left);
+  border-radius:50%;
+  border:1px solid rgba(234,216,181,.42);
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.28),rgba(234,216,181,.035) 65%);
+  box-shadow:inset 0 0 12px rgba(255,255,255,.12),0 0 16px rgba(234,216,181,.08);
+  animation:floatBubble var(--duration) linear var(--delay) infinite;
+}
+
+/* MUSIC */
+
+audio {display:none}
+
+/* HEADER */
 
 header {
   position:sticky;
@@ -324,72 +346,58 @@ header {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
-  padding:12px clamp(15px,5vw,75px);
-  background:rgba(250,247,240,.96);
-  border-bottom:1px solid rgba(196,161,106,.48);
-  box-shadow:0 4px 22px rgba(0,0,0,.035);
+  gap:18px;
+  padding:12px clamp(15px,5vw,70px);
+  background:rgba(250,247,240,.97);
+  border-bottom:1px solid rgba(198,163,107,.4);
   backdrop-filter:blur(15px);
 }
 
 .brand {
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:9px;
   color:var(--teal);
-  font:26px var(--serif);
+  font:25px var(--serif);
   white-space:nowrap;
 }
 
 .brand img {
-  width:39px;
-  height:39px;
+  width:36px;
+  height:36px;
   object-fit:contain;
 }
 
 nav {
   display:flex;
   justify-content:flex-end;
-  align-items:center;
-  gap:clamp(12px,2.4vw,30px);
+  gap:clamp(10px,2.2vw,27px);
   flex-wrap:wrap;
 }
 
 nav a {
-  position:relative;
   color:var(--teal);
   font-size:8px;
-  letter-spacing:.15em;
+  letter-spacing:.13em;
   text-transform:uppercase;
+  transition:color .25s ease;
 }
 
-nav a::after {
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:1px;
-  background:var(--gold3);
-  transition:width .3s;
-}
-
-nav a:hover::after { width:100%; }
+nav a:hover {color:#a77b3f}
 
 /* HERO */
 
 .hero {
   position:relative;
-  min-height:min(850px,92vh);
+  min-height:min(790px,88vh);
   display:grid;
   place-items:center;
-  padding:100px 22px;
+  padding:90px 20px;
   text-align:center;
   color:white;
   overflow:hidden;
-  isolation:isolate;
   background:
-    linear-gradient(rgba(3,35,41,.38),rgba(3,35,41,.78)),
+    linear-gradient(rgba(4,38,44,.42),rgba(4,38,44,.78)),
     url("./handpicture.jpg") center 45%/cover no-repeat,
     var(--teal);
 }
@@ -397,261 +405,219 @@ nav a:hover::after { width:100%; }
 .hero::before {
   content:"";
   position:absolute;
-  inset:15px;
-  border:1px solid rgba(232,212,172,.65);
-  z-index:-1;
+  inset:18px;
+  border:1px solid rgba(234,216,181,.45);
   pointer-events:none;
 }
 
 .hero::after {
   content:"";
   position:absolute;
-  inset:23px;
-  border:1px solid rgba(232,212,172,.22);
-  z-index:-1;
+  inset:26px;
+  border:1px solid rgba(234,216,181,.17);
   pointer-events:none;
 }
 
 .hero-content {
-  width:min(100%,850px);
+  position:relative;
+  z-index:2;
+  width:min(100%,800px);
   animation:fadeUp 1.4s ease both;
 }
 
 .hero-monogram {
-  width:95px;
-  height:95px;
+  width:85px;
+  height:85px;
   object-fit:contain;
-  margin:0 auto 20px;
-  animation:float 6s ease-in-out infinite;
-}
-
-.hero-bismillah {
-  color:var(--gold2);
-  font:32px var(--arabic);
-  margin-bottom:12px;
-}
-
-.hero .eyebrow {
-  color:var(--gold2);
-  font-size:9px;
-  letter-spacing:.32em;
-  text-transform:uppercase;
+  margin:0 auto 23px;
 }
 
 .hero h1 {
-  margin:22px 0 0;
-  font:400 clamp(58px,10vw,115px)/.95 var(--serif);
-  text-shadow:0 5px 25px rgba(0,0,0,.2);
+  margin:18px 0 0;
+  font:400 clamp(55px,10vw,105px)/1.05 var(--serif);
 }
 
 .hero-amp {
   display:block;
-  margin:7px 0;
-  color:var(--gold2);
-  font:clamp(42px,7vw,75px) var(--script);
+  color:var(--gold-light);
+  font:clamp(45px,7vw,72px) var(--script);
 }
 
 .hero-subtitle {
-  margin-top:29px;
-  color:var(--gold2);
+  margin-top:28px;
+  color:var(--gold-light);
   font-size:9px;
-  letter-spacing:.33em;
+  letter-spacing:.3em;
   text-transform:uppercase;
 }
 
 .hero-date {
-  margin-top:17px;
-  font:30px var(--serif);
+  margin-top:15px;
+  font:29px var(--serif);
   letter-spacing:.08em;
 }
 
+.rule {
+  width:78px;
+  height:1px;
+  margin:24px auto;
+  background:var(--gold-light);
+}
+
 .hero-blessing {
-  margin-top:22px;
-  font:italic 20px var(--serif);
+  font:italic 19px var(--serif);
 }
 
 .scroll-cue {
   position:absolute;
-  bottom:31px;
-  left:0;
-  right:0;
-  color:var(--gold2);
+  bottom:24px;
+  z-index:2;
+  color:var(--gold-light);
   font-size:8px;
-  letter-spacing:.27em;
-  animation:pulse 2.5s infinite;
+  letter-spacing:.23em;
+  animation:shimmer 2s infinite;
 }
 
-/* SHARED SECTION */
+/* SECTIONS */
 
-section { padding:95px 22px; }
+section {padding:85px 22px}
 
 .inner {
-  width:min(1160px,100%);
+  width:min(1120px,100%);
   margin:auto;
 }
 
 .heading {
   text-align:center;
-  margin:0 auto 25px;
+  margin:0 auto 22px;
 }
 
 .kicker {
   display:block;
-  margin-bottom:15px;
-  color:var(--gold3);
+  margin-bottom:14px;
+  color:#a77b3f;
   font-size:9px;
-  letter-spacing:.31em;
+  letter-spacing:.3em;
   text-transform:uppercase;
 }
 
 .heading h2 {
   margin:0;
   color:var(--teal);
-  font:400 clamp(39px,6vw,66px)/1.08 var(--serif);
+  font:400 clamp(39px,6vw,62px)/1.1 var(--serif);
 }
 
 .heading p {
-  max-width:640px;
-  margin:19px auto 0;
+  max-width:620px;
+  margin:17px auto 0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:2;
+}
+
+/* INTRO */
+
+.intro {
+  text-align:center;
+  background:
+    radial-gradient(ellipse at center,rgba(234,216,181,.14),transparent 65%),
+    var(--cream);
+}
+
+.quote {
+  max-width:770px;
+  margin:34px auto 0;
+  color:var(--teal);
+  font:italic clamp(22px,4vw,33px)/1.5 var(--serif);
+}
+
+.quran {
+  margin-top:22px;
+  color:#a77b3f;
+  font:18px var(--serif);
+}
+
+.intro-copy {
+  max-width:650px;
+  margin:28px auto 0;
   color:var(--muted);
   font-size:11px;
   line-height:2.1;
 }
 
-.rule {
-  width:76px;
-  height:1px;
-  margin:24px auto;
-  background:var(--gold);
-}
-
-/* INTRODUCTION */
-
-.intro {
-  position:relative;
-  text-align:center;
-  background:
-    radial-gradient(circle at center,rgba(222,211,188,.17),transparent 55%),
-    var(--cream);
-}
-
-.intro::before {
-  content:"۞";
-  position:absolute;
-  top:45px;
-  left:50%;
-  transform:translateX(-50%);
-  color:rgba(196,161,106,.12);
-  font-size:230px;
-  pointer-events:none;
-}
-
-.intro .inner { position:relative; }
-
-.quote {
-  max-width:810px;
-  margin:38px auto 0;
-  color:var(--teal);
-  font:italic clamp(23px,4vw,36px)/1.55 var(--serif);
-}
-
-.quran {
-  margin-top:25px;
-  color:var(--gold3);
-  font:18px var(--serif);
-}
-
-.intro-copy {
-  max-width:680px;
-  margin:28px auto 0;
-  color:var(--muted);
-  font-size:11px;
-  line-height:2.2;
-}
-
 /* FAMILY */
 
-.family {
-  position:relative;
-  background:#f0ece2;
-}
+.family {background:#f1ece2}
 
 .family-grid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:27px;
-  margin-top:45px;
+  gap:25px;
+  margin-top:42px;
 }
 
 .family-card {
   position:relative;
-  padding:42px 25px;
+  padding:36px 24px;
   text-align:center;
   background:var(--paper);
-  border:1px solid rgba(196,161,106,.52);
-  outline:1px solid rgba(196,161,106,.2);
-  outline-offset:6px;
-  box-shadow:0 15px 40px rgba(30,45,42,.045);
-  transition:transform .4s,box-shadow .4s;
-}
-
-.family-card:hover {
-  transform:translateY(-6px);
-  box-shadow:0 20px 45px rgba(30,45,42,.09);
+  border:1px solid rgba(198,163,107,.55);
+  outline:1px solid rgba(198,163,107,.15);
+  outline-offset:5px;
+  box-shadow:0 10px 30px rgba(30,45,42,.04);
 }
 
 .family-label {
-  color:var(--gold3);
+  color:#a77b3f;
   font-size:9px;
-  letter-spacing:.25em;
+  letter-spacing:.22em;
   text-transform:uppercase;
 }
 
 .family-card h3 {
-  margin:15px 0;
+  margin:13px 0 8px;
   color:var(--teal);
-  font:400 43px var(--serif);
+  font:400 39px var(--serif);
 }
 
 .family-card p {
   margin:8px 0;
-  color:#59645e;
-  font:italic 20px/1.65 var(--serif);
+  color:#606b66;
+  font:italic 19px/1.6 var(--serif);
 }
 
-.family-small {
-  margin-top:19px;
+.family-card .family-small {
+  margin-top:16px;
   color:var(--muted);
   font:10px/1.8 var(--sans);
 }
 
 .hosts {
-  position:relative;
-  margin-top:45px;
-  padding:39px 25px;
+  margin-top:38px;
+  padding:35px 25px;
   text-align:center;
-  background:rgba(255,253,248,.75);
-  border:1px solid rgba(196,161,106,.55);
+  border:1px solid rgba(198,163,107,.55);
+  background:rgba(255,253,248,.7);
 }
 
 .host-title {
-  color:var(--gold3);
+  color:#a77b3f;
   font-size:9px;
-  letter-spacing:.23em;
-  line-height:2;
+  letter-spacing:.2em;
+  line-height:1.8;
   text-transform:uppercase;
 }
 
 .hosts h3 {
-  margin:16px 0;
+  margin:15px 0;
   color:var(--teal);
-  font:400 clamp(29px,4vw,42px) var(--serif);
+  font:400 clamp(28px,4vw,40px) var(--serif);
 }
 
 .hosts p {
   margin:10px 0;
   color:#5d6762;
-  font:italic 20px/1.6 var(--serif);
+  font:italic 19px/1.6 var(--serif);
 }
 
 /* COUNTDOWN */
@@ -659,64 +625,58 @@ section { padding:95px 22px; }
 .countdown-section {
   position:relative;
   overflow:hidden;
+  background:
+    linear-gradient(rgba(4,48,55,.96),rgba(4,48,55,.96)),
+    url("./handpicture.jpg") center/cover;
   color:white;
   text-align:center;
-  background:
-    linear-gradient(rgba(3,43,50,.96),rgba(3,43,50,.96)),
-    url("./handpicture.jpg") center/cover;
 }
 
 .countdown-section::before {
-  content:"۞";
+  content:"";
   position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  color:rgba(232,212,172,.045);
-  font-size:400px;
+  inset:18px;
+  border:1px solid rgba(234,216,181,.3);
   pointer-events:none;
 }
 
-.countdown-section .inner { position:relative; }
-.countdown-section .heading h2 { color:white; }
+.countdown-section .inner {position:relative;z-index:1}
+.countdown-section .heading h2 {color:white}
 
 .countdown {
   display:flex;
   justify-content:center;
-  gap:clamp(20px,5vw,65px);
+  gap:clamp(18px,4vw,48px);
   flex-wrap:wrap;
-  margin-top:45px;
+  margin-top:38px;
 }
 
-.count-item { min-width:70px; }
+.count-item {min-width:65px}
 
 .count-number {
   display:block;
-  color:var(--gold2);
-  font:clamp(42px,7vw,72px)/1 var(--serif);
+  color:var(--gold-light);
+  font:clamp(40px,7vw,65px)/1 var(--serif);
 }
 
 .count-label {
   display:block;
-  margin-top:12px;
+  margin-top:10px;
   color:#ddd;
   font-size:8px;
-  letter-spacing:.23em;
+  letter-spacing:.2em;
   text-transform:uppercase;
 }
 
 /* EVENTS */
 
-.events {
-  background:var(--cream);
-}
+.events {background:var(--cream)}
 
 .event-grid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  align-items:stretch;
   gap:30px;
-  margin-top:45px;
+  margin-top:43px;
 }
 
 .event-card {
@@ -726,26 +686,38 @@ section { padding:95px 22px; }
   min-width:0;
   overflow:hidden;
   background:var(--paper);
-  border:1px solid rgba(196,161,106,.48);
-  box-shadow:0 12px 38px rgba(30,45,42,.055);
-  transition:transform .4s,box-shadow .4s;
+  border:1px solid rgba(198,163,107,.5);
+  box-shadow:0 12px 34px rgba(30,45,42,.055);
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+
+.event-card::before {
+  content:"";
+  position:absolute;
+  inset:7px;
+  z-index:2;
+  border:1px solid rgba(198,163,107,.22);
+  pointer-events:none;
 }
 
 .event-card:hover {
-  transform:translateY(-7px);
-  box-shadow:0 22px 48px rgba(30,45,42,.11);
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(30,45,42,.11);
 }
 
+/* EVENT IMAGES */
+
 .event-image-frame {
+  position:relative;
   width:100%;
-  height:clamp(270px,35vw,410px);
+  height:clamp(280px,35vw,420px);
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
   padding:13px;
   background:#eee8dc;
-  border-bottom:1px solid rgba(196,161,106,.4);
+  border-bottom:1px solid rgba(198,163,107,.4);
 }
 
 .event-image-frame img {
@@ -753,7 +725,7 @@ section { padding:95px 22px; }
   height:100%;
   object-fit:contain;
   object-position:center;
-  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+  transition:transform .65s ease;
 }
 
 .event-card:hover .event-image-frame img {
@@ -762,26 +734,26 @@ section { padding:95px 22px; }
 
 .event-content {
   flex:1;
-  padding:31px clamp(18px,3vw,37px) 35px;
+  padding:30px clamp(18px,3vw,34px) 35px;
   text-align:center;
 }
 
 .event-number {
-  color:var(--gold3);
+  color:#a77b3f;
   font-size:8px;
-  letter-spacing:.25em;
+  letter-spacing:.23em;
   text-transform:uppercase;
 }
 
 .event-content h3 {
-  margin:13px 0 4px;
+  margin:12px 0 4px;
   color:var(--teal);
-  font:500 clamp(31px,4vw,45px)/1.12 var(--serif);
+  font:500 clamp(30px,4vw,43px)/1.12 var(--serif);
 }
 
 .event-tagline {
-  margin:10px 0 21px;
-  color:var(--gold3);
+  margin:9px 0 20px;
+  color:#a77b3f;
   font:italic 20px var(--serif);
 }
 
@@ -798,68 +770,65 @@ section { padding:95px 22px; }
 }
 
 .event-venue {
-  max-width:390px;
-  margin:9px auto;
+  max-width:370px;
+  margin:8px auto;
 }
 
 .event-map {
   display:inline-block;
-  margin-top:17px;
-  padding-bottom:6px;
+  margin-top:15px;
+  padding-bottom:5px;
   border-bottom:1px solid var(--gold);
   color:#986e37;
   font-size:8px;
-  letter-spacing:.19em;
+  letter-spacing:.17em;
   text-transform:uppercase;
-  transition:color .25s;
 }
 
-.event-map:hover { color:var(--teal); }
+.event-map:hover {color:var(--teal)}
 
 .program {
-  max-width:350px;
-  margin:20px auto 0;
-  padding:15px 5px;
+  max-width:340px;
+  margin:17px auto 0;
+  padding:13px 5px;
   border-top:1px solid #ddc9a6;
   border-bottom:1px solid #ddc9a6;
 }
 
 .program span {
   display:inline-block;
-  margin:5px 9px;
+  margin:5px 8px;
   color:var(--teal);
-  font:19px var(--serif);
+  font:17px var(--serif);
 }
 
 .program small {
   display:block;
-  margin-top:9px;
-  color:var(--gold3);
-  font:20px var(--arabic);
+  margin-top:7px;
+  color:#9a784e;
+  font:16px var(--arabic);
 }
 
 /* GALLERY */
 
-.gallery {
-  background:#f0ece2;
-}
+.gallery {background:#f2ede4}
 
 .photo-wall {
   display:grid;
   grid-template-columns:repeat(12,1fr);
-  grid-auto-rows:clamp(125px,14vw,185px);
-  gap:13px;
-  margin-top:43px;
+  grid-auto-rows:clamp(120px,13vw,180px);
+  gap:12px;
+  margin-top:40px;
 }
 
 .photo-wall figure {
   position:relative;
-  min-width:0;
   margin:0;
+  min-width:0;
   overflow:hidden;
   background:#e6ddce;
-  border:5px solid var(--paper);
-  outline:1px solid rgba(196,161,106,.5);
+  border:1px solid rgba(198,163,107,.4);
+  padding:5px;
 }
 
 .photo-wall figure:nth-child(1) {
@@ -882,59 +851,45 @@ section { padding:95px 22px; }
   grid-row:span 2;
 }
 
-.photo-wall img {
+.photo-wall figure img {
   width:100%;
   height:100%;
   object-fit:cover;
   object-position:center;
-  transition:transform .8s;
+  transition:transform .7s ease;
 }
 
-.photo-wall figure:hover img { transform:scale(1.07); }
+.photo-wall figure:hover img {transform:scale(1.06)}
 
 /* BLESSINGS */
 
 .blessings {
   position:relative;
-  overflow:hidden;
   color:white;
   background:
-    linear-gradient(rgba(3,43,50,.96),rgba(3,43,50,.97)),
+    linear-gradient(rgba(4,48,55,.96),rgba(4,48,55,.97)),
     url("./handpicture.jpg") center/cover;
 }
 
-.blessings::before {
-  content:"۞";
-  position:absolute;
-  right:-70px;
-  top:30px;
-  color:rgba(232,212,172,.05);
-  font-size:300px;
-  pointer-events:none;
-}
-
-.blessings .inner { position:relative; }
-.blessings .heading h2 { color:white; }
-.blessings .heading p { color:#ddd; }
+.blessings .heading h2 {color:white}
+.blessings .heading p {color:#ddd}
 
 .blessing-form {
-  width:min(640px,100%);
-  margin:40px auto 0;
-  padding:clamp(23px,5vw,45px);
-  border:1px solid rgba(232,212,172,.6);
-  outline:1px solid rgba(232,212,172,.2);
-  outline-offset:6px;
+  width:min(620px,100%);
+  margin:38px auto 0;
+  padding:clamp(22px,5vw,42px);
+  border:1px solid rgba(234,216,181,.55);
   background:rgba(255,255,255,.045);
 }
 
-.form-row { margin-bottom:21px; }
+.form-row {margin-bottom:19px}
 
 .blessing-form label {
   display:block;
-  margin-bottom:9px;
-  color:var(--gold2);
+  margin-bottom:8px;
+  color:var(--gold-light);
   font-size:9px;
-  letter-spacing:.18em;
+  letter-spacing:.17em;
   text-transform:uppercase;
 }
 
@@ -942,14 +897,12 @@ section { padding:95px 22px; }
 .blessing-form select,
 .blessing-form textarea {
   width:100%;
-  padding:14px 15px;
+  padding:13px 14px;
   color:white;
-  background:rgba(255,255,255,.075);
-  border:1px solid rgba(232,212,172,.35);
-  border-radius:0;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(234,216,181,.34);
   outline:none;
   font-size:12px;
-  transition:border .3s,background .3s;
 }
 
 .blessing-form input::placeholder,
@@ -965,47 +918,37 @@ section { padding:95px 22px; }
 .blessing-form input:focus,
 .blessing-form select:focus,
 .blessing-form textarea:focus {
-  border-color:var(--gold2);
-  background:rgba(255,255,255,.11);
+  border-color:var(--gold-light);
 }
 
 .blessing-form textarea {
-  min-height:130px;
+  min-height:125px;
   resize:vertical;
 }
 
 .submit-button {
   width:100%;
-  padding:16px;
+  padding:15px;
+  border:1px solid var(--gold-light);
+  background:var(--gold);
   color:var(--deep);
-  background:linear-gradient(120deg,#b99055,#ead7b0,#b99055);
-  background-size:200% auto;
-  border:1px solid var(--gold2);
   cursor:pointer;
   font-size:9px;
-  letter-spacing:.23em;
+  letter-spacing:.2em;
   text-transform:uppercase;
-  transition:transform .3s,background-position .5s;
+  transition:background .3s ease;
 }
 
-.submit-button:hover {
-  transform:translateY(-3px);
-  background-position:right center;
-}
-
-.submit-button:disabled {
-  opacity:.65;
-  cursor:wait;
-  transform:none;
-}
+.submit-button:hover {background:var(--gold-light)}
+.submit-button:disabled {opacity:.65;cursor:wait}
 
 .form-status {
   min-height:24px;
   margin:15px 0 0;
-  color:var(--gold2);
   text-align:center;
+  color:var(--gold-light);
   font-size:11px;
-  line-height:1.8;
+  line-height:1.7;
 }
 
 .form-note {
@@ -1013,7 +956,7 @@ section { padding:95px 22px; }
   color:#bbb;
   text-align:center;
   font-size:9px;
-  line-height:1.8;
+  line-height:1.7;
 }
 
 .honeypot {
@@ -1029,82 +972,73 @@ section { padding:95px 22px; }
 footer {
   position:relative;
   overflow:hidden;
-  padding:60px 20px 35px;
+  padding:55px 20px 32px;
   color:white;
   text-align:center;
   background:var(--deep);
-  border-top:1px solid rgba(196,161,106,.55);
 }
 
 footer::before {
   content:"";
   position:absolute;
-  inset:12px;
-  border:1px solid rgba(196,161,106,.22);
+  inset:13px;
+  border:1px solid rgba(234,216,181,.28);
   pointer-events:none;
 }
 
 footer img {
   position:relative;
-  width:75px;
-  height:75px;
+  width:68px;
+  height:68px;
   object-fit:contain;
-  margin:0 auto 16px;
-  animation:float 5s ease-in-out infinite;
+  margin:0 auto 15px;
 }
 
 footer h2 {
   margin:0;
-  font:400 clamp(38px,6vw,52px) var(--serif);
+  font:400 45px var(--serif);
 }
 
 .footer-script {
-  margin:9px 0 17px;
-  color:var(--gold2);
-  font:37px var(--script);
+  margin:7px 0 17px;
+  color:var(--gold-light);
+  font:36px var(--script);
 }
 
 footer p {
-  margin:9px 0;
+  margin:8px 0;
   color:#ddd;
   font-size:9px;
-  letter-spacing:.12em;
+  letter-spacing:.1em;
 }
 
 footer .copyright {
-  margin-top:32px;
+  margin-top:30px;
   color:#999;
   font-size:8px;
-  letter-spacing:.15em;
+  letter-spacing:.13em;
 }
 
-/* TABLET */
+/* RESPONSIVE */
 
 @media(max-width:850px) {
-  header { padding:12px 20px; }
-  nav { gap:12px 16px; }
-  .event-image-frame { height:310px; }
-  .photo-wall { grid-auto-rows:145px; }
+  .event-image-frame {height:320px}
+  .photo-wall {grid-auto-rows:145px}
 }
-
-/* MOBILE */
 
 @media(max-width:650px) {
   header {
-    padding:10px 12px 12px;
     display:block;
+    padding:10px 13px;
   }
 
   .brand {
     justify-content:center;
-    margin-bottom:11px;
+    margin-bottom:9px;
     font-size:22px;
   }
 
-  .brand img {
-    width:31px;
-    height:31px;
-  }
+  .brand img {width:30px;height:30px}
 
   nav {
     justify-content:center;
@@ -1113,43 +1047,30 @@ footer .copyright {
 
   nav a {
     font-size:7px;
-    letter-spacing:.1em;
+    letter-spacing:.09em;
   }
 
-  .hero {
-    min-height:78svh;
-    padding:85px 20px;
-    background-position:56% center;
-  }
+  .hero {min-height:78vh}
+  .hero h1 {font-size:clamp(55px,14vw,78px)}
 
-  .hero h1 { font-size:clamp(57px,14vw,82px); }
-  .hero-monogram { width:78px; height:78px; }
+  section {padding:66px 16px}
 
-  section { padding:68px 17px; }
+  .family-grid {grid-template-columns:1fr}
+  .family-card {padding:29px 20px}
 
-  .family-grid {
-    grid-template-columns:1fr;
-    gap:25px;
-  }
-
-  .family-card { padding:32px 20px; }
-
-  .event-grid {
-    grid-template-columns:1fr;
-    gap:24px;
-  }
+  .event-grid {grid-template-columns:1fr;gap:24px}
 
   .event-image-frame {
-    height:clamp(270px,85vw,430px);
-    padding:10px;
+    height:clamp(290px,100vw,450px);
+    padding:12px;
   }
 
-  .event-content { padding:26px 19px 30px; }
+  .event-content {padding:27px 19px 30px}
 
   .photo-wall {
     grid-template-columns:repeat(2,minmax(0,1fr));
-    grid-auto-rows:clamp(145px,47vw,240px);
-    gap:10px;
+    grid-auto-rows:clamp(145px,48vw,240px);
+    gap:9px;
   }
 
   .photo-wall figure:nth-child(n) {
@@ -1157,27 +1078,31 @@ footer .copyright {
     grid-row:auto;
   }
 
-  .photo-wall figure:first-child { grid-column:span 2; }
+  .photo-wall figure:first-child {grid-column:span 2}
 
-  .hosts { padding:30px 18px; }
-
-  .opening-card { padding:36px 19px; }
-
-  .opening h1 { font-size:49px; }
-  .opening-card .bismillah { font-size:31px; }
+  .hosts {padding:29px 18px}
+  .opening-card {padding:38px 20px}
+  .bismillah {font-size:32px}
 }
 
 @media(max-width:380px) {
-  nav { gap:9px 11px; }
-  nav a { font-size:6.5px; }
-
-  .hero h1 { font-size:53px; }
-
-  .count-item { min-width:57px; }
-
-  .event-image-frame { height:275px; }
+  nav {gap:9px 11px}
+  nav a {font-size:7px}
+  .opening-card {padding:32px 15px}
+  .hero h1 {font-size:53px}
+  .count-item {min-width:58px}
+  .event-image-frame {height:300px}
 }
 
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+
+  .reveal {opacity:1;transform:none}
+}
 </style>
 </head>
 
@@ -1186,23 +1111,29 @@ footer .copyright {
 <!-- OPENING INVITATION -->
 
 <div class="opening" id="opening">
-  <div class="opening-card">
 
+  <div class="opening-ornament one"></div>
+  <div class="opening-ornament two"></div>
+  <div class="bubbles" id="openingBubbles"></div>
+
+  <div class="opening-card" id="openingCard">
+
+    <!-- Arabic calligraphy appears ONLY here -->
     <div class="bismillah">﷽</div>
 
-    <img src="./AD-monogram.png" alt="Alfiya and Danish monogram">
+    <img class="opening-monogram"
+         src="./AD-monogram.png"
+         alt="Alfiya and Danish monogram">
 
     <div class="eyebrow">A celebration of love and faith</div>
 
     <h1>Alfiya & Danish</h1>
 
-    <span class="script">Together, InshaAllah</span>
-
-    <div class="ornament"><span>✧</span></div>
+    <span class="opening-script">Together, InshaAllah</span>
 
     <p>
       With the blessings of Allah and our beloved families,
-      we invite you to be part of our beautiful beginning.
+      we invite you to be part of our special celebration.
     </p>
 
     <button class="open-button" id="openInvite" type="button">
@@ -1214,6 +1145,10 @@ footer .copyright {
     </div>
 
   </div>
+
+  <div class="opening-curtain left"></div>
+  <div class="opening-curtain right"></div>
+
 </div>
 
 <!-- BACKGROUND MUSIC -->
@@ -1249,8 +1184,6 @@ footer .copyright {
 
   <div class="hero-content">
 
-    <div class="hero-bismillah arabic">﷽</div>
-
     <img class="hero-monogram"
          src="./AD-monogram.png"
          alt="A and D monogram">
@@ -1269,7 +1202,7 @@ footer .copyright {
       Together, in faith and forever
     </div>
 
-    <div class="ornament"><span>✧</span></div>
+    <div class="rule"></div>
 
     <div class="hero-date">16 December 2026</div>
 
@@ -1279,24 +1212,20 @@ footer .copyright {
 
   </div>
 
-  <div class="scroll-cue">
-    SCROLL TO EXPLORE ↓
-  </div>
+  <div class="scroll-cue">SCROLL TO EXPLORE ↓</div>
 
 </section>
 
 <!-- OUR STORY -->
 
-<section class="intro section-frame">
+<section class="intro" id="story">
 
-  <div class="inner reveal" id="story">
+  <div class="inner reveal">
 
     <div class="heading">
-      <span class="kicker">Bismillah · With gratitude</span>
+      <span class="kicker">With gratitude and love</span>
       <h2>Our Forever Begins</h2>
     </div>
-
-    <div class="ornament"><span>۞</span></div>
 
     <p class="quote">
       “And among His signs is that He created for you spouses
@@ -1306,7 +1235,7 @@ footer .copyright {
 
     <div class="quran">Qur’an 30:21</div>
 
-    <div class="rule"></div>
+    <div class="rule" style="background:var(--gold)"></div>
 
     <p class="intro-copy">
       With grateful hearts and the love of our families,
@@ -1319,7 +1248,7 @@ footer .copyright {
 
 </section>
 
-<!-- FAMILY -->
+<!-- FAMILIES -->
 
 <section class="family" id="family">
 
@@ -1329,45 +1258,11 @@ footer .copyright {
       <span class="kicker">Two families · One beautiful bond</span>
       <h2>With the Blessings of Our Families</h2>
       <p>
-        Surrounded by the love, duas and blessings of
-        those who mean the world to us.
+        Surrounded by the love, duas and blessings
+        of those who mean the world to us.
       </p>
     </div>
-
-    <div class="ornament"><span>✧</span></div>
-
-    <div class="family-grid">
-
-      <article class="family-card reveal">
-        <div class="family-label">The Bride</div>
-        <h3>Alfiya</h3>
-        <p>Daughter of</p>
-        <p>
-          Mrs. Rabiyabi<br>
-          &<br>
-          Mr. Ashfaque Mukadam
-        </p>
-        <div class="family-small">
-          With love and gratitude to her family
-        </div>
-      </article>
-
-      <article class="family-card reveal reveal-delay-1">
-        <div class="family-label">The Groom</div>
-        <h3>Danish</h3>
-        <p>Son of</p>
-        <p>
-          Mrs. Heena<br>
-          &<br>
-          Mr. Feroz Khan
-        </p>
-        <div class="family-small">
-          With love and gratitude to his family
-        </div>
-      </article>
-
-    </div>
-
+    
     <div class="hosts reveal">
 
       <div class="host-title">
@@ -1378,12 +1273,44 @@ footer .copyright {
 
       <p>Mrs. Julekha & Late Mr. Ahmed Mukadam</p>
 
-      <div class="ornament"><span>✧</span></div>
+      <div class="rule" style="background:var(--gold)"></div>
 
       <p>Mrs. Roshanbi & Late Mr. Abdul Latif Thakur</p>
 
     </div>
 
+
+    <div class="family-grid">
+
+      <article class="family-card reveal">
+        <div class="family-label">The Bride</div>
+        <h3>Alfiya</h3>
+        <p>Daughter of</p>
+        <p>
+          Mrs. Rabiyabi
+          <br>&<br>
+          Mr. Ashfaque Mukadam
+        </p>
+        <div class="family-small">
+          With love and gratitude to her family
+        </div>
+      </article>
+
+      <article class="family-card reveal">
+        <div class="family-label">The Groom</div>
+        <h3>Danish</h3>
+        <p>Son of</p>
+        <p>
+          Mrs. Heena
+          <br>&<br>
+          Mr. Feroz Khan
+        </p>
+        <div class="family-small">
+          With love and gratitude to his family
+        </div>
+      </article>
+
+    </div>
   </div>
 
 </section>
@@ -1427,7 +1354,7 @@ footer .copyright {
 
 </section>
 
-<!-- EVENTS -->
+<!-- CELEBRATIONS -->
 
 <section class="events" id="events">
 
@@ -1442,8 +1369,6 @@ footer .copyright {
       </p>
     </div>
 
-    <div class="ornament"><span>✧</span></div>
-
     <div class="event-grid">
 
       <!-- HALDI -->
@@ -1451,9 +1376,10 @@ footer .copyright {
       <article class="event-card reveal">
 
         <div class="event-image-frame">
-          <img src="./haldi_image.jpg"
-               alt="Haldi and Sangeet invitation artwork"
-               loading="lazy">
+          <img
+            src="./haldi_image.jpg"
+            alt="Alfiya's Haldi celebration illustration"
+            loading="lazy">
         </div>
 
         <div class="event-content">
@@ -1464,26 +1390,21 @@ footer .copyright {
 
           <p class="event-tagline">In My Haldi Era</p>
 
-          <p class="event-detail"><strong>For:</strong> Danish</p>
+          <p class="event-detail">
+            <strong>For: Bride Alfiya</strong>
+          </p>
 
           <p class="event-detail">
-            <strong>Sunday, 13 December 2026</strong>
+            <strong>Monday, 14 December 2026</strong>
           </p>
 
-          <p class="event-detail"><strong>Venue</strong></p>
-
-          <p class="event-detail event-venue">
-            Shree Sai Bhavan, Budhaji Nagar,<br>
-            Kalwa West, Thane,<br>
-            Maharashtra 400605
+          <p class="event-detail">
+            <strong>Time: Baad Namaz-e-Asar</strong>
           </p>
 
-          <a class="event-map"
-             href="https://www.google.com/maps/search/?api=1&query=Shree+Sai+Bhavan+Budhaji+Nagar+Kalwa+West+Thane+400605"
-             target="_blank"
-             rel="noopener">
-            View Venue
-          </a>
+          <p class="event-detail">
+            <strong>Venue: Bride's Residence</strong>
+          </p>
 
         </div>
 
@@ -1491,12 +1412,13 @@ footer .copyright {
 
       <!-- MEHENDI -->
 
-      <article class="event-card reveal reveal-delay-1">
+      <article class="event-card reveal">
 
         <div class="event-image-frame">
-          <img src="./mehendi_image.jpg"
-               alt="Mehendi invitation artwork"
-               loading="lazy">
+          <img
+            src="./mehendi_image.jpg"
+            alt="Alfiya's Mehendi celebration illustration"
+            loading="lazy">
         </div>
 
         <div class="event-content">
@@ -1509,22 +1431,24 @@ footer .copyright {
             A little mehendi, a lot of memories
           </p>
 
-          <p class="event-detail"><strong>For:</strong> Alfiya</p>
+          <p class="event-detail">
+            <strong>For: Alfiya</strong>
+          </p>
 
           <p class="event-detail">
             <strong>Tuesday, 15 December 2026</strong>
           </p>
 
           <p class="event-detail">
-            <strong>Time:</strong> Baad Namaz-e-Maghrib
+            <strong>Time: Baad Namaz-e-Maghrib</strong>
           </p>
 
           <p class="event-detail">
-            <strong>Followed by:</strong> Dinner
+            <strong>Followed by: Dinner</strong>
           </p>
 
           <p class="event-detail">
-            <strong>Venue:</strong> Bride's Residence
+            <strong>Venue: Bride's Residence</strong>
           </p>
 
         </div>
@@ -1536,9 +1460,10 @@ footer .copyright {
       <article class="event-card reveal">
 
         <div class="event-image-frame">
-          <img src="./nikah_image.jpeg"
-               alt="Nikah invitation artwork"
-               loading="lazy">
+          <img
+            src="./nikah_image.jpeg"
+            alt="Alfiya and Danish Nikah illustration"
+            loading="lazy">
         </div>
 
         <div class="event-content">
@@ -1570,8 +1495,10 @@ footer .copyright {
           <p class="event-detail"><strong>Venue</strong></p>
 
           <p class="event-detail event-venue">
-            Noor Baug Hall, Behind Shimla Park,<br>
-            Opposite Talao Pali, Kausa,<br>
+            Noor Baug Hall, Behind Shimla Park,
+            <br>
+            Opposite Talao Pali, Kausa,
+            <br>
             Mumbra – 400612
           </p>
 
@@ -1583,10 +1510,11 @@ footer .copyright {
             <small>محفلِ نور</small>
           </div>
 
-          <a class="event-map"
-             href="https://www.google.com/maps/search/?api=1&query=Noor+Baug+Hall+Kausa+Mumbra+Thane"
-             target="_blank"
-             rel="noopener">
+          <a
+            class="event-map"
+            href="https://www.google.com/maps/search/?api=1&query=Noor+Baug+Hall+Kausa+Mumbra+Thane"
+            target="_blank"
+            rel="noopener">
             View Venue
           </a>
 
@@ -1596,12 +1524,13 @@ footer .copyright {
 
       <!-- WALIMA -->
 
-      <article class="event-card reveal reveal-delay-1">
+      <article class="event-card reveal">
 
         <div class="event-image-frame">
-          <img src="./walima_image.png"
-               alt="Walima invitation artwork"
-               loading="lazy">
+          <img
+            src="./walima_image.png"
+            alt="Ta'am al Walima invitation illustration"
+            loading="lazy">
         </div>
 
         <div class="event-content">
@@ -1625,15 +1554,18 @@ footer .copyright {
           <p class="event-detail"><strong>Venue</strong></p>
 
           <p class="event-detail event-venue">
-            Noori Hall, Noori Baba Dargah Road,<br>
-            Makhmali Tank Road, Thane West,<br>
+            Noori Hall, Noori Baba Dargah Road,
+            <br>
+            Makhmali Tank Road, Thane West,
+            <br>
             Thane, Maharashtra 400601
           </p>
 
-          <a class="event-map"
-             href="https://www.google.com/maps/search/?api=1&query=Noori+Hall+Noori+Baba+Dargah+Road+Thane+West+400601"
-             target="_blank"
-             rel="noopener">
+          <a
+            class="event-map"
+            href="https://www.google.com/maps/search/?api=1&query=Noori+Hall+Noori+Baba+Dargah+Road+Thane+West+400601"
+            target="_blank"
+            rel="noopener">
             View Venue
           </a>
 
@@ -1647,7 +1579,7 @@ footer .copyright {
 
 </section>
 
-<!-- MEMORIES -->
+<!-- PHOTO WALL -->
 
 <section class="gallery" id="gallery">
 
@@ -1670,23 +1602,18 @@ footer .copyright {
              loading="lazy">
       </figure>
 
-      <figure class="reveal reveal-delay-1">
+      <figure class="reveal">
         <img src="./engagement2.jpg"
              alt="Engagement memory two"
              loading="lazy">
       </figure>
 
-      <figure class="reveal reveal-delay-2">
+      <figure class="reveal">
         <img src="./engagement3.jpg"
              alt="Engagement memory three"
              loading="lazy">
       </figure>
 
-      <figure class="reveal">
-        <img src="./handpicture.jpg"
-             alt="A wedding detail memory"
-             loading="lazy">
-      </figure>
 
     </div>
 
@@ -1701,31 +1628,29 @@ footer .copyright {
   <div class="inner">
 
     <div class="heading reveal">
-
       <span class="kicker">Your duas mean the world</span>
-
       <h2>Leave Us Your Blessings</h2>
-
       <p>
         Share a heartfelt message, a dua or a few words of love.
         We would be delighted to read your wishes.
       </p>
-
     </div>
 
-    <form class="blessing-form reveal"
-          id="blessingForm"
-          method="POST"
-          target="blessingResponse">
+    <form
+      class="blessing-form reveal"
+      id="blessingForm"
+      method="POST"
+      target="blessingResponse">
 
       <div class="form-row">
         <label for="guestName">Your Name *</label>
-        <input id="guestName"
-               name="name"
-               type="text"
-               placeholder="Enter your name"
-               maxlength="100"
-               required>
+        <input
+          id="guestName"
+          name="name"
+          type="text"
+          placeholder="Enter your name"
+          maxlength="100"
+          required>
       </div>
 
       <div class="form-row">
@@ -1743,32 +1668,37 @@ footer .copyright {
 
       <div class="form-row">
         <label for="message">Your Blessing *</label>
-        <textarea id="message"
-                  name="blessing"
-                  placeholder="Write your heartfelt wishes for Alfiya & Danish..."
-                  maxlength="1500"
-                  required></textarea>
+        <textarea
+          id="message"
+          name="blessing"
+          placeholder="Write your heartfelt wishes for Alfiya & Danish..."
+          maxlength="1500"
+          required></textarea>
       </div>
 
       <div class="honeypot" aria-hidden="true">
         <label for="website">Leave this field empty</label>
-        <input id="website"
-               name="website"
-               type="text"
-               tabindex="-1"
-               autocomplete="off">
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabindex="-1"
+          autocomplete="off">
       </div>
 
-      <button class="submit-button"
-              id="blessingSubmit"
-              type="submit">
-        Send Your Blessing
+      <button
+        class="submit-button"
+        id="blessingSubmit"
+        type="submit">
+        Send
       </button>
 
-      <p class="form-status"
-         id="blessingStatus"
-         role="status"
-         aria-live="polite"></p>
+      <p
+        class="form-status"
+        id="blessingStatus"
+        role="status"
+        aria-live="polite">
+      </p>
 
       <p class="form-note">
         Thank you for being part of our special journey.
@@ -1776,10 +1706,11 @@ footer .copyright {
 
     </form>
 
-    <iframe name="blessingResponse"
-            id="blessingResponse"
-            title="Blessing submission response"
-            style="display:none">
+    <iframe
+      name="blessingResponse"
+      id="blessingResponse"
+      title="Blessing submission response"
+      style="display:none">
     </iframe>
 
   </div>
@@ -1794,17 +1725,11 @@ footer .copyright {
 
   <img src="./AD-monogram.png" alt="A and D monogram">
 
-  <div class="arabic gold-text" style="font-size:29px">
-    ﷽
-  </div>
-
   <h2>Alfiya & Danish</h2>
 
-  <div class="footer-script">
-    Forever, InshaAllah
-  </div>
+  <div class="footer-script">Forever, InshaAllah</div>
 
-  <div class="ornament"><span>✧</span></div>
+  <div class="rule"></div>
 
   <p>16 DECEMBER 2026 · 7 RAJAB 1448 AH</p>
 
@@ -1818,21 +1743,54 @@ footer .copyright {
 
 <script>
 
-/* GOOGLE APPS SCRIPT CONNECTION */
-
-const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbz5VARKb8wvnHrgr6s-xeXsVaWk6pSsVd2Okqg766o3h3ZgX-Y35yMWOztOR-MpdycH/exec";
-
-/* OPEN INVITATION + MUSIC */
+/* ===================================
+   OPENING SCREEN: BUBBLES & TRANSITION
+=================================== */
 
 const opening = document.getElementById("opening");
 const openButton = document.getElementById("openInvite");
 const music = document.getElementById("weddingMusic");
+const bubblesContainer = document.getElementById("openingBubbles");
+
+const reduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+/* Create floating bubbles */
+
+if (!reduceMotion) {
+  for (let i = 0; i < 24; i++) {
+    const bubble = document.createElement("span");
+    bubble.className = "bubble";
+
+    const size = 9 + Math.random() * 32;
+    const duration = 9 + Math.random() * 15;
+    const delay = Math.random() * -20;
+    const left = Math.random() * 100;
+
+    bubble.style.setProperty("--size", size + "px");
+    bubble.style.setProperty("--duration", duration + "s");
+    bubble.style.setProperty("--delay", delay + "s");
+    bubble.style.setProperty("--left", left + "%");
+
+    bubblesContainer.appendChild(bubble);
+  }
+}
+
+/* Open invitation */
+
+let invitationOpened = false;
 
 openButton.addEventListener("click", async () => {
 
-  opening.classList.add("hidden");
-  document.body.classList.remove("locked");
+  if (invitationOpened) return;
+
+  invitationOpened = true;
+  openButton.disabled = true;
+
+  opening.classList.add("opened");
+
+  /* Start music from the user's tap */
 
   try {
     music.volume = 0.5;
@@ -1841,18 +1799,34 @@ openButton.addEventListener("click", async () => {
     console.warn("Music playback was prevented:", error);
   }
 
+  /* Let the curtains complete their animation */
+
+  setTimeout(() => {
+    opening.classList.add("hidden");
+    document.body.classList.remove("locked");
+  }, reduceMotion ? 100 : 1550);
+
+  /* Remove opening overlay from interaction */
+
+  setTimeout(() => {
+    opening.style.display = "none";
+  }, reduceMotion ? 300 : 2600);
+
 });
 
-/* COUNTDOWN */
+/* ===================================
+   COUNTDOWN
+=================================== */
 
-const weddingDate =
-new Date("2026-12-16T18:30:00+05:30").getTime();
+const weddingDate = new Date(
+  "2026-12-16T18:30:00+05:30"
+).getTime();
 
 function updateCountdown() {
 
   const distance = weddingDate - Date.now();
 
-  const ids = ["days","hours","minutes","seconds"];
+  const ids = ["days", "hours", "minutes", "seconds"];
 
   if (distance <= 0) {
     ids.forEach(id => {
@@ -1868,57 +1842,55 @@ function updateCountdown() {
     Math.floor((distance / 1000) % 60)
   ];
 
-  ids.forEach((id,index) => {
-
+  ids.forEach((id, index) => {
     document.getElementById(id).textContent =
-      String(values[index]).padStart(2,"0");
-
+      String(values[index]).padStart(2, "0");
   });
 
 }
 
 updateCountdown();
-setInterval(updateCountdown,1000);
+setInterval(updateCountdown, 1000);
 
-/* SCROLL REVEALS */
-
-const revealElements =
-document.querySelectorAll(".reveal");
+/* ===================================
+   SCROLL REVEAL ANIMATIONS
+=================================== */
 
 if ("IntersectionObserver" in window) {
 
-  const observer = new IntersectionObserver(entries => {
+  const revealObserver = new IntersectionObserver(entries => {
 
     entries.forEach(entry => {
 
       if (entry.isIntersecting) {
-
         entry.target.classList.add("visible");
-
-        observer.unobserve(entry.target);
-
+        revealObserver.unobserve(entry.target);
       }
 
     });
 
   }, {
-    threshold:0.12,
-    rootMargin:"0px 0px -35px 0px"
+    threshold: 0.12
   });
 
-  revealElements.forEach(element => {
-    observer.observe(element);
+  document.querySelectorAll(".reveal").forEach(element => {
+    revealObserver.observe(element);
   });
 
 } else {
 
-  revealElements.forEach(element => {
+  document.querySelectorAll(".reveal").forEach(element => {
     element.classList.add("visible");
   });
 
 }
 
-/* BLESSINGS FORM */
+/* ===================================
+   BLESSINGS FORM - GOOGLE SHEETS
+=================================== */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbz5VARKb8wvnHrgr6s-xeXsVaWk6pSsVd2Okqg766o3h3ZgX-Y35yMWOztOR-MpdycH/exec";
 
 const form = document.getElementById("blessingForm");
 const statusMessage = document.getElementById("blessingStatus");
@@ -1928,7 +1900,7 @@ const responseFrame = document.getElementById("blessingResponse");
 let submissionPending = false;
 let responseTimeout;
 
-form.addEventListener("submit",event => {
+form.addEventListener("submit", event => {
 
   event.preventDefault();
 
@@ -1939,18 +1911,14 @@ form.addEventListener("submit",event => {
   if (submissionPending) return;
 
   if (!GOOGLE_SCRIPT_URL.endsWith("/exec")) {
-
     statusMessage.textContent =
       "The blessings form is not configured.";
-
     return;
-
   }
 
   form.action = GOOGLE_SCRIPT_URL;
 
   submissionPending = true;
-
   submitButton.disabled = true;
   submitButton.textContent = "Sending...";
 
@@ -1965,10 +1933,10 @@ form.addEventListener("submit",event => {
     submissionPending = false;
 
     submitButton.disabled = false;
-    submitButton.textContent = "Send Your Blessing";
+    submitButton.textContent = "Send";
 
     statusMessage.textContent =
-      "Your message has been submitted. Please check the Google Sheet to confirm it was received.";
+      "Thank you! Your blessing has been submitted. Please check your Google Sheet to confirm it was received.";
 
     form.reset();
 
@@ -1981,12 +1949,12 @@ form.addEventListener("submit",event => {
     submissionPending = false;
 
     submitButton.disabled = false;
-    submitButton.textContent = "Send Your Blessing";
+    submitButton.textContent = "Send";
 
     statusMessage.textContent =
       "We could not confirm the submission. Please check your Google Sheet before trying again.";
 
-  },15000);
+  }, 15000);
 
   HTMLFormElement.prototype.submit.call(form);
 
@@ -1996,4 +1964,3 @@ form.addEventListener("submit",event => {
 
 </body>
 </html>
-```
