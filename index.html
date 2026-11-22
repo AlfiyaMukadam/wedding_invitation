@@ -5,11 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#073e48">
-<title>Alfiya & Danish | Mehfil-e-Noor — Forever, InshaAllah</title>
+
+<title>Alfiya & Danish | A Blessed Beginning — InshaAllah</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -23,7 +24,7 @@
   --muted:#777d77;
   --serif:"Cormorant Garamond",Georgia,serif;
   --sans:"DM Sans",Arial,sans-serif;
-  --script:"Parisienne",cursive;
+  --script:"Great Vibes",cursive;
   --arabic:"Amiri",serif;
 }
 
@@ -49,7 +50,14 @@ img {display:block;max-width:100%}
 a {color:inherit;text-decoration:none}
 button,input,textarea,select {font:inherit}
 
-::selection {background:var(--gold-light);color:var(--deep)}
+::selection {
+  background:var(--gold-light);
+  color:var(--deep);
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
 
 @keyframes fadeUp {
   from {opacity:0;transform:translateY(30px)}
@@ -62,11 +70,20 @@ button,input,textarea,select {font:inherit}
 }
 
 @keyframes floatBubble {
-  0% {transform:translateY(110vh) translateX(0) scale(.7);opacity:0}
-  10% {opacity:.7}
-  50% {transform:translateY(50vh) translateX(25px) scale(1)}
+  0% {
+    transform:translate3d(0,0,0) scale(.7);
+    opacity:0;
+  }
+  10% {opacity:.85}
+  50% {
+    transform:translate3d(25px,-55vh,0) scale(1.05);
+    opacity:.8;
+  }
   90% {opacity:.5}
-  100% {transform:translateY(-15vh) translateX(-20px) scale(.8);opacity:0}
+  100% {
+    transform:translate3d(-20px,-115vh,0) scale(.85);
+    opacity:0;
+  }
 }
 
 @keyframes shimmer {
@@ -80,8 +97,16 @@ button,input,textarea,select {font:inherit}
 }
 
 @keyframes nameReveal {
-  0% {opacity:0;transform:translateY(35px) scale(.94);filter:blur(8px)}
-  100% {opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+  0% {
+    opacity:0;
+    transform:translateY(35px) scale(.94);
+    filter:blur(8px);
+  }
+  100% {
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+  }
 }
 
 @keyframes goldSweep {
@@ -89,16 +114,20 @@ button,input,textarea,select {font:inherit}
   100% {background-position:200% center}
 }
 
-@keyframes curtainOpenLeft {
+@keyframes curtainLeft {
   to {transform:translateX(-105%)}
 }
 
-@keyframes curtainOpenRight {
+@keyframes curtainRight {
   to {transform:translateX(105%)}
 }
 
 @keyframes cardDisappear {
-  to {opacity:0;transform:scale(1.12);filter:blur(8px)}
+  to {
+    opacity:0;
+    transform:scale(1.12);
+    filter:blur(8px);
+  }
 }
 
 @keyframes gentleFloat {
@@ -106,10 +135,35 @@ button,input,textarea,select {font:inherit}
   50% {transform:translateY(-9px)}
 }
 
+@keyframes sealFloat {
+  0%,100% {transform:translateY(0)}
+  50% {transform:translateY(-8px)}
+}
+
+@keyframes sealGlow {
+  0%,100% {
+    box-shadow:0 0 12px rgba(234,216,181,.12);
+  }
+  50% {
+    box-shadow:0 0 35px rgba(234,216,181,.38);
+  }
+}
+
+@keyframes sparkle {
+  0%,100% {opacity:.3;transform:scale(.7)}
+  50% {opacity:1;transform:scale(1.3)}
+}
+
 @keyframes petalFall {
-  0% {transform:translateY(-10vh) rotate(0);opacity:0}
+  0% {
+    transform:translateY(-10vh) rotate(0);
+    opacity:0;
+  }
   15% {opacity:.75}
-  100% {transform:translateY(110vh) rotate(360deg);opacity:0}
+  100% {
+    transform:translateY(110vh) rotate(360deg);
+    opacity:0;
+  }
 }
 
 .reveal {
@@ -123,7 +177,9 @@ button,input,textarea,select {font:inherit}
   transform:translateY(0);
 }
 
-/* OPENING SCREEN */
+/* =====================================
+   OPENING SCREEN
+===================================== */
 
 .opening {
   position:fixed;
@@ -132,12 +188,23 @@ button,input,textarea,select {font:inherit}
   display:grid;
   place-items:center;
   overflow:hidden;
-  padding:24px;
+  padding:28px;
   color:white;
+
   background:
-    linear-gradient(135deg,rgba(3,31,36,.83),rgba(3,49,55,.72)),
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(24,91,91,.22),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(3,31,36,.78),
+      rgba(3,49,55,.68)
+    ),
     url("./handpicture.jpg") center/cover no-repeat,
     var(--deep);
+
   transition:opacity 1s ease,visibility 1s ease;
 }
 
@@ -146,14 +213,14 @@ button,input,textarea,select {font:inherit}
   content:"";
   position:absolute;
   inset:15px;
+  z-index:3;
   border:1px solid rgba(234,216,181,.65);
   pointer-events:none;
-  z-index:3;
 }
 
 .opening::after {
   inset:23px;
-  border:1px solid rgba(234,216,181,.2);
+  border:1px solid rgba(234,216,181,.22);
 }
 
 .opening.hidden {
@@ -162,16 +229,343 @@ button,input,textarea,select {font:inherit}
   pointer-events:none;
 }
 
+/* Ambient lighting */
+
+.opening-glow {
+  position:absolute;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(234,216,181,.12),
+    rgba(234,216,181,.025) 45%,
+    transparent 70%
+  );
+  pointer-events:none;
+  animation:gentleFloat 8s ease-in-out infinite;
+}
+
+/* Decorative corners */
+
+.opening-ornament {
+  position:absolute;
+  width:230px;
+  height:230px;
+  border:1px solid rgba(234,216,181,.19);
+  border-radius:50%;
+  animation:rotateOrnament 45s linear infinite;
+  pointer-events:none;
+}
+
+.opening-ornament::before,
+.opening-ornament::after {
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(234,216,181,.18);
+  border-radius:50%;
+}
+
+.opening-ornament::after {
+  inset:38px;
+  border-style:dashed;
+}
+
+.opening-ornament.one {
+  top:-110px;
+  left:-100px;
+}
+
+.opening-ornament.two {
+  bottom:-110px;
+  right:-100px;
+  animation-direction:reverse;
+}
+
+/* Floating bubbles */
+
+.bubbles {
+  position:absolute;
+  inset:0;
+  z-index:5;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.bubble {
+  position:absolute;
+  bottom:-100px;
+  width:var(--size);
+  height:var(--size);
+  left:var(--left);
+  border-radius:50%;
+  border:1px solid rgba(255,232,190,.85);
+
+  background:radial-gradient(
+    circle at 28% 25%,
+    rgba(255,255,255,.55),
+    rgba(234,216,181,.19) 42%,
+    rgba(234,216,181,.025) 75%
+  );
+
+  box-shadow:
+    inset 0 0 15px rgba(255,255,255,.3),
+    0 0 12px rgba(234,216,181,.3),
+    0 0 28px rgba(234,216,181,.12);
+
+  animation:floatBubble var(--duration) linear var(--delay) infinite;
+  will-change:transform,opacity;
+}
+
+.bubble::after {
+  content:"";
+  position:absolute;
+  width:20%;
+  height:20%;
+  top:20%;
+  left:22%;
+  border-radius:50%;
+  background:rgba(255,255,255,.85);
+  filter:blur(2px);
+}
+
+/* Floating decorative stars */
+
+.opening-sparkle {
+  position:absolute;
+  z-index:5;
+  color:var(--gold-light);
+  font-size:17px;
+  pointer-events:none;
+  animation:sparkle 3s ease-in-out infinite;
+}
+
+.sparkle-one {top:17%;left:15%}
+.sparkle-two {top:28%;right:13%;animation-delay:1s}
+.sparkle-three {bottom:20%;left:19%;animation-delay:1.5s}
+.sparkle-four {bottom:25%;right:16%;animation-delay:.7s}
+
+/* Opening card */
+
+.opening-card {
+  position:relative;
+  z-index:6;
+  width:min(100%,550px);
+  padding:clamp(32px,5vw,48px) 25px 35px;
+  text-align:center;
+
+  border:1px solid rgba(234,216,181,.85);
+  outline:1px solid rgba(234,216,181,.3);
+  outline-offset:8px;
+
+  background:linear-gradient(
+    145deg,
+    rgba(3,40,46,.89),
+    rgba(3,35,41,.77)
+  );
+
+  backdrop-filter:blur(12px);
+
+  box-shadow:
+    0 25px 100px rgba(0,0,0,.4),
+    inset 0 0 35px rgba(234,216,181,.04);
+
+  animation:fadeUp 1.4s ease both;
+
+  transition:
+    opacity .6s ease,
+    transform .8s ease,
+    filter .8s ease;
+}
+
+.opening.opened .opening-card {
+  animation:cardDisappear .75s ease forwards;
+}
+
+/* Islamic seal */
+
+.seal-wrap {
+  position:relative;
+  width:148px;
+  height:148px;
+  margin:0 auto 24px;
+  display:grid;
+  place-items:center;
+  animation:sealFloat 5s ease-in-out infinite;
+}
+
+.seal-outer {
+  position:absolute;
+  inset:5px;
+  border:1px solid rgba(234,216,181,.95);
+  border-radius:50%;
+  animation:sealGlow 4s ease-in-out infinite;
+}
+
+.seal-outer::before {
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px dashed rgba(234,216,181,.7);
+  border-radius:50%;
+}
+
+.seal-outer::after {
+  content:"";
+  position:absolute;
+  inset:17px;
+  border:1px solid rgba(234,216,181,.65);
+  transform:rotate(45deg);
+}
+
+.seal-inner {
+  position:absolute;
+  inset:27px;
+  border:1px solid var(--gold-light);
+  transform:rotate(45deg);
+}
+
+.seal-inner::before {
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px solid rgba(234,216,181,.7);
+}
+
+.seal-monogram {
+  position:relative;
+  z-index:2;
+  width:78px;
+  height:78px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 10px rgba(234,216,181,.4));
+}
+
+.seal-top,
+.seal-bottom {
+  position:absolute;
+  z-index:3;
+  color:var(--gold-light);
+  font-size:12px;
+}
+
+.seal-top {top:-3px}
+.seal-bottom {bottom:-3px}
+
+.bismillah {
+  margin-bottom:18px;
+  color:var(--gold-light);
+  font:36px var(--arabic);
+  direction:rtl;
+  text-shadow:0 0 22px rgba(234,216,181,.45);
+}
+
+.eyebrow {
+  color:var(--gold-light);
+  font-size:9px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+}
+
+.opening h1 {
+  margin:15px 0 0;
+  color:#fffaf0;
+  font:400 clamp(60px,10vw,88px)/1.3 var(--script);
+  text-shadow:0 3px 15px rgba(0,0,0,.2);
+  animation:nameReveal 1.5s ease both;
+}
+
+.opening-script {
+  display:block;
+  margin-top:5px;
+  color:var(--gold-light);
+  font:clamp(30px,6vw,42px) "Parisienne",cursive;
+}
+
+.opening-card p {
+  max-width:370px;
+  margin:20px auto 25px;
+  color:#eee9df;
+  font:17px/1.65 var(--serif);
+}
+
+/* Invitation button */
+
+.open-button {
+  position:relative;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:13px;
+  min-width:235px;
+  padding:17px 27px;
+
+  border:1px solid #f4e4c3;
+  background:linear-gradient(
+    110deg,
+    #b68c52,
+    #f2dfb9,
+    #c6a36b
+  );
+  background-size:200% auto;
+
+  color:var(--deep);
+  cursor:pointer;
+  font:600 9px var(--sans);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+
+  transition:transform .35s ease,box-shadow .35s ease;
+  animation:goldSweep 5s linear infinite;
+}
+
+.open-button::after {
+  content:"✧";
+  font-size:17px;
+}
+
+.open-button:hover {
+  transform:translateY(-4px);
+  box-shadow:0 10px 35px rgba(234,216,181,.35);
+}
+
+.open-button:disabled {
+  cursor:wait;
+}
+
+.opening-note {
+  margin-top:24px;
+  color:rgba(255,255,255,.75);
+  font:13px var(--serif);
+  letter-spacing:.17em;
+}
+
+/* Opening curtains */
+
 .opening-curtain {
   position:absolute;
   top:0;
   bottom:0;
   width:50.5%;
-  z-index:10;
+  z-index:4;
   pointer-events:none;
+
   background:
-    repeating-linear-gradient(90deg,transparent 0,rgba(234,216,181,.04) 3px,transparent 8px),
-    linear-gradient(135deg,#073e48,#032d35 75%,#092e32);
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      rgba(234,216,181,.04) 3px,
+      transparent 8px
+    ),
+    linear-gradient(
+      135deg,
+      #073e48,
+      #032d35 75%,
+      #092e32
+    );
+
   transition:transform 1.45s cubic-bezier(.77,0,.18,1);
 }
 
@@ -193,151 +587,15 @@ button,input,textarea,select {font:inherit}
   transform:translateX(105%);
 }
 
-.opening-card {
-  position:relative;
-  z-index:5;
-  width:min(100%,540px);
-  padding:clamp(34px,6vw,60px) 25px;
-  text-align:center;
-  border:1px solid rgba(234,216,181,.8);
-  outline:1px solid rgba(234,216,181,.3);
-  outline-offset:8px;
-  background:rgba(3,40,46,.68);
-  backdrop-filter:blur(9px);
-  box-shadow:0 25px 90px rgba(0,0,0,.25);
-  animation:fadeUp 1.4s ease both;
-  transition:opacity .6s ease,transform .8s ease,filter .8s ease;
-}
-
-.opening.opened .opening-card {
-  animation:cardDisappear .75s ease forwards;
-}
-
-.bismillah {
-  margin-bottom:18px;
-  color:var(--gold-light);
-  font:36px var(--arabic);
-  direction:rtl;
-  text-shadow:0 0 22px rgba(234,216,181,.45);
-}
-
-.opening-monogram {
-  width:76px;
-  height:76px;
-  object-fit:contain;
-  margin:0 auto 20px;
-  animation:gentleFloat 4s ease-in-out infinite;
-}
-
-.eyebrow {
-  color:var(--gold-light);
-  font-size:9px;
-  letter-spacing:.3em;
-  text-transform:uppercase;
-}
-
-.opening h1 {
-  margin:20px 0 0;
-  color:white;
-  font:400 clamp(43px,9vw,68px)/1.15 var(--serif);
-}
-
-.opening-script {
-  display:block;
-  margin-top:8px;
-  color:var(--gold-light);
-  font:clamp(32px,7vw,43px) var(--script);
-}
-
-.opening-card p {
-  max-width:365px;
-  margin:24px auto;
-  color:#eee9df;
-  font-size:11px;
-  line-height:2;
-}
-
-.open-button {
-  position:relative;
-  overflow:hidden;
-  border:1px solid var(--gold-light);
-  background:linear-gradient(110deg,var(--gold),#f1dfba,var(--gold));
-  background-size:200% auto;
-  color:var(--deep);
-  padding:16px 34px;
-  cursor:pointer;
-  font-size:9px;
-  letter-spacing:.23em;
-  text-transform:uppercase;
-  transition:transform .35s ease,box-shadow .35s ease;
-  animation:goldSweep 5s linear infinite;
-}
-
-.open-button:hover {
-  transform:translateY(-3px);
-  box-shadow:0 8px 30px rgba(234,216,181,.28);
-}
-
-.opening-note {
-  margin-top:24px;
-  color:#ddd;
-  font-size:8px;
-  letter-spacing:.22em;
-}
-
-.opening-ornament {
-  position:absolute;
-  width:210px;
-  height:210px;
-  border:1px solid rgba(234,216,181,.13);
-  border-radius:50%;
-  animation:rotateOrnament 45s linear infinite;
-  pointer-events:none;
-}
-
-.opening-ornament::before,
-.opening-ornament::after {
-  content:"";
-  position:absolute;
-  inset:18px;
-  border:1px solid rgba(234,216,181,.13);
-  border-radius:50%;
-}
-
-.opening-ornament::after {
-  inset:38px;
-  border-style:dashed;
-}
-
-.opening-ornament.one {top:-100px;left:-90px}
-.opening-ornament.two {bottom:-100px;right:-90px;animation-direction:reverse}
-
-.bubbles {
-  position:absolute;
-  inset:0;
-  z-index:2;
-  overflow:hidden;
-  pointer-events:none;
-}
-
-.bubble {
-  position:absolute;
-  bottom:-100px;
-  width:var(--size);
-  height:var(--size);
-  left:var(--left);
-  border-radius:50%;
-  border:1px solid rgba(234,216,181,.42);
-  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.28),rgba(234,216,181,.035) 65%);
-  box-shadow:inset 0 0 12px rgba(255,255,255,.12),0 0 16px rgba(234,216,181,.08);
-  animation:floatBubble var(--duration) linear var(--delay) infinite;
-}
-
-/* MUSIC */
+/* =====================================
+   MUSIC
+===================================== */
 
 audio {display:none}
 
-/* HEADER */
+/* =====================================
+   HEADER
+===================================== */
 
 header {
   position:sticky;
@@ -385,7 +643,9 @@ nav a {
 
 nav a:hover {color:#a77b3f}
 
-/* HERO */
+/* =====================================
+   HERO
+===================================== */
 
 .hero {
   position:relative;
@@ -396,6 +656,7 @@ nav a:hover {color:#a77b3f}
   text-align:center;
   color:white;
   overflow:hidden;
+
   background:
     linear-gradient(rgba(4,38,44,.42),rgba(4,38,44,.78)),
     url("./handpicture.jpg") center 45%/cover no-repeat,
@@ -434,13 +695,14 @@ nav a:hover {color:#a77b3f}
 
 .hero h1 {
   margin:18px 0 0;
-  font:400 clamp(55px,10vw,105px)/1.05 var(--serif);
+  font:400 clamp(76px,12vw,125px)/1.2 var(--script);
+  text-shadow:0 3px 20px rgba(0,0,0,.2);
 }
 
 .hero-amp {
   display:block;
   color:var(--gold-light);
-  font:clamp(45px,7vw,72px) var(--script);
+  font:clamp(45px,7vw,72px) "Parisienne",cursive;
 }
 
 .hero-subtitle {
@@ -478,7 +740,9 @@ nav a:hover {color:#a77b3f}
   animation:shimmer 2s infinite;
 }
 
-/* SECTIONS */
+/* =====================================
+   COMMON SECTIONS
+===================================== */
 
 section {padding:85px 22px}
 
@@ -515,7 +779,9 @@ section {padding:85px 22px}
   line-height:2;
 }
 
-/* INTRO */
+/* =====================================
+   INTRODUCTION
+===================================== */
 
 .intro {
   text-align:center;
@@ -545,7 +811,9 @@ section {padding:85px 22px}
   line-height:2.1;
 }
 
-/* FAMILY */
+/* =====================================
+   FAMILIES
+===================================== */
 
 .family {background:#f1ece2}
 
@@ -620,7 +888,9 @@ section {padding:85px 22px}
   font:italic 19px/1.6 var(--serif);
 }
 
-/* COUNTDOWN */
+/* =====================================
+   COUNTDOWN
+===================================== */
 
 .countdown-section {
   position:relative;
@@ -640,7 +910,11 @@ section {padding:85px 22px}
   pointer-events:none;
 }
 
-.countdown-section .inner {position:relative;z-index:1}
+.countdown-section .inner {
+  position:relative;
+  z-index:1;
+}
+
 .countdown-section .heading h2 {color:white}
 
 .countdown {
@@ -668,7 +942,9 @@ section {padding:85px 22px}
   text-transform:uppercase;
 }
 
-/* EVENTS */
+/* =====================================
+   EVENTS
+===================================== */
 
 .events {background:var(--cream)}
 
@@ -704,8 +980,6 @@ section {padding:85px 22px}
   transform:translateY(-6px);
   box-shadow:0 20px 40px rgba(30,45,42,.11);
 }
-
-/* EVENT IMAGES */
 
 .event-image-frame {
   position:relative;
@@ -809,7 +1083,9 @@ section {padding:85px 22px}
   font:16px var(--arabic);
 }
 
-/* GALLERY */
+/* =====================================
+   GALLERY
+===================================== */
 
 .gallery {background:#f2ede4}
 
@@ -846,11 +1122,6 @@ section {padding:85px 22px}
   grid-row:span 2;
 }
 
-.photo-wall figure:nth-child(4) {
-  grid-column:span 6;
-  grid-row:span 2;
-}
-
 .photo-wall figure img {
   width:100%;
   height:100%;
@@ -861,7 +1132,9 @@ section {padding:85px 22px}
 
 .photo-wall figure:hover img {transform:scale(1.06)}
 
-/* BLESSINGS */
+/* =====================================
+   BLESSINGS
+===================================== */
 
 .blessings {
   position:relative;
@@ -967,7 +1240,9 @@ section {padding:85px 22px}
   overflow:hidden;
 }
 
-/* FOOTER */
+/* =====================================
+   FOOTER
+===================================== */
 
 footer {
   position:relative;
@@ -996,13 +1271,13 @@ footer img {
 
 footer h2 {
   margin:0;
-  font:400 45px var(--serif);
+  font:400 65px var(--script);
 }
 
 .footer-script {
   margin:7px 0 17px;
   color:var(--gold-light);
-  font:36px var(--script);
+  font:36px "Parisienne",cursive;
 }
 
 footer p {
@@ -1019,7 +1294,9 @@ footer .copyright {
   letter-spacing:.13em;
 }
 
-/* RESPONSIVE */
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
 
 @media(max-width:850px) {
   .event-image-frame {height:320px}
@@ -1027,6 +1304,7 @@ footer .copyright {
 }
 
 @media(max-width:650px) {
+
   header {
     display:block;
     padding:10px 13px;
@@ -1038,7 +1316,10 @@ footer .copyright {
     font-size:22px;
   }
 
-  .brand img {width:30px;height:30px}
+  .brand img {
+    width:30px;
+    height:30px;
+  }
 
   nav {
     justify-content:center;
@@ -1051,14 +1332,20 @@ footer .copyright {
   }
 
   .hero {min-height:78vh}
-  .hero h1 {font-size:clamp(55px,14vw,78px)}
+
+  .hero h1 {
+    font-size:clamp(76px,16vw,100px);
+  }
 
   section {padding:66px 16px}
 
   .family-grid {grid-template-columns:1fr}
   .family-card {padding:29px 20px}
 
-  .event-grid {grid-template-columns:1fr;gap:24px}
+  .event-grid {
+    grid-template-columns:1fr;
+    gap:24px;
+  }
 
   .event-image-frame {
     height:clamp(290px,100vw,450px);
@@ -1078,18 +1365,65 @@ footer .copyright {
     grid-row:auto;
   }
 
-  .photo-wall figure:first-child {grid-column:span 2}
+  .photo-wall figure:first-child {
+    grid-column:span 2;
+  }
 
   .hosts {padding:29px 18px}
-  .opening-card {padding:38px 20px}
+
+  .opening {
+    padding:28px;
+  }
+
+  .opening-card {
+    padding:32px 19px;
+  }
+
+  .seal-wrap {
+    width:130px;
+    height:130px;
+    margin-bottom:20px;
+  }
+
+  .seal-monogram {
+    width:68px;
+    height:68px;
+  }
+
+  .opening h1 {
+    font-size:clamp(57px,13vw,76px);
+  }
+
+  .opening-card p {
+    font-size:16px;
+  }
+
   .bismillah {font-size:32px}
+
+  .opening-ornament {
+    width:170px;
+    height:170px;
+  }
+
+  footer h2 {font-size:58px}
 }
 
 @media(max-width:380px) {
+
   nav {gap:9px 11px}
   nav a {font-size:7px}
-  .opening-card {padding:32px 15px}
-  .hero h1 {font-size:53px}
+
+  .opening-card {padding:28px 14px}
+
+  .opening h1 {font-size:55px}
+
+  .opening-card p {font-size:15px}
+
+  .seal-wrap {
+    width:118px;
+    height:118px;
+  }
+
   .count-item {min-width:58px}
   .event-image-frame {height:300px}
 }
@@ -1101,47 +1435,78 @@ footer .copyright {
     scroll-behavior:auto!important;
   }
 
-  .reveal {opacity:1;transform:none}
+  .reveal {
+    opacity:1;
+    transform:none;
+  }
 }
 </style>
 </head>
 
 <body class="locked">
 
-<!-- OPENING INVITATION -->
+<!-- =====================================
+     OPENING INVITATION
+===================================== -->
 
 <div class="opening" id="opening">
 
+  <div class="opening-glow"></div>
+
   <div class="opening-ornament one"></div>
   <div class="opening-ornament two"></div>
+
+  <div class="opening-sparkle sparkle-one">✧</div>
+  <div class="opening-sparkle sparkle-two">✦</div>
+  <div class="opening-sparkle sparkle-three">✧</div>
+  <div class="opening-sparkle sparkle-four">✦</div>
+
   <div class="bubbles" id="openingBubbles"></div>
 
   <div class="opening-card" id="openingCard">
 
-    <!-- Arabic calligraphy appears ONLY here -->
     <div class="bismillah">﷽</div>
 
-    <img class="opening-monogram"
-         src="./AD-monogram.png"
-         alt="Alfiya and Danish monogram">
+    <!-- ISLAMIC GEOMETRIC MONOGRAM SEAL -->
 
-    <div class="eyebrow">A celebration of love and faith</div>
+    <div class="seal-wrap">
+
+      <div class="seal-outer"></div>
+      <div class="seal-inner"></div>
+
+      <div class="seal-top">✧</div>
+
+      <img
+        class="seal-monogram"
+        src="./AD-monogram.png"
+        alt="Alfiya and Danish monogram">
+
+      <div class="seal-bottom">✧</div>
+
+    </div>
+
+    <div class="eyebrow">
+      A celebration of love and faith
+    </div>
 
     <h1>Alfiya & Danish</h1>
 
-    <span class="opening-script">Together, InshaAllah</span>
+    <span class="opening-script">
+      Together, InshaAllah
+    </span>
 
     <p>
       With the blessings of Allah and our beloved families,
       we invite you to be part of our special celebration.
+      A beautiful new chapter awaits.
     </p>
 
     <button class="open-button" id="openInvite" type="button">
-      Open Invitation
+      Enter the Celebration
     </button>
 
     <div class="opening-note">
-      A LITTLE CELEBRATION OF OUR FOREVER
+      A BLESSED BEGINNING AWAITS
     </div>
 
   </div>
@@ -1151,13 +1516,19 @@ footer .copyright {
 
 </div>
 
-<!-- BACKGROUND MUSIC -->
+<!-- =====================================
+     BACKGROUND MUSIC
+===================================== -->
 
 <audio id="weddingMusic" loop preload="auto">
-  <source src="./Guzarish%20Satinder%20Sartaj%20Instrumental.mp3" type="audio/mpeg">
+  <source
+    src="./Guzarish%20Satinder%20Sartaj%20Instrumental.mp3"
+    type="audio/mpeg">
 </audio>
 
-<!-- NAVIGATION -->
+<!-- =====================================
+     NAVIGATION
+===================================== -->
 
 <header>
 
@@ -1178,15 +1549,18 @@ footer .copyright {
 
 <main>
 
-<!-- HERO -->
+<!-- =====================================
+     HERO
+===================================== -->
 
 <section class="hero" id="home">
 
   <div class="hero-content">
 
-    <img class="hero-monogram"
-         src="./AD-monogram.png"
-         alt="A and D monogram">
+    <img
+      class="hero-monogram"
+      src="./AD-monogram.png"
+      alt="A and D monogram">
 
     <div class="eyebrow">
       The beginning of a beautiful chapter
@@ -1212,11 +1586,15 @@ footer .copyright {
 
   </div>
 
-  <div class="scroll-cue">SCROLL TO EXPLORE ↓</div>
+  <div class="scroll-cue">
+    SCROLL TO EXPLORE ↓
+  </div>
 
 </section>
 
-<!-- OUR STORY -->
+<!-- =====================================
+     OUR STORY
+===================================== -->
 
 <section class="intro" id="story">
 
@@ -1248,21 +1626,29 @@ footer .copyright {
 
 </section>
 
-<!-- FAMILIES -->
+<!-- =====================================
+     FAMILIES
+===================================== -->
 
 <section class="family" id="family">
 
   <div class="inner">
 
     <div class="heading reveal">
-      <span class="kicker">Two families · One beautiful bond</span>
+
+      <span class="kicker">
+        Two families · One beautiful bond
+      </span>
+
       <h2>With the Blessings of Our Families</h2>
+
       <p>
         Surrounded by the love, duas and blessings
         of those who mean the world to us.
       </p>
+
     </div>
-    
+
     <div class="hosts reveal">
 
       <div class="host-title">
@@ -1279,51 +1665,68 @@ footer .copyright {
 
     </div>
 
-
     <div class="family-grid">
 
       <article class="family-card reveal">
+
         <div class="family-label">The Bride</div>
+
         <h3>Alfiya</h3>
+
         <p>Daughter of</p>
+
         <p>
           Mrs. Rabiyabi
           <br>&<br>
           Mr. Ashfaque Mukadam
         </p>
+
         <div class="family-small">
           With love and gratitude to her family
         </div>
+
       </article>
 
       <article class="family-card reveal">
+
         <div class="family-label">The Groom</div>
+
         <h3>Danish</h3>
+
         <p>Son of</p>
+
         <p>
           Mrs. Heena
           <br>&<br>
           Mr. Feroz Khan
         </p>
+
         <div class="family-small">
           With love and gratitude to his family
         </div>
+
       </article>
 
     </div>
+
   </div>
 
 </section>
 
-<!-- COUNTDOWN -->
+<!-- =====================================
+     COUNTDOWN
+===================================== -->
 
 <section class="countdown-section">
 
   <div class="inner reveal">
 
     <div class="heading">
+
       <span class="kicker">The countdown is on</span>
+
       <h2>Until Our Big Day</h2>
+
     </div>
 
     <div class="countdown" aria-live="polite">
@@ -1354,19 +1757,25 @@ footer .copyright {
 
 </section>
 
-<!-- CELEBRATIONS -->
+<!-- =====================================
+     WEDDING CELEBRATIONS
+===================================== -->
 
 <section class="events" id="events">
 
   <div class="inner">
 
     <div class="heading reveal">
+
       <span class="kicker">Save the dates</span>
+
       <h2>Our Wedding Celebrations</h2>
+
       <p>
         Four beautiful occasions, countless memories
         and a lifetime of duas. We cannot wait to celebrate with you.
       </p>
+
     </div>
 
     <div class="event-grid">
@@ -1579,41 +1988,49 @@ footer .copyright {
 
 </section>
 
-<!-- PHOTO WALL -->
+<!-- =====================================
+     PHOTO WALL
+===================================== -->
 
 <section class="gallery" id="gallery">
 
   <div class="inner">
 
     <div class="heading reveal">
+
       <span class="kicker">Moments to treasure</span>
+
       <h2>A Wall of Memories</h2>
+
       <p>
         A few photographs, a thousand emotions
         and memories we will carry into forever.
       </p>
+
     </div>
 
     <div class="photo-wall">
 
       <figure class="reveal">
-        <img src="./engagement1.jpg"
-             alt="Engagement memory one"
-             loading="lazy">
+        <img
+          src="./engagement1.jpg"
+          alt="Engagement memory one"
+          loading="lazy">
       </figure>
 
       <figure class="reveal">
-        <img src="./engagement2.jpg"
-             alt="Engagement memory two"
-             loading="lazy">
+        <img
+          src="./engagement2.jpg"
+          alt="Engagement memory two"
+          loading="lazy">
       </figure>
 
       <figure class="reveal">
-        <img src="./engagement3.jpg"
-             alt="Engagement memory three"
-             loading="lazy">
+        <img
+          src="./engagement3.jpg"
+          alt="Engagement memory three"
+          loading="lazy">
       </figure>
-
 
     </div>
 
@@ -1621,19 +2038,25 @@ footer .copyright {
 
 </section>
 
-<!-- BLESSINGS -->
+<!-- =====================================
+     BLESSINGS
+===================================== -->
 
 <section class="blessings" id="blessings">
 
   <div class="inner">
 
     <div class="heading reveal">
+
       <span class="kicker">Your duas mean the world</span>
+
       <h2>Leave Us Your Blessings</h2>
+
       <p>
         Share a heartfelt message, a dua or a few words of love.
         We would be delighted to read your wishes.
       </p>
+
     </div>
 
     <form
@@ -1643,7 +2066,9 @@ footer .copyright {
       target="blessingResponse">
 
       <div class="form-row">
+
         <label for="guestName">Your Name *</label>
+
         <input
           id="guestName"
           name="name"
@@ -1651,10 +2076,13 @@ footer .copyright {
           placeholder="Enter your name"
           maxlength="100"
           required>
+
       </div>
 
       <div class="form-row">
+
         <label for="relation">You Are</label>
+
         <select id="relation" name="relation">
           <option value="">Select (optional)</option>
           <option>Family</option>
@@ -1664,26 +2092,33 @@ footer .copyright {
           <option>Well-wisher</option>
           <option>Other</option>
         </select>
+
       </div>
 
       <div class="form-row">
+
         <label for="message">Your Blessing *</label>
+
         <textarea
           id="message"
           name="blessing"
           placeholder="Write your heartfelt wishes for Alfiya & Danish..."
           maxlength="1500"
           required></textarea>
+
       </div>
 
       <div class="honeypot" aria-hidden="true">
+
         <label for="website">Leave this field empty</label>
+
         <input
           id="website"
           name="website"
           type="text"
           tabindex="-1"
           autocomplete="off">
+
       </div>
 
       <button
@@ -1719,7 +2154,9 @@ footer .copyright {
 
 </main>
 
-<!-- FOOTER -->
+<!-- =====================================
+     FOOTER
+===================================== -->
 
 <footer>
 
@@ -1743,9 +2180,9 @@ footer .copyright {
 
 <script>
 
-/* ===================================
+/* =====================================
    OPENING SCREEN: BUBBLES & TRANSITION
-=================================== */
+===================================== */
 
 const opening = document.getElementById("opening");
 const openButton = document.getElementById("openInvite");
@@ -1756,16 +2193,19 @@ const reduceMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
 
-/* Create floating bubbles */
+/* Generate visible floating bubbles */
 
 if (!reduceMotion) {
-  for (let i = 0; i < 24; i++) {
+
+  for (let i = 0; i < 38; i++) {
+
     const bubble = document.createElement("span");
+
     bubble.className = "bubble";
 
-    const size = 9 + Math.random() * 32;
-    const duration = 9 + Math.random() * 15;
-    const delay = Math.random() * -20;
+    const size = 12 + Math.random() * 38;
+    const duration = 9 + Math.random() * 13;
+    const delay = Math.random() * -22;
     const left = Math.random() * 100;
 
     bubble.style.setProperty("--size", size + "px");
@@ -1774,7 +2214,9 @@ if (!reduceMotion) {
     bubble.style.setProperty("--left", left + "%");
 
     bubblesContainer.appendChild(bubble);
+
   }
+
 }
 
 /* Open invitation */
@@ -1786,37 +2228,50 @@ openButton.addEventListener("click", async () => {
   if (invitationOpened) return;
 
   invitationOpened = true;
+
   openButton.disabled = true;
 
   opening.classList.add("opened");
 
-  /* Start music from the user's tap */
+  /* Start background music from user interaction */
 
   try {
+
     music.volume = 0.5;
     await music.play();
+
   } catch (error) {
-    console.warn("Music playback was prevented:", error);
+
+    console.warn(
+      "Music playback was prevented:",
+      error
+    );
+
   }
 
-  /* Let the curtains complete their animation */
+  /* Curtains open and reveal the website */
 
   setTimeout(() => {
+
     opening.classList.add("hidden");
+
     document.body.classList.remove("locked");
+
   }, reduceMotion ? 100 : 1550);
 
-  /* Remove opening overlay from interaction */
+  /* Remove opening overlay after animation */
 
   setTimeout(() => {
+
     opening.style.display = "none";
+
   }, reduceMotion ? 300 : 2600);
 
 });
 
-/* ===================================
+/* =====================================
    COUNTDOWN
-=================================== */
+===================================== */
 
 const weddingDate = new Date(
   "2026-12-16T18:30:00+05:30"
@@ -1826,76 +2281,108 @@ function updateCountdown() {
 
   const distance = weddingDate - Date.now();
 
-  const ids = ["days", "hours", "minutes", "seconds"];
+  const ids = [
+    "days",
+    "hours",
+    "minutes",
+    "seconds"
+  ];
 
   if (distance <= 0) {
+
     ids.forEach(id => {
       document.getElementById(id).textContent = "00";
     });
+
     return;
+
   }
 
   const values = [
+
     Math.floor(distance / 86400000),
+
     Math.floor((distance / 3600000) % 24),
+
     Math.floor((distance / 60000) % 60),
+
     Math.floor((distance / 1000) % 60)
+
   ];
 
   ids.forEach((id, index) => {
+
     document.getElementById(id).textContent =
       String(values[index]).padStart(2, "0");
+
   });
 
 }
 
 updateCountdown();
+
 setInterval(updateCountdown, 1000);
 
-/* ===================================
+/* =====================================
    SCROLL REVEAL ANIMATIONS
-=================================== */
+===================================== */
 
 if ("IntersectionObserver" in window) {
 
-  const revealObserver = new IntersectionObserver(entries => {
+  const revealObserver = new IntersectionObserver(
+    entries => {
 
-    entries.forEach(entry => {
+      entries.forEach(entry => {
 
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
-      }
+        if (entry.isIntersecting) {
 
-    });
+          entry.target.classList.add("visible");
 
-  }, {
-    threshold: 0.12
-  });
+          revealObserver.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold:0.12
+    }
+  );
 
   document.querySelectorAll(".reveal").forEach(element => {
+
     revealObserver.observe(element);
+
   });
 
 } else {
 
   document.querySelectorAll(".reveal").forEach(element => {
+
     element.classList.add("visible");
+
   });
 
 }
 
-/* ===================================
+/* =====================================
    BLESSINGS FORM - GOOGLE SHEETS
-=================================== */
+===================================== */
 
 const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbz5VARKb8wvnHrgr6s-xeXsVaWk6pSsVd2Okqg766o3h3ZgX-Y35yMWOztOR-MpdycH/exec";
 
 const form = document.getElementById("blessingForm");
-const statusMessage = document.getElementById("blessingStatus");
-const submitButton = document.getElementById("blessingSubmit");
-const responseFrame = document.getElementById("blessingResponse");
+
+const statusMessage =
+  document.getElementById("blessingStatus");
+
+const submitButton =
+  document.getElementById("blessingSubmit");
+
+const responseFrame =
+  document.getElementById("blessingResponse");
 
 let submissionPending = false;
 let responseTimeout;
@@ -1906,23 +2393,31 @@ form.addEventListener("submit", event => {
 
   if (!form.reportValidity()) return;
 
-  if (document.getElementById("website").value.trim()) return;
+  if (document.getElementById("website").value.trim()) {
+    return;
+  }
 
   if (submissionPending) return;
 
   if (!GOOGLE_SCRIPT_URL.endsWith("/exec")) {
+
     statusMessage.textContent =
       "The blessings form is not configured.";
+
     return;
+
   }
 
   form.action = GOOGLE_SCRIPT_URL;
 
   submissionPending = true;
+
   submitButton.disabled = true;
+
   submitButton.textContent = "Sending...";
 
-  statusMessage.textContent = "Sending your blessing...";
+  statusMessage.textContent =
+    "Sending your blessing...";
 
   responseFrame.onload = () => {
 
@@ -1933,6 +2428,7 @@ form.addEventListener("submit", event => {
     submissionPending = false;
 
     submitButton.disabled = false;
+
     submitButton.textContent = "Send";
 
     statusMessage.textContent =
@@ -1949,6 +2445,7 @@ form.addEventListener("submit", event => {
     submissionPending = false;
 
     submitButton.disabled = false;
+
     submitButton.textContent = "Send";
 
     statusMessage.textContent =
