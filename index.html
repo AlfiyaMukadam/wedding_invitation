@@ -5,12 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#073d42">
-
-<title>Alfiya ♡ Danish | Our Forever Begins — 2026</title>
-<meta name="description" content="A celebration of love, faith and forever. Join Alfiya and Danish for their wedding celebrations, 14–18 December 2026.">
-<meta property="og:title" content="Alfiya ♡ Danish | Our Forever Begins">
-<meta property="og:description" content="Five days of love, laughter, duas and beautiful beginnings. You're invited!">
-<meta property="og:type" content="website">
+<title>Alfiya ♡ Danish | Mehfil-e-Noor — Our Forever Begins</title>
+<meta name="description" content="A celebration of love, faith and forever. Join Alfiya and Danish, 14–18 December 2026.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +21,6 @@
   --paper: #fbf6eb;
   --ink: #183c39;
   --muted: #71817a;
-  --haldi: #a66c14;
-  --mehendi: #426b50;
 }
 
 * {
@@ -53,20 +47,27 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* COVER */
+/* OPENING COVER */
 
 .hero {
   min-height: 100svh;
+  min-height: 100vh;
   display: grid;
   place-items: center;
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  padding: 30px 20px;
+  padding: 35px 20px;
   text-align: center;
   color: #f9f3e7;
   background:
-    radial-gradient(ellipse at 50% 45%, #1a6564 0%, #0b484d 46%, #052c32 100%);
+    linear-gradient(
+      135deg,
+      rgba(3, 25, 29, .62),
+      rgba(3, 35, 37, .34),
+      rgba(3, 25, 29, .64)
+    ),
+    url("./handpicture.jpg") center 42% / cover no-repeat;
 }
 
 .hero::before,
@@ -110,8 +111,8 @@ a {
 }
 
 .brand-mark {
-  width: clamp(120px, 20vw, 175px);
-  height: clamp(120px, 20vw, 175px);
+  width: clamp(115px, 20vw, 165px);
+  height: clamp(115px, 20vw, 165px);
   margin: 24px auto;
   border-radius: 50%;
   display: grid;
@@ -134,14 +135,14 @@ a {
   font-size: clamp(65px, 13vw, 116px);
   line-height: 1.12;
   color: #f7e8d0;
-  text-shadow: 0 3px 25px #0003;
+  text-shadow: 0 3px 25px #0008;
   margin: 10px 0;
 }
 
 .amp {
   font-family: 'Cormorant Garamond', serif;
   font-size: .55em;
-  color: var(--gold);
+  color: var(--gold-light);
   font-style: italic;
 }
 
@@ -201,16 +202,16 @@ a {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
   font-style: italic;
-  color: #d9c69f;
+  color: #f0dfbd;
 }
 
-/* HIDDEN BACKGROUND AUDIO */
+/* HIDDEN MUSIC */
 
 #weddingMusic {
   display: none;
 }
 
-/* MAIN PAGE */
+/* MAIN CONTENT */
 
 main {
   display: none;
@@ -242,7 +243,6 @@ main.open {
   font-size: 10px;
   letter-spacing: .13em;
   text-transform: uppercase;
-  transition: color .2s;
 }
 
 .nav a:hover {
@@ -394,12 +394,18 @@ section {
 
 .event-photo {
   width: 100%;
-  height: 245px;
+  height: 280px;
   display: block;
   object-fit: cover;
+  object-position: center;
   margin: 0 auto 24px;
-  border: 1px solid #c6a36a66;
+  border: 1px solid #c6a36a99;
   background: #e8e0d0;
+  transition: transform .5s ease;
+}
+
+.event:hover .event-photo {
+  transform: scale(1.025);
 }
 
 .event-icon {
@@ -732,7 +738,7 @@ footer p {
   letter-spacing: .14em;
 }
 
-/* REVEAL ANIMATIONS */
+/* ANIMATIONS */
 
 .reveal {
   opacity: 0;
@@ -774,7 +780,7 @@ footer p {
   }
 
   .event-photo {
-    height: 250px;
+    height: 260px;
   }
 
   .event .tagline {
@@ -807,6 +813,7 @@ footer p {
 @media (max-width: 420px) {
   .hero {
     padding: 24px 15px;
+    background-position: center center;
   }
 
   .hero::before {
@@ -833,7 +840,7 @@ footer p {
   }
 
   .event-photo {
-    height: 220px;
+    height: 230px;
   }
 }
 
@@ -854,12 +861,12 @@ footer p {
 
 <body>
 
-<!-- BACKGROUND MUSIC: NO VISIBLE PLAYER OR CONTROLS -->
+<!-- HIDDEN BACKGROUND MUSIC -->
 <audio id="weddingMusic" preload="auto" loop playsinline>
   <source src="./Guzarish%20Satinder%20Sartaj%20Instrumental.mp3" type="audio/mpeg">
 </audio>
 
-<!-- COVER -->
+<!-- OPENING COVER -->
 <header class="hero" id="cover">
   <div class="hero-inner">
 
@@ -932,7 +939,6 @@ footer p {
     </p>
 
     <div class="names">
-
       <div class="person">
         <h3>Alfiya</h3>
         <p>D/o Mrs. &amp; Mr. Rabiyabi<br>&amp; Ashfaque Mukadam</p>
@@ -944,7 +950,6 @@ footer p {
         <h3>Danish</h3>
         <p>S/o Mrs. &amp; Mr. Heena<br>&amp; Feroz Ismail Khan</p>
       </div>
-
     </div>
 
     <div class="ornament">❧</div>
@@ -964,7 +969,9 @@ footer p {
 
       <div style="text-align:center">
         <div class="kicker">Four beautiful occasions · One unforgettable beginning</div>
+
         <h2 class="section-title">The Wedding Festivities</h2>
+
         <p class="body-copy">
           From the colours of Haldi to the joy of Mehendi, the blessings
           of Nikah and the warmth of Walima — we would love to celebrate
@@ -979,10 +986,9 @@ footer p {
 
           <img
             class="event-photo"
-            src="https://cdn0.weddingwire.in/vendor/2690/3_2/1280/png/screenshot-2023-07-19-135025_15_452690-168983130681096.jpeg"
-            alt="Haldi ceremony with turmeric, yellow flowers and festive decor"
+            src="./haldi_image.jpg"
+            alt="Haldi celebration"
             loading="lazy"
-            onerror="this.style.display='none'"
           >
 
           <div class="event-icon">✺</div>
@@ -1011,10 +1017,9 @@ footer p {
 
           <img
             class="event-photo"
-            src="https://weddingstylist.in/assets/mehendi-ceremony-outfit-styling-india-BlHJtaev.webp"
-            alt="Mehendi celebration with bridal henna and festive styling"
+            src="./mehendi_image.jpg"
+            alt="Mehendi celebration"
             loading="lazy"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1000&q=85'"
           >
 
           <div class="event-icon">❧</div>
@@ -1046,10 +1051,9 @@ footer p {
 
           <img
             class="event-photo"
-            src="https://res.cloudinary.com/cloudstg/images/f_auto%2Cq_auto/v1717913172/Zarra-and-Haider-Nikkah-Ceremony-together-lux-studios-in-Sacramento-CA/Zarra-and-Haider-Nikkah-Ceremony-together-lux-studios-in-Sacramento-CA.webp?_i=AA"
-            alt="Elegant Islamic Nikah ceremony with beautiful wedding decor"
+            src="./nikah_image.jpeg"
+            alt="Nikah celebration"
             loading="lazy"
-            onerror="this.style.display='none'"
           >
 
           <div class="event-icon">۞</div>
@@ -1085,10 +1089,9 @@ footer p {
 
           <img
             class="event-photo"
-            src="https://i0.wp.com/elitecaterers.in/wp-content/uploads/2018/07/Professional-Catering-Service-Hyderabad-Dining-Hall-Setup.jpeg?resize=960%2C639&ssl=1"
-            alt="Elegant Walima reception dining hall and celebration decor"
+            src="./walima_image.png"
+            alt="Ta'am-al-Walima celebration"
             loading="lazy"
-            onerror="this.style.display='none'"
           >
 
           <div class="event-icon">✧</div>
@@ -1167,6 +1170,7 @@ footer p {
   <section id="schedule" class="reveal">
 
     <div style="text-align:center">
+
       <div class="kicker">Save these beautiful dates</div>
 
       <h2 class="section-title">
@@ -1177,6 +1181,7 @@ footer p {
         Four special gatherings, each filled with its own colour,
         joy and blessings.
       </p>
+
     </div>
 
     <div class="schedule-list">
@@ -1254,11 +1259,8 @@ footer p {
           </iframe>
         </div>
 
-        <a
-          class="pill"
-          target="_blank"
-          rel="noopener"
-          href="https://www.google.com/maps/dir/?api=1&destination=Al-Madina%20Building%2C%20Kadar%20Palace%2C%20Kausa%2C%20Mumbra%20400612">
+        <a class="pill" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/dir/?api=1&destination=Al-Madina%20Building%2C%20Kadar%20Palace%2C%20Kausa%2C%20Mumbra%20400612">
           Get directions ↗
         </a>
 
@@ -1285,11 +1287,8 @@ footer p {
           </iframe>
         </div>
 
-        <a
-          class="pill"
-          target="_blank"
-          rel="noopener"
-          href="https://www.google.com/maps/dir/?api=1&destination=Al-Madina%20Building%2C%20Kadar%20Palace%2C%20Kausa%2C%20Mumbra%20400612">
+        <a class="pill" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/dir/?api=1&destination=Al-Madina%20Building%2C%20Kadar%20Palace%2C%20Kausa%2C%20Mumbra%20400612">
           Get directions ↗
         </a>
 
@@ -1318,11 +1317,8 @@ footer p {
           </iframe>
         </div>
 
-        <a
-          class="pill"
-          target="_blank"
-          rel="noopener"
-          href="https://www.google.com/maps/dir/?api=1&destination=Noor%20Baug%20Hall%2C%20Behind%20Shimla%20Park%2C%20Opposite%20Talao%20Pali%2C%20Kausa%2C%20Mumbra%20400612">
+        <a class="pill" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/dir/?api=1&destination=Noor%20Baug%20Hall%2C%20Behind%20Shimla%20Park%2C%20Opposite%20Talao%20Pali%2C%20Kausa%2C%20Mumbra%20400612">
           Get directions ↗
         </a>
 
@@ -1351,11 +1347,8 @@ footer p {
           </iframe>
         </div>
 
-        <a
-          class="pill"
-          target="_blank"
-          rel="noopener"
-          href="https://www.google.com/maps/dir/?api=1&destination=Noori%20Hall%2C%20Noori%20Baba%20Dargah%20Road%2C%20Makhmali%20Tank%20Road%2C%20Thane%20West%2C%20Maharashtra%20400601">
+        <a class="pill" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/dir/?api=1&destination=Noori%20Hall%2C%20Noori%20Baba%20Dargah%20Road%2C%20Makhmali%20Tank%20Road%2C%20Thane%20West%2C%20Maharashtra%20400601">
           Get directions ↗
         </a>
 
@@ -1402,8 +1395,7 @@ footer p {
       <textarea
         id="message"
         placeholder="Your blessing or message"
-        required>
-      </textarea>
+        required></textarea>
 
       <button class="gold-btn" type="submit">
         Send your blessings via WhatsApp
@@ -1412,8 +1404,8 @@ footer p {
     </form>
 
     <p class="small-note">
-      The WhatsApp button will open a pre-filled message.
-      The family WhatsApp number must be configured before publishing.
+      The WhatsApp button requires the family WhatsApp number
+      to be configured in the website code.
     </p>
 
   </section>
@@ -1517,6 +1509,7 @@ document.getElementById('blessingForm').addEventListener('submit', event => {
 
   event.preventDefault();
 
+  // Replace with the family WhatsApp number, including country code.
   const phone = 'ADD_WHATSAPP_NUMBER';
 
   if (phone === 'ADD_WHATSAPP_NUMBER') {
