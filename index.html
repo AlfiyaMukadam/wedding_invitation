@@ -2001,6 +2001,280 @@ body {font-family:var(--sans)}
   text-shadow:0 3px 24px rgba(0,0,0,.25);
 }
 
+
+/* FINAL RESPONSIVE ALIGNMENT — opening cover + revealed hero */
+html, body {width:100%;max-width:100%;overflow-x:clip}
+img,video,iframe,canvas,svg {max-width:100%}
+.opening {
+  width:100%;height:100vh;height:100svh;height:100dvh;min-height:0;overflow:hidden;
+  padding:max(12px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));
+}
+.opening-card {width:min(100%,760px);max-width:760px;max-height:100%;min-height:0;overflow:hidden;justify-content:center;padding:clamp(12px,2.2vh,25px) clamp(18px,3vw,42px)}
+.opening h1.opening-couple {width:100%;max-width:100%;justify-content:center;align-items:center;flex-wrap:nowrap;gap:clamp(5px,1vw,16px);font-size:clamp(48px,6.4vw,88px);line-height:.98;white-space:nowrap}
+.opening-couple .person-name {min-width:0;white-space:nowrap;font-size:1em}
+.opening-couple .name-amp {flex:0 0 auto;font-size:clamp(34px,4.5vw,58px)}
+.opening .bismillah {margin:clamp(5px,1.2vh,13px) 0 5px}
+.opening-name-label {margin-top:clamp(5px,1.2vh,13px)}
+.opening-script {margin-top:clamp(5px,1.1vh,12px)}
+.opening-divider {margin:clamp(6px,1.2vh,13px) auto 6px}
+.opening-card p {max-width:430px;margin:clamp(6px,1.1vh,12px) auto;line-height:1.55}
+.opening-seal-wrap {margin-top:clamp(6px,1.2vh,13px)}
+.opening-note {margin-top:clamp(5px,1vh,11px)}
+header {width:100%;min-width:0}
+nav {min-width:0;max-width:100%}
+.hero {min-height:calc(100dvh - 68px);padding:clamp(28px,5vh,58px) 20px;display:grid;align-items:center}
+.hero-content {width:min(100%,820px);max-width:100%}
+.hero-monogram {width:clamp(48px,8vh,76px);height:clamp(48px,8vh,76px);margin:0 auto clamp(10px,2vh,20px)}
+.hero h1 {margin-top:clamp(8px,1.8vh,18px);font-size:clamp(58px,8vw,104px);line-height:.98}
+.hero-subtitle {margin-top:clamp(12px,2.5vh,24px)}
+.hero-date {margin-top:clamp(8px,1.8vh,16px)}
+.hero .rule {margin:clamp(12px,2.2vh,22px) auto}
+.hero-blessing {margin:0}
+.scroll-cue {bottom:max(12px,env(safe-area-inset-bottom))}
+section {min-width:0;overflow-wrap:anywhere}
+.inner,.family-grid,.event-grid,.photo-wall,.hosts,.blessing-form,.remembrance {min-width:0;max-width:100%}
+@media(min-width:651px) {
+  header {min-height:68px;padding:9px clamp(18px,4vw,60px)}
+}
+@media(max-width:650px) {
+  header {padding:8px 12px}
+  nav {gap:8px 12px;justify-content:center}
+  nav a {font-size:clamp(6px,1.7vw,7px);white-space:nowrap}
+  .opening {padding:max(10px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left))}
+  .opening-card {width:min(100%,470px);padding:clamp(9px,1.7vh,16px) 14px}
+  .opening-topline {font-size:clamp(5px,1.45vw,6px);letter-spacing:.12em}
+  .opening .bismillah {font-size:clamp(23px,4vh,30px)}
+  .opening-name-label {font-size:clamp(12px,3.5vw,15px)}
+  .opening h1.opening-couple {flex-direction:column;flex-wrap:nowrap;gap:0;font-size:clamp(48px,13vw,68px);line-height:.82;white-space:normal}
+  .opening-couple .person-name {font-size:1em;white-space:nowrap}
+  .opening-couple .name-amp {font-size:clamp(28px,8vw,40px);line-height:.72;margin:1px 0}
+  .opening-script {font-size:clamp(14px,4vw,19px)}
+  .opening-date {font-size:clamp(17px,4.8vw,22px);padding:5px 9px}
+  .opening-card p {max-width:300px;font-size:clamp(8px,2.2vw,9px);line-height:1.4}
+  .open-button {min-height:36px;padding:0 16px;font-size:7px}
+  .opening-seal-wrap {margin-top:6px}
+  .opening-seal {width:30px;height:30px}
+  .opening-seal img {width:20px;height:20px}
+  .seal-caption {font-size:11px}
+  .opening-note {font-size:5px;letter-spacing:.1em}
+  .hero {min-height:calc(100dvh - 88px);padding:28px 16px 44px}
+  .hero-monogram {width:clamp(48px,13vw,64px);height:clamp(48px,13vw,64px);margin-bottom:10px}
+  .hero h1 {font-size:clamp(57px,15vw,82px);line-height:.92}
+  .hero-amp {font-size:clamp(35px,10vw,52px);line-height:.85}
+  .hero-subtitle {margin-top:13px;font-size:7px;letter-spacing:.2em}
+  .hero-date {font-size:clamp(21px,6vw,27px);margin-top:9px}
+  .hero .rule {margin:13px auto}
+  .hero-blessing {font-size:clamp(15px,4vw,18px)}
+  .scroll-cue {bottom:12px;font-size:7px}
+  section {padding:clamp(46px,8vw,66px) 15px}
+}
+@media(max-width:380px) {
+  .opening h1.opening-couple {font-size:clamp(43px,12vw,51px)}
+  .opening .bismillah {font-size:22px}
+  .opening-script {font-size:14px}
+  .opening-date {font-size:17px}
+  .hero {min-height:calc(100dvh - 94px);padding-left:12px;padding-right:12px}
+  .hero h1 {font-size:clamp(53px,14vw,61px)}
+}
+@media(max-height:700px) {
+  .opening-card {padding-top:7px;padding-bottom:7px}
+  .opening .bismillah {margin-top:3px;margin-bottom:3px}
+  .opening-name-label {margin-top:4px}
+  .opening-script {margin-top:4px}
+  .opening-divider {margin-top:5px;margin-bottom:4px}
+  .opening-card p {margin-top:4px;margin-bottom:5px}
+  .opening-seal-wrap {margin-top:4px}
+  .opening-note {margin-top:4px}
+  .hero-monogram {margin-bottom:8px}
+  .hero-subtitle {margin-top:10px}
+  .hero-date {margin-top:7px}
+  .hero .rule {margin:10px auto}
+}
+@media(max-width:650px) and (max-height:740px) {
+  .opening h1.opening-couple {font-size:clamp(40px,11vw,54px)}
+  .opening-couple .name-amp {font-size:29px}
+  .opening-seal-wrap {margin-top:3px}
+  .opening-seal {width:27px;height:27px}
+  .opening-seal img {width:18px;height:18px}
+}
+@media(orientation:landscape) and (max-height:500px) {
+  .opening-card {width:min(100%,800px);padding:5px 24px}
+  .opening h1.opening-couple {flex-direction:row;font-size:clamp(38px,8vh,54px);line-height:.9}
+  .opening-couple .name-amp {font-size:32px}
+  .opening .bismillah {font-size:20px}
+  .opening-note {display:none}
+  .hero {min-height:calc(100dvh - 64px);padding:14px 18px 28px}
+  .hero-monogram {width:38px;height:38px;margin-bottom:4px}
+  .hero h1 {font-size:52px}
+  .hero-amp {font-size:34px}
+  .hero-subtitle {margin-top:6px}
+  .hero-date {margin-top:4px;font-size:22px}
+  .hero .rule {margin:6px auto}
+}
+
+
+/* FINAL DEVICE FIT + LIGHTER FOOTER FINISH */
+:root {
+  --footer-sage:#dce9e4;
+  --footer-ink:#17464a;
+}
+
+/* Keep every section within the device width; long content remains naturally scrollable. */
+html, body {max-width:100%;width:100%;overflow-x:hidden}
+body {min-width:320px}
+main, section, header, footer, .inner, .hero-content {min-width:0;max-width:100%}
+section {scroll-margin-top:78px}
+
+/* Opening invitation: one complete, non-scrolling screen on phones and laptops. */
+.opening {
+  height:100vh;
+  height:100svh;
+  height:100dvh;
+  min-height:0;
+  padding:clamp(9px,2.2vh,22px) clamp(10px,2vw,24px);
+}
+.opening-card {
+  width:min(100%,760px);
+  max-width:760px;
+  height:auto;
+  max-height:100%;
+  min-height:0;
+  overflow:hidden;
+  flex:0 1 auto;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-items:center;
+  gap:clamp(3px,1.05vh,12px);
+  padding:clamp(10px,2.2vh,22px) clamp(14px,3vw,38px);
+}
+.opening-card > * {flex-shrink:0}
+.opening-topline {font-size:clamp(5px,.72vw,8px);line-height:1.3}
+.opening .bismillah {font-size:clamp(23px,4.1vh,37px);line-height:1.05;margin:0}
+.opening-eyebrow {font-size:clamp(6px,.78vw,9px);line-height:1.4}
+.opening-name-label {margin:0;font-size:clamp(12px,1.9vh,18px);line-height:1.2}
+.opening h1.opening-couple {
+  margin:0;
+  width:100%;
+  font-size:clamp(48px,7.1vw,92px);
+  line-height:.95;
+  gap:clamp(5px,1.2vw,16px);
+}
+.opening-couple .name-amp {font-size:clamp(32px,4.7vw,58px);line-height:.9}
+.opening-script {margin:0;font-size:clamp(15px,2.4vh,24px);line-height:1.15}
+.opening-divider {margin:clamp(3px,.8vh,9px) auto}
+.opening-date {font-size:clamp(18px,3vh,29px);padding:3px 10px;line-height:1.2}
+.opening-card p {max-width:430px;margin:0 auto;font-size:clamp(8px,1.2vh,10px);line-height:1.45}
+.open-button {min-height:36px;padding:0 20px}
+.opening-seal-wrap {margin:0;gap:4px}
+.opening-seal {width:clamp(27px,4.6vh,43px);height:clamp(27px,4.6vh,43px)}
+.opening-seal img {width:68%;height:68%}
+.seal-caption {font-size:clamp(11px,1.8vh,15px)}
+.opening-note {margin:0;font-size:clamp(5px,.65vw,7px);line-height:1.3}
+
+/* Revealed hero: fit the visible browser viewport without clipping its content. */
+.hero {
+  min-height:calc(100vh - 68px);
+  min-height:calc(100svh - 68px);
+  min-height:calc(100dvh - 68px);
+  padding:clamp(28px,5vh,58px) clamp(14px,3vw,30px) clamp(42px,7vh,70px);
+}
+.hero-content {width:min(100%,820px);padding:0 8px}
+.hero-monogram {width:clamp(45px,8vh,76px);height:clamp(45px,8vh,76px);margin:0 auto clamp(8px,1.8vh,18px)}
+.hero h1 {font-size:clamp(52px,8vw,100px);line-height:.98;overflow-wrap:normal}
+.hero-subtitle {font-size:clamp(7px,.9vw,9px);letter-spacing:clamp(.12em,.25vw,.3em)}
+.hero-date {font-size:clamp(20px,2.6vw,29px)}
+.hero .rule {margin:clamp(10px,2vh,20px) auto}
+.hero-blessing {font-size:clamp(15px,1.7vw,19px);line-height:1.5}
+
+/* Flexible grids and media: no fixed-width children on narrow screens. */
+.family-grid, .event-grid, .photo-wall {width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
+.family-card, .event-card, .hosts, .remembrance, .blessing-form, figure {min-width:0;max-width:100%}
+.event-card img, .photo-wall img, .event-image-frame img {max-width:100%}
+input, textarea, select, button {max-width:100%}
+
+/* A lighter muted-sage footer makes the monogram stand out while retaining the palette. */
+footer {
+  background:var(--footer-sage);
+  color:var(--footer-ink);
+  padding:clamp(38px,6vh,58px) 18px clamp(26px,4vh,36px);
+}
+footer::before {border-color:rgba(23,70,74,.24)}
+footer img {
+  width:clamp(62px,8vw,78px);
+  height:clamp(62px,8vw,78px);
+  padding:7px;
+  border-radius:50%;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(198,163,107,.55);
+  object-fit:contain;
+}
+footer h2 {color:var(--footer-ink);font-size:clamp(34px,4.5vw,45px)}
+.footer-script {color:#8b6a3d;font-size:clamp(29px,3.7vw,36px)}
+footer p {color:#365d5d;font-size:clamp(8px,.9vw,9px);line-height:1.7}
+footer .copyright {color:#607b78}
+
+@media(max-width:650px) {
+  .opening {padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}
+  .opening-card {width:min(100%,470px);gap:clamp(2px,.65vh,6px);padding:clamp(8px,1.5vh,13px) 13px}
+  .opening-topline {font-size:clamp(5px,1.4vw,6px);letter-spacing:.1em}
+  .opening .bismillah {font-size:clamp(21px,3.7vh,29px)}
+  .opening-eyebrow {font-size:6px;letter-spacing:.16em}
+  .opening-name-label {font-size:clamp(11px,3.2vw,14px)}
+  .opening h1.opening-couple {flex-direction:column;gap:0;font-size:clamp(43px,12vw,64px);line-height:.8}
+  .opening-couple .person-name {font-size:1em;white-space:nowrap}
+  .opening-couple .name-amp {font-size:clamp(25px,7vw,36px);line-height:.72;margin:0}
+  .opening-script {font-size:clamp(13px,3.7vw,17px)}
+  .opening-date {font-size:clamp(16px,4.5vw,21px);padding:2px 7px}
+  .opening-card p {max-width:290px;font-size:8px;line-height:1.35}
+  .open-button {min-height:33px;padding:0 15px;font-size:7px}
+  .opening-seal {width:27px;height:27px}
+  .seal-caption {font-size:10px}
+  .opening-note {font-size:5px;letter-spacing:.08em}
+  .hero {min-height:calc(100svh - 88px);min-height:calc(100dvh - 88px);padding:25px 14px 42px}
+  .hero-monogram {width:clamp(42px,12vw,58px);height:clamp(42px,12vw,58px);margin-bottom:8px}
+  .hero h1 {font-size:clamp(48px,13.5vw,76px);line-height:.92}
+  .hero-amp {font-size:clamp(31px,8.5vw,46px)}
+  .hero-subtitle {margin-top:10px;font-size:6px;letter-spacing:.15em}
+  .hero-date {margin-top:7px;font-size:clamp(19px,5.4vw,25px)}
+  .hero .rule {margin:10px auto}
+  .hero-blessing {font-size:clamp(14px,3.8vw,17px)}
+  .scroll-cue {bottom:max(9px,env(safe-area-inset-bottom));font-size:6px}
+  section {padding:clamp(42px,8vw,62px) 14px}
+  .family-grid, .event-grid {grid-template-columns:minmax(0,1fr)}
+  .photo-wall {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .heading h2 {font-size:clamp(34px,9vw,48px)}
+  .heading p, .intro-copy {font-size:10px;line-height:1.85}
+  footer {padding:40px 18px 28px}
+  footer::before {inset:10px}
+  footer img {width:64px;height:64px}
+  footer p {font-size:8px;letter-spacing:.06em}
+  footer .copyright {font-size:7px;letter-spacing:.08em;margin-top:22px}
+}
+
+@media(max-width:360px) {
+  .opening h1.opening-couple {font-size:clamp(39px,11.5vw,44px)}
+  .opening-card {padding-left:10px;padding-right:10px}
+  nav {gap:8px 9px}
+  nav a {font-size:6px}
+  .hero h1 {font-size:clamp(45px,13vw,52px)}
+  .hero-subtitle {letter-spacing:.1em}
+}
+
+@media(orientation:landscape) and (max-height:520px) {
+  .opening-card {width:min(100%,820px);gap:2px;padding:5px 22px}
+  .opening h1.opening-couple {flex-direction:row;font-size:clamp(38px,8vh,54px);line-height:.9}
+  .opening-couple .name-amp {font-size:clamp(27px,6vh,36px)}
+  .opening .bismillah {font-size:20px}
+  .opening-note {display:none}
+  .hero {min-height:calc(100svh - 64px);min-height:calc(100dvh - 64px);padding:12px 18px 26px}
+  .hero-monogram {width:36px;height:36px;margin-bottom:4px}
+  .hero h1 {font-size:clamp(44px,10vh,58px)}
+  .hero-subtitle {margin-top:5px}
+  .hero-date {margin-top:3px;font-size:20px}
+  .hero .rule {margin:5px auto}
+}
+
 </style>
 </head>
 
