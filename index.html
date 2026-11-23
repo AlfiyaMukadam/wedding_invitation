@@ -3662,6 +3662,107 @@ nav a { flex-shrink:0; }
 }
 
 </style>
+
+<style id="opening-page-editorial-revamp">
+/* MEHFIL-E-NOOR — opening page editorial treatment */
+.opening{
+  padding:clamp(22px,4.5vh,48px) 18px !important;
+  background:
+    linear-gradient(135deg,rgba(3,27,31,.82),rgba(5,47,52,.77) 52%,rgba(7,37,41,.86)),
+    url("./handpicture.jpg") center/cover no-repeat,
+    #082f34 !important;
+}
+.opening::before{inset:13px !important;border-color:rgba(218,194,151,.56) !important}
+.opening::after{inset:21px !important;border-color:rgba(218,194,151,.22) !important}
+.opening-card{
+  width:min(100%,620px) !important;
+  max-height:calc(100svh - 76px) !important;
+  padding:clamp(25px,4.2vh,43px) clamp(22px,5vw,52px) clamp(20px,3.5vh,32px) !important;
+  overflow-y:auto !important;
+  border:1px solid rgba(211,184,137,.66) !important;
+  outline:1px solid rgba(211,184,137,.22) !important;
+  outline-offset:7px !important;
+  background:linear-gradient(155deg,rgba(7,49,54,.89),rgba(3,35,40,.88)) !important;
+  box-shadow:0 28px 90px rgba(0,0,0,.38),inset 0 0 50px rgba(226,207,171,.035) !important;
+  backdrop-filter:blur(13px) !important;-webkit-backdrop-filter:blur(13px) !important;
+}
+.opening-card::before{
+  content:"";display:block;width:clamp(44px,7vw,66px);height:1px;margin:0 auto 15px;
+  background:linear-gradient(90deg,transparent,#c8a977,transparent);opacity:.9
+}
+.opening-topline{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;color:#d9c29c !important;font-size:8px !important;letter-spacing:.24em !important}
+.opening-topline-name{font-weight:600}.opening-topline-star{color:#c7a675;font-size:13px}.opening-hijri{color:rgba(236,224,201,.68)}
+.opening .bismillah{margin:clamp(17px,2.7vh,25px) 0 10px !important;color:#d9c39d !important;font-size:clamp(37px,5vw,47px) !important;text-shadow:none !important}
+.opening-eyebrow{color:rgba(232,216,188,.78) !important;font-size:8px !important;letter-spacing:.2em !important;line-height:1.8 !important}
+.opening-name-label{margin-top:clamp(19px,3vh,29px) !important;color:#d5c4a5 !important;font:italic clamp(15px,2.4vw,18px)/1.5 var(--serif) !important;letter-spacing:.045em !important}
+.opening h1.opening-couple{
+  display:flex !important;flex-wrap:wrap !important;justify-content:center !important;align-items:center !important;
+  gap:3px clamp(8px,1.6vw,17px) !important;margin:12px 0 0 !important;
+  color:#f0e4cf !important;font:400 clamp(40px,6.7vw,69px)/1.1 var(--serif) !important;
+  letter-spacing:-.025em !important;text-shadow:0 3px 20px rgba(0,0,0,.18) !important;
+}
+.opening h1.opening-couple .person-name{white-space:nowrap}
+.opening h1.opening-couple .name-amp{color:#c9a979 !important;font:italic 400 .78em/1 var(--script) !important;padding:0 3px}
+.opening-script{display:block !important;max-width:450px !important;margin:13px auto 0 !important;color:#e4d6bc !important;font:italic clamp(18px,2.7vw,23px)/1.45 var(--serif) !important;letter-spacing:.01em !important}
+.opening-divider{width:min(220px,58%) !important;margin:clamp(17px,2.6vh,24px) auto 13px !important;color:#c9a979 !important;gap:13px !important}
+.opening-divider::before,.opening-divider::after{background:linear-gradient(90deg,transparent,rgba(201,169,121,.72),transparent) !important}
+.opening-date{display:flex;justify-content:center;align-items:baseline;gap:10px;color:#f0e5d2 !important;font:400 clamp(21px,3.3vw,28px)/1.2 var(--serif) !important;letter-spacing:.03em !important}
+.opening-date .date-day{font-size:1.22em;color:#d8bd8e}.opening-date .date-month{font:600 9px var(--sans);letter-spacing:.28em}.opening-date .date-year{font:400 14px var(--serif);letter-spacing:.13em;color:#d8c9af}
+.opening-date-caption{margin-top:8px;color:rgba(223,207,178,.58);font:600 7px var(--sans);letter-spacing:.22em}
+.opening-card p.opening-invitation-copy{max-width:410px !important;margin:clamp(15px,2.2vh,21px) auto 0 !important;color:rgba(249,244,234,.9) !important;font:400 clamp(11px,1.5vw,12px)/1.9 var(--sans) !important;letter-spacing:.015em}
+.opening-card p.opening-dua{max-width:430px !important;margin:9px auto 0 !important;color:rgba(221,205,176,.77) !important;font:italic clamp(10px,1.4vw,11px)/1.85 var(--serif) !important;letter-spacing:.01em}
+.opening-dua em{color:#e0c99f;font-style:italic}
+.opening-action-row{display:flex;justify-content:center;margin-top:clamp(16px,2.5vh,23px)}
+.opening .open-button{margin:0 !important}
+.opening-seal-wrap{margin:clamp(15px,2.2vh,21px) auto 0 !important;gap:7px !important}
+.opening-seal{width:48px !important;height:48px !important;border-color:rgba(211,184,137,.65) !important;background:rgba(11,54,57,.6) !important;box-shadow:none !important;animation:none !important}
+.opening-seal::before{inset:4px !important;border-color:rgba(211,184,137,.38) !important}.opening-seal::after{display:none !important}
+.opening-seal img{width:31px !important;height:31px !important;filter:brightness(0) invert(1) !important;opacity:.9 !important}
+.opening .seal-caption{color:#d7c19b !important;font:italic 13px var(--serif) !important;letter-spacing:.055em !important}
+.opening-note{margin-top:14px !important;color:rgba(222,207,181,.54) !important;font-size:7px !important;letter-spacing:.2em !important}
+.opening-ornament{width:260px !important;height:260px !important;border-color:rgba(212,187,145,.12) !important}
+.opening-ornament::before,.opening-ornament::after{border-color:rgba(212,187,145,.11) !important}
+@media(max-width:650px){
+ .opening{padding:20px 16px !important}
+ .opening-card{width:min(100%,470px) !important;max-height:calc(100svh - 66px) !important;padding:23px 21px 20px !important;outline-offset:5px !important}
+ .opening-topline{gap:8px;font-size:7px !important;letter-spacing:.17em !important}
+ .opening-name-label{margin-top:20px !important;font-size:15px !important}
+ .opening h1.opening-couple{display:flex !important;flex-direction:column !important;gap:0 !important;font-size:clamp(43px,11.8vw,58px) !important;line-height:1.02 !important}
+ .opening h1.opening-couple .name-amp{font-size:.65em !important;line-height:.9 !important;margin:2px 0 !important}
+ .opening-script{margin-top:11px !important;font-size:18px !important}
+ .opening-divider{margin:17px auto 11px !important}
+ .opening-date{gap:8px !important;font-size:23px !important}.opening-date .date-month{font-size:8px !important;letter-spacing:.22em !important}
+ .opening-date-caption{font-size:6px !important;letter-spacing:.16em !important}
+ .opening-card p.opening-invitation-copy{font-size:11px !important;line-height:1.8 !important;margin-top:14px !important}
+ .opening-card p.opening-dua{font-size:10px !important;line-height:1.75 !important}
+ .opening-action-row{margin-top:15px !important}
+ .opening .open-button{width:100px !important;height:100px !important;min-width:100px !important;min-height:100px !important;flex-basis:100px !important}
+ .opening-seal-wrap{margin-top:13px !important}
+ .opening-seal{width:43px !important;height:43px !important}.opening-seal img{width:28px !important;height:28px !important}
+ .opening-note{font-size:6px !important;letter-spacing:.13em !important;margin-top:11px !important}
+}
+@media(max-width:370px){
+ .opening-card{padding:20px 17px 17px !important}
+ .opening h1.opening-couple{font-size:clamp(39px,11.5vw,45px) !important}
+ .opening-card p.opening-invitation-copy{font-size:10px !important}
+ .opening-card p.opening-dua{font-size:9px !important}
+}
+@media(orientation:landscape) and (max-height:560px) and (min-width:651px){
+ .opening-card{max-height:calc(100svh - 48px) !important;padding:15px 30px 13px !important}
+ .opening .bismillah{margin:8px 0 4px !important;font-size:31px !important}
+ .opening-name-label{margin-top:10px !important}
+ .opening h1.opening-couple{flex-direction:row !important;font-size:clamp(34px,6vh,46px) !important}
+ .opening-script{margin-top:5px !important;font-size:17px !important}
+ .opening-divider{margin:10px auto 7px !important}
+ .opening-card p.opening-invitation-copy{margin-top:8px !important}
+ .opening-card p.opening-dua{margin-top:4px !important}
+ .opening-action-row{margin-top:8px !important}
+ .opening .open-button{width:82px !important;height:82px !important;min-width:82px !important;min-height:82px !important;flex-basis:82px !important}
+ .opening-seal-wrap{display:none !important}
+}
+@media(prefers-reduced-motion:reduce){.opening-ornament{animation:none !important}}
+</style>
+
 </head>
 
 <body class="locked">
@@ -3669,48 +3770,57 @@ nav a { flex-shrink:0; }
 <!-- OPENING INVITATION -->
 
 <div class="opening" id="opening">
-
-  <div class="opening-ornament one"></div>
-  <div class="opening-ornament two"></div>
+  <div class="opening-ornament one" aria-hidden="true"></div>
+  <div class="opening-ornament two" aria-hidden="true"></div>
 
   <div class="opening-card" id="openingCard">
-    <div class="opening-topline">MEHFIL-E-NOOR <span>✦</span> 6 Rajab 1448 AH </div>
+    <div class="opening-topline">
+      <span class="opening-topline-name">MEHFIL-E-NOOR</span>
+      <span class="opening-topline-star" aria-hidden="true">✧</span>
+      <span class="opening-hijri">6 Rajab 1448 AH</span>
+    </div>
 
     <div class="bismillah" aria-label="Bismillah">﷽</div>
+    <div class="opening-eyebrow">IN THE NAME OF ALLAH, THE MOST MERCIFUL</div>
 
-    <div class="opening-eyebrow">WITH THE BLESSINGS OF ALLAH</div>
-    <div class="opening-name-label">A celebration of</div>
+    <div class="opening-name-label">A gathering of duas · A promise of forever</div>
 
     <h1 class="opening-couple">
-  <span class="person-name">Er. Alfiya</span>
-  <span class="name-amp" aria-hidden="true">&amp;</span>
-  <span class="person-name">Er. Danish</span>
-  </h1>
+      <span class="person-name">Er. Alfiya</span>
+      <span class="name-amp" aria-hidden="true">&amp;</span>
+      <span class="person-name">Er. Danish</span>
+    </h1>
 
-    <span class="opening-script">Two hearts. One beautiful beginning.</span>
+    <span class="opening-script">A beautiful beginning, by His grace.</span>
 
     <div class="opening-divider"><span>✧</span></div>
-    <div class="opening-date">16 <span>DECEMBER</span> 2026</div>
+    <div class="opening-date"><span class="date-day">16</span><span class="date-month">DECEMBER</span><span class="date-year">2026</span></div>
+    <div class="opening-date-caption">THE DAY TWO FAMILIES COME TOGETHER</div>
 
-    <p>
-      With grateful hearts and the blessings of Allah,
-      we invite you to be part of our wedding celebrations.
+    <p class="opening-invitation-copy">
+      With hearts full of gratitude and prayers, our families invite you
+      to share in the joy of this blessed union.
+    </p>
+    <p class="opening-dua">
+      May Allah bless this union with <em>sakinah</em>, <em>mawaddah</em> and <em>rahmah</em> —
+      tranquility, love and mercy — today and always.
     </p>
 
-    <button class="open-button" id="openInvite" type="button">
-      <span>Open Invitation</span><span class="button-arrow" aria-hidden="true">↗</span>
-    </button>
+    <div class="opening-action-row">
+      <button class="open-button" id="openInvite" type="button" aria-label="Open wedding invitation">
+        <span>Open Invitation</span><span class="button-arrow" aria-hidden="true">↗</span>
+      </button>
+    </div>
 
     <div class="opening-seal-wrap">
       <div class="opening-seal">
         <img src="./AD-monogram.png" alt="Alfiya and Danish monogram">
       </div>
-      <span class="seal-caption">With love &amp; duas</span>
+      <span class="seal-caption">With love, duas &amp; gratitude</span>
     </div>
 
-    <div class="opening-note">A GATHERING OF LOVE · FAITH · BLESSINGS</div>
+    <div class="opening-note">A BLESSED UNION · TWO FAMILIES · ONE JOURNEY</div>
   </div>
-
 </div>
 
 <!-- BACKGROUND MUSIC -->
