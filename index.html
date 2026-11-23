@@ -2882,6 +2882,95 @@ footer .copyright{margin-top:28px;color:#c6b99f;font-size:8px;letter-spacing:.22
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
 
+
+
+/* FINAL RESPONSIVE SAFETY: keep every element inside its frame */
+html, body { width:100%; max-width:100%; overflow-x:clip; }
+body, main, section, header, footer, .inner, .event-grid, .event-card,
+.family-grid, .family-card, .hosts, .remembrance, .blessing-form,
+.opening-card, .hero-content, .event-content, .photo-wall { min-width:0; }
+img, video, iframe { max-width:100%; }
+.event-card, .family-card, .hosts, .remembrance, .blessing-form,
+.opening-card, .hero-content, .event-content { overflow-wrap:anywhere; }
+.event-content *, .family-card *, .hosts *, .remembrance *, footer * { max-width:100%; }
+.event-detail, .event-venue, .event-tagline, .family-card p,
+.hosts p, .remembrance-message, .remembrance-dua, footer p {
+  overflow-wrap:anywhere; word-break:normal;
+}
+.event-card::before { pointer-events:none; }
+.event-content { position:relative; z-index:1; }
+.event-map, .card-download {
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  max-width:100%; min-height:42px; margin:13px 5px 0; padding:10px 16px;
+  border:1px solid #b99a68; border-radius:30px; text-align:center;
+  white-space:normal; overflow-wrap:anywhere; line-height:1.35;
+  font:600 9px/1.35 var(--sans); letter-spacing:.10em;
+}
+.card-download { background:#173f3e; border-color:#173f3e; color:#f7f3e8; }
+.card-download:hover { background:#9b8057; border-color:#9b8057; color:#fffdf8; }
+.event-map:hover { background:#173f3e; color:#f5f1e7; }
+.opening { overflow-y:auto; overscroll-behavior:contain; }
+.opening-card { max-width:calc(100vw - 52px); }
+.opening-card, .hero-content { overflow-wrap:anywhere; }
+.opening-topline, .opening-eyebrow, .opening-note, .hero-subtitle,
+.kicker, .event-number, nav a { overflow-wrap:anywhere; }
+nav { min-width:0; max-width:100%; }
+nav a { flex-shrink:0; }
+
+@media (min-width:651px) {
+  .event-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .event-card { min-width:0; }
+  .event-content { padding-left:clamp(18px,2.5vw,34px); padding-right:clamp(18px,2.5vw,34px); }
+  .opening { padding:clamp(18px,4vh,42px); }
+  .opening-card { width:min(100%,560px); max-height:calc(100dvh - 70px); overflow-y:auto; }
+}
+@media (max-width:900px) {
+  .event-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .event-content h3 { font-size:clamp(30px,4vw,40px); }
+  .event-tagline { font-size:clamp(17px,2.4vw,21px); }
+  .event-detail { font-size:11px; }
+}
+@media (max-width:650px) {
+  header { width:100%; }
+  .brand { max-width:100%; white-space:normal; }
+  nav { justify-content:flex-start; }
+  .hero { min-height:100svh; min-height:100dvh; }
+  section { padding:clamp(54px,9vw,72px) 16px; }
+  .inner { width:100%; }
+  .family-grid, .event-grid { grid-template-columns:minmax(0,1fr); }
+  .event-card { width:100%; }
+  .event-image-frame { height:clamp(220px,72vw,360px); }
+  .event-content { padding:27px clamp(15px,5vw,23px) 30px; }
+  .event-content h3 { font-size:clamp(31px,9vw,40px); line-height:1.08; }
+  .event-tagline { font-size:19px; line-height:1.4; }
+  .event-detail { font-size:11px; line-height:1.75; }
+  .event-map, .card-download { margin:10px 3px 0; padding:10px 13px; font-size:8px; letter-spacing:.07em; }
+  .program span { margin:5px 6px; font-size:18px; }
+  .photo-wall { width:100%; }
+  .opening { min-height:100svh; min-height:100dvh; padding: max(18px,env(safe-area-inset-top)) 16px max(18px,env(safe-area-inset-bottom)); }
+  .opening-card { width:100%; max-width:480px; max-height:calc(100svh - 40px); max-height:calc(100dvh - 40px); overflow-y:auto; padding:clamp(18px,4vh,28px) 15px; }
+  .opening-card * { max-width:100%; }
+  .opening-couple { flex-wrap:wrap; justify-content:center; }
+  .opening-topline { letter-spacing:.12em; }
+  .opening-card p { font-size:clamp(10px,2.8vw,12px); }
+  .hero-content { width:100%; }
+  .hero h1.hero-couple { flex-wrap:wrap; justify-content:center; gap:6px; }
+  .heading h2 { overflow-wrap:anywhere; }
+  .family-card, .hosts, .remembrance, .blessing-form { padding-left:clamp(15px,5vw,24px); padding-right:clamp(15px,5vw,24px); }
+}
+@media (max-width:380px) {
+  .opening-card { max-width:calc(100vw - 32px); }
+  .opening-topline { font-size:7px; }
+  .opening-couple { font-size:clamp(36px,10vw,43px); }
+  .hero h1.hero-couple { font-size:clamp(44px,12vw,53px); }
+  .event-map, .card-download { width:calc(100% - 8px); margin-left:4px; margin-right:4px; }
+}
+@media (orientation:landscape) and (max-height:520px) {
+  .opening { align-items:start; }
+  .opening-card { max-height:calc(100dvh - 30px); overflow-y:auto; }
+  .hero { min-height:100dvh; }
+}
+
 </style>
 </head>
 
@@ -3202,9 +3291,8 @@ footer .copyright{margin-top:28px;color:#c6b99f;font-size:8px;letter-spacing:.22
             <strong>Venue: Bride's Residence</strong>
           </p>
 
-          <a class="event-map" href="https://maps.app.goo.gl/ChtJeovoDppH7mis6" target="_blank" rel="noopener">View Residence</a>
-
-          <a class="event-map" href="https://maps.app.goo.gl/ChtJeovoDppH7mis6" target="_blank" rel="noopener">View Residence</a>
+          <a class="event-map" href="https://maps.app.goo.gl/ChtJeovoDppH7mis6" target="_blank" rel="noopener">View Venue</a>
+          <a class="card-download" href="./Haldi_Invitation.png" download="Alfiya-Haldi-Invitation.png" aria-label="Download Haldi invitation card">Download Haldi Card <span aria-hidden="true">↓</span></a>
 
         </div>
 
@@ -3250,6 +3338,9 @@ footer .copyright{margin-top:28px;color:#c6b99f;font-size:8px;letter-spacing:.22
           <p class="event-detail">
             <strong>Venue: Bride's Residence</strong>
           </p>
+
+          <a class="event-map" href="https://maps.app.goo.gl/ChtJeovoDppH7mis6" target="_blank" rel="noopener">View Venue</a>
+          <a class="card-download" href="./Mehendi_Invitation.png" download="Alfiya-Mehendi-Invitation.png" aria-label="Download Mehendi invitation card">Download Mehendi Card <span aria-hidden="true">↓</span></a>
 
         </div>
 
@@ -3317,6 +3408,7 @@ footer .copyright{margin-top:28px;color:#c6b99f;font-size:8px;letter-spacing:.22
             rel="noopener">
             View Venue
           </a>
+          <a class="card-download" href="./Nikah_Invitation.png" download="Alfiya-Danish-Nikah-Invitation.png" aria-label="Download Nikah invitation card">Download Nikah Card <span aria-hidden="true">↓</span></a>
 
         </div>
 
