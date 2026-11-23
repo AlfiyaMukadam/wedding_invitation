@@ -3516,6 +3516,99 @@ nav a { flex-shrink:0; }
   .open-button > span:first-child { font-size: 7.5px; letter-spacing: .045em; }
 }
 
+
+
+/* FINAL UPDATE — separated photo wall + Walima bus information */
+.gallery .photo-wall {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-auto-flow: row;
+  align-items: stretch;
+  justify-items: stretch;
+  gap: clamp(14px, 2vw, 26px) !important;
+  width: 100%;
+  max-width: 100%;
+  margin: 38px auto 0 !important;
+}
+.gallery .photo-wall figure,
+.gallery .photo-wall figure:nth-child(n) {
+  position: relative !important;
+  inset: auto !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 9px !important;
+  transform: none !important;
+  float: none !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.gallery .photo-wall figure img {
+  display: block !important;
+  position: static !important;
+  width: 100% !important;
+  height: clamp(210px, 29vw, 360px) !important;
+  margin: 0 !important;
+  object-fit: cover;
+  transform: none !important;
+}
+.gallery .photo-wall figure.reveal,
+.gallery .photo-wall figure.reveal.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.walima-transport-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  max-width: 420px;
+  margin: 18px auto 8px;
+  padding: 13px 17px;
+  border: 1px solid rgba(182,154,105,.55);
+  border-radius: 8px;
+  background: rgba(182,154,105,.08);
+  color: inherit;
+  text-align: center;
+  line-height: 1.5;
+}
+.walima-transport-note strong {
+  color: #9b8057;
+  font-size: .9em;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.walima-transport-note span { font-size: .92em; }
+.open-button > span:first-child {
+  white-space: nowrap !important;
+  display: inline-block;
+  max-width: none !important;
+  font-size: clamp(6px, .72vw, 9px);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+@media (max-width: 650px) {
+  .gallery .photo-wall {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+    max-width: 440px;
+    margin-top: 28px !important;
+  }
+  .gallery .photo-wall figure,
+  .gallery .photo-wall figure:nth-child(n) {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 7px !important;
+  }
+  .gallery .photo-wall figure img {
+    height: clamp(210px, 68vw, 310px) !important;
+  }
+  .walima-transport-note { margin: 15px auto 7px; padding: 11px 12px; }
+}
+
 </style>
 </head>
 
@@ -3998,6 +4091,11 @@ nav a { flex-shrink:0; }
             Thane, Maharashtra 400601
           </p>
 
+          <p class="walima-transport-note">
+            <strong>Bus Service Arranged</strong>
+            <span>Details and timings will be updated shortly.</span>
+          </p>
+
           <a
             class="event-map"
             href="https://www.google.com/maps/search/?api=1&query=Noori+Hall+Noori+Baba+Dargah+Road+Thane+West+400601"
@@ -4369,7 +4467,7 @@ form.addEventListener("submit", event => {
     submitButton.textContent = "Send";
 
     statusMessage.textContent =
-      "We could not confirm the submission. Please try again.";
+      "We could not confirm the submission. Please check your Google Sheet before trying again.";
 
   }, 15000);
 
