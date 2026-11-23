@@ -3609,6 +3609,58 @@ nav a { flex-shrink:0; }
   .walima-transport-note { margin: 15px auto 7px; padding: 11px 12px; }
 }
 
+
+
+/* ROYAL COUPLE SHOWCASE — responsive Mughal-inspired name panels */
+.couple-showcase{
+  position:relative;display:grid;grid-template-columns:minmax(0,1fr) 104px minmax(0,1fr);
+  align-items:stretch;gap:clamp(12px,2.1vw,28px);width:100%;max-width:1040px;margin:clamp(38px,5vw,58px) auto 0
+}
+.couple-showcase .family-card{
+  min-width:0;min-height:390px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  padding:clamp(36px,4vw,52px) clamp(18px,3vw,36px) 32px;
+  overflow:hidden;border:1px solid #c9b184;border-radius:48% 48% 7px 7px / 19% 19% 7px 7px;
+  background:radial-gradient(ellipse at 50% 7%,rgba(219,229,224,.52),transparent 42%),linear-gradient(160deg,#fffefa 0%,#f4f2e9 100%);
+  box-shadow:0 18px 42px rgba(24,57,51,.10),inset 0 0 0 7px rgba(255,255,255,.58),inset 0 0 0 8px rgba(193,164,113,.28)
+}
+.couple-showcase .family-card::before{inset:13px;border:1px solid rgba(190,161,111,.65);border-radius:inherit;z-index:0}
+.couple-showcase .family-card::after{content:"";position:absolute;inset:22px 22px 14px;border:1px solid rgba(190,161,111,.22);border-radius:inherit;pointer-events:none;z-index:0}
+.family-arch-ornament{position:relative;z-index:1;margin:0 0 15px;color:#b39461;font:22px var(--serif)}
+.couple-showcase .family-label{position:relative;z-index:1;padding:7px 17px;border-radius:2px;background:#e8eee8;border:1px solid #c9d4c9;color:#806b48;font-size:8px;letter-spacing:.28em}
+.family-name-kicker{position:relative;z-index:1;margin-top:23px;color:#a68a5d;font:600 9px var(--sans);letter-spacing:.38em}
+.couple-showcase .family-card h3{position:relative;z-index:1;margin:5px 0 8px;color:#17464a;font:400 clamp(49px,5.2vw,69px)/1.05 var(--serif);letter-spacing:-.035em}
+.family-name-rule{position:relative;z-index:1;display:flex;align-items:center;gap:11px;width:min(210px,78%);margin:10px auto 15px;color:#ae8d58;font-size:12px}
+.family-name-rule::before,.family-name-rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#c6ad7d)}
+.family-name-rule::after{transform:rotate(180deg)}
+.couple-showcase .family-card p.family-relation{position:relative;z-index:1;margin:0 0 5px;color:#9a8057;font:italic 15px var(--serif)}
+.couple-showcase .family-card p.family-parents{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:3px;margin:0;color:#425e55;font:italic clamp(18px,2vw,22px)/1.45 var(--serif)}
+.parent-amp{color:#b39461;font:italic 17px var(--script)}
+.couple-showcase .family-card .family-small{position:relative;z-index:1;margin-top:auto;padding-top:19px;max-width:260px;color:#8b806c;font:500 8px/1.8 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.couple-crest{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;align-self:center}
+.crest-line{width:1px;height:clamp(30px,6vw,72px);background:linear-gradient(180deg,transparent,#b99b6a,transparent)}
+.crest-medallion{display:grid;place-items:center;width:82px;height:82px;padding:13px;border:1px solid #b99b6a;border-radius:50%;background:radial-gradient(circle,#fffefa 0 54%,#e7e1d1 55% 57%,#f8f5eb 58%);box-shadow:0 6px 20px #173c3518,inset 0 0 0 4px #fff9}
+.crest-medallion img{display:block;width:100%;height:100%;object-fit:contain}
+.crest-caption{color:#94794e;font:600 8px var(--sans);letter-spacing:.2em}
+@media(max-width:700px){
+  .couple-showcase{grid-template-columns:minmax(0,1fr);gap:0;max-width:470px;margin-top:34px}
+  .couple-showcase .family-card{min-height:345px;padding:32px 20px 27px;border-radius:47% 47% 7px 7px / 15% 15% 7px 7px}
+  .couple-showcase .family-card h3{font-size:clamp(49px,13vw,64px)}
+  .couple-showcase .family-card p.family-parents{font-size:21px}
+  .couple-crest{flex-direction:row;gap:10px;padding:10px 0;margin:0 auto}
+  .crest-line{width:clamp(35px,13vw,76px);height:1px;background:linear-gradient(90deg,transparent,#b99b6a,transparent)}
+  .crest-medallion{width:66px;height:66px;padding:11px}
+  .crest-caption{display:none}
+  .family-arch-ornament{margin-bottom:11px}
+}
+@media(max-width:380px){
+  .couple-showcase .family-card{min-height:325px;padding-left:14px;padding-right:14px}
+  .couple-showcase .family-card p.family-parents{font-size:19px}
+  .family-name-kicker{margin-top:18px}
+}
+@media(orientation:landscape) and (max-height:520px) and (min-width:701px){
+  .couple-showcase .family-card{min-height:320px;padding-top:28px}
+}
+
 </style>
 </head>
 
@@ -3790,34 +3842,43 @@ nav a { flex-shrink:0; }
 
     </div>
 
-    <div class="family-grid">
+    <div class="couple-showcase">
 
-      <article class="family-card reveal">
+      <article class="family-card bride-card reveal">
+        <div class="family-arch-ornament" aria-hidden="true">✧</div>
         <div class="family-label">The Bride</div>
+        <div class="family-name-kicker">ER.</div>
         <h3>Alfiya</h3>
-        <p>Daughter of</p>
-        <p>
+        <div class="family-name-rule" aria-hidden="true"><span>✦</span></div>
+        <p class="family-relation">Daughter of</p>
+        <p class="family-parents">
           Mrs. Rabiyabi
-          <br>&<br>
+          <span class="parent-amp">&amp;</span>
           Mr. Ashfaque Mukadam
         </p>
-        <div class="family-small">
-          With love and gratitude to her family
-        </div>
+        <div class="family-small">With love and gratitude to her family</div>
       </article>
 
-      <article class="family-card reveal">
+      <div class="couple-crest" aria-label="Alfiya and Danish monogram">
+        <span class="crest-line"></span>
+        <div class="crest-medallion"><img src="./AD-monogram.png" alt="A and D monogram"></div>
+        <span class="crest-caption">A &amp; D</span>
+        <span class="crest-line"></span>
+      </div>
+
+      <article class="family-card groom-card reveal">
+        <div class="family-arch-ornament" aria-hidden="true">✧</div>
         <div class="family-label">The Groom</div>
+        <div class="family-name-kicker">ER.</div>
         <h3>Danish</h3>
-        <p>Son of</p>
-        <p>
+        <div class="family-name-rule" aria-hidden="true"><span>✦</span></div>
+        <p class="family-relation">Son of</p>
+        <p class="family-parents">
           Mrs. Heena
-          <br>&<br>
+          <span class="parent-amp">&amp;</span>
           Mr. Feroz Khan
         </p>
-        <div class="family-small">
-          With love and gratitude to his family
-        </div>
+        <div class="family-small">With love and gratitude to his family</div>
       </article>
 
     </div>
