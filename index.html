@@ -3704,9 +3704,9 @@ nav a { flex-shrink:0; }
     </div>
 
     <h1 class="hero-couple">
-      <span class="hero-person">Alfiya</span>
+      <span class="hero-person"><small>ER.</small> Alfiya</span>
       <span class="hero-amp" aria-hidden="true">&amp;</span>
-      <span class="hero-person">Danish</span>
+      <span class="hero-person"><small>ER.</small> Danish</span>
     </h1>
 
     <div class="hero-subtitle">
@@ -4643,4 +4643,102 @@ form.addEventListener("submit", event => {
     height: auto !important;
   }
 }
+
+
+/* COUPLE FEATURE — refined Mughal name cartouches, responsive by design */
+.hero-content{width:min(100%,900px);padding:clamp(8px,2vw,18px)}
+.hero-monogram{width:clamp(62px,7vw,86px);height:clamp(62px,7vw,86px);margin-bottom:clamp(14px,2.2vh,24px)}
+.hero h1.hero-couple{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
+  width:100%;margin:clamp(17px,3vh,30px) auto 0;
+  font:400 clamp(58px,8.3vw,104px)/.98 var(--serif);letter-spacing:-.035em;
+}
+.hero-couple .hero-person{
+  position:relative;display:block;width:fit-content;max-width:100%;padding:0 clamp(18px,4vw,54px);
+  color:#fffaf0;text-align:center;white-space:nowrap;text-shadow:0 3px 18px #001d20a8;
+}
+.hero-couple .hero-person::before,.hero-couple .hero-person::after{
+  content:"✧";position:absolute;top:50%;transform:translateY(-50%);color:#d8bd8f;
+  font:clamp(13px,1.7vw,19px) var(--serif);opacity:.9
+}
+.hero-couple .hero-person::before{left:0}.hero-couple .hero-person::after{right:0}
+.hero-couple .hero-person small{
+  display:block;margin:0 0 5px;color:#e4cfaa;font:600 9px var(--sans);
+  letter-spacing:.34em;line-height:1.3;text-align:center
+}
+.hero-couple .hero-amp{
+  display:flex;align-items:center;justify-content:center;gap:16px;margin:8px 0 10px;
+  color:#e4c99a;font:400 clamp(34px,4.6vw,54px)/.9 var(--script)
+}
+.hero-couple .hero-amp::before,.hero-couple .hero-amp::after{
+  content:"";display:block;width:clamp(38px,7vw,84px);height:1px;
+  background:linear-gradient(90deg,transparent,#d8bd8f)
+}
+.hero-couple .hero-amp::after{transform:rotate(180deg)}
+.hero-subtitle{margin-top:clamp(19px,3vh,30px);letter-spacing:.25em}
+.hero .rule{margin:clamp(15px,2.5vh,24px) auto}
+.hero-blessing{font-size:clamp(18px,2vw,24px)}
+
+/* Family details — framed name panels with restrained gold detailing */
+.family-grid{gap:clamp(18px,3vw,30px);margin-top:clamp(34px,5vw,52px)}
+.family-card{
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:clamp(30px,4.5vw,48px) clamp(18px,3vw,34px);
+  border:1px solid #cdb88f;background:linear-gradient(145deg,#fffdf8 0%,#f7f4eb 100%);
+  box-shadow:0 15px 38px #173c3510
+}
+.family-card::before{
+  content:"";position:absolute;inset:10px;border:1px solid #d9c9a8;pointer-events:none;z-index:-1
+}
+.family-card::after{
+  content:"✦";position:absolute;top:0;left:50%;transform:translate(-50%,-2px);
+  padding:0 12px;background:#fbf9f2;color:#b18e58;font-size:15px
+}
+.family-label{
+  display:inline-block;padding:7px 15px;border:1px solid #d8c7a5;border-radius:30px;
+  color:#96764a;background:#f8f4e9;font:600 8px var(--sans);letter-spacing:.24em
+}
+.family-card h3{
+  margin:20px 0 12px;color:#17464a;
+  font:400 clamp(42px,5vw,58px)/1.05 var(--serif);letter-spacing:-.025em
+}
+.family-card p{font:italic clamp(18px,2vw,21px)/1.55 var(--serif);color:#596c62}
+.family-card p:nth-of-type(2){margin-top:4px;color:#405d54}
+.family-card .family-small{
+  margin:20px auto 0;padding-top:14px;max-width:270px;border-top:1px solid #dfd2b8;
+  color:#8a806e;font:500 9px/1.8 var(--sans);letter-spacing:.08em
+}
+.hosts{position:relative;background:linear-gradient(135deg,#fbfaf4,#f3f1e7);border-color:#d4c19b}
+.hosts::before,.hosts::after{content:"✧";position:absolute;top:50%;color:#b99a68;font-size:18px;transform:translateY(-50%)}
+.hosts::before{left:clamp(10px,3vw,30px)}.hosts::after{right:clamp(10px,3vw,30px)}
+
+@media(max-width:650px){
+  .hero{padding:66px 16px 82px;min-height:calc(100svh - 70px)}
+  .hero h1.hero-couple{font-size:clamp(54px,13.5vw,76px);gap:0;margin-top:17px}
+  .hero-couple .hero-person{padding:0 23px}
+  .hero-couple .hero-person small{font-size:8px;margin-bottom:3px}
+  .hero-couple .hero-amp{font-size:34px;margin:7px 0 9px;gap:12px}
+  .hero-couple .hero-amp::before,.hero-couple .hero-amp::after{width:35px}
+  .hero-subtitle{font-size:8px;letter-spacing:.17em;line-height:1.8}
+  .hero-blessing{font-size:19px;line-height:1.45}
+  .family-grid{grid-template-columns:minmax(0,1fr);gap:22px}
+  .family-card{padding:34px 20px}
+  .family-card h3{font-size:clamp(45px,12vw,56px)}
+  .hosts::before{left:9px}.hosts::after{right:9px}
+}
+@media(max-width:360px){
+  .hero h1.hero-couple{font-size:51px}
+  .hero-couple .hero-person{padding:0 19px}
+  .hero-couple .hero-amp{font-size:30px}
+}
+@media(orientation:landscape) and (max-height:520px){
+  .hero{padding:24px 18px 48px}
+  .hero-monogram{width:42px;height:42px;margin-bottom:5px}
+  .hero h1.hero-couple{flex-direction:row;gap:10px;font-size:clamp(42px,8vh,60px);margin-top:8px}
+  .hero-couple .hero-person{padding:0 14px}
+  .hero-couple .hero-person small{font-size:6px}
+  .hero-couple .hero-amp{font-size:30px;margin:0 4px}
+  .hero-subtitle{margin-top:8px}
+}
+
 </style>
