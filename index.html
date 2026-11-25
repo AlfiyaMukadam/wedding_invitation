@@ -3663,104 +3663,145 @@ nav a { flex-shrink:0; }
 
 </style>
 
-<style id="opening-page-editorial-revamp">
-/* MEHFIL-E-NOOR — opening page editorial treatment */
-.opening{
-  padding:clamp(22px,4.5vh,48px) 18px !important;
+
+
+
+<style id="mehfil-opening-final">
+/* MEHFIL-E-NOOR — consolidated responsive opening cover */
+.opening {
+  position:fixed; inset:0; z-index:2000;
+  display:grid; place-items:center;
+  width:100%; height:100vh; height:100svh; height:100dvh;
+  min-height:0; box-sizing:border-box;
+  padding: max(14px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(14px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  overflow:hidden; overscroll-behavior:none; isolation:isolate;
+  color:#f3eadb;
   background:
-    linear-gradient(135deg,rgba(3,27,31,.82),rgba(5,47,52,.77) 52%,rgba(7,37,41,.86)),
-    url("./handpicture.jpg") center/cover no-repeat,
-    #082f34 !important;
+    radial-gradient(ellipse at 50% 38%, rgba(31,91,91,.30), transparent 54%),
+    linear-gradient(145deg,rgba(2,28,33,.88),rgba(4,48,53,.84)),
+    url("./handpicture.jpg") center/cover no-repeat, #062f35;
+  transition:opacity .9s ease, visibility .9s ease;
 }
-.opening::before{inset:13px !important;border-color:rgba(218,194,151,.56) !important}
-.opening::after{inset:21px !important;border-color:rgba(218,194,151,.22) !important}
-.opening-card{
-  width:min(100%,620px) !important;
-  max-height:calc(100svh - 76px) !important;
-  padding:clamp(25px,4.2vh,43px) clamp(22px,5vw,52px) clamp(20px,3.5vh,32px) !important;
-  overflow-y:auto !important;
-  border:1px solid rgba(211,184,137,.66) !important;
-  outline:1px solid rgba(211,184,137,.22) !important;
-  outline-offset:7px !important;
-  background:linear-gradient(155deg,rgba(7,49,54,.89),rgba(3,35,40,.88)) !important;
-  box-shadow:0 28px 90px rgba(0,0,0,.38),inset 0 0 50px rgba(226,207,171,.035) !important;
-  backdrop-filter:blur(13px) !important;-webkit-backdrop-filter:blur(13px) !important;
+.opening::before,.opening::after {content:none !important;}
+.opening.hidden {opacity:0;visibility:hidden;pointer-events:none;}
+.opening-card {
+  position:relative; z-index:1; box-sizing:border-box;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:min(100%,600px); max-width:600px; max-height:100%; min-height:0;
+  padding:clamp(13px,2.5vh,27px) clamp(18px,4vw,42px);
+  overflow:hidden; text-align:center;
+  border:0; outline:0; background:transparent; box-shadow:none;
+  animation:fadeUp 1s ease both;
+  transition:opacity .6s ease,transform .8s ease,filter .8s ease;
 }
-.opening-card::before{
-  content:"";display:block;width:clamp(44px,7vw,66px);height:1px;margin:0 auto 15px;
-  background:linear-gradient(90deg,transparent,#c8a977,transparent);opacity:.9
+.opening-card::before {content:""; flex:0 0 1px; width:48px; height:1px; margin:0 auto clamp(8px,1.5vh,14px); background:linear-gradient(90deg,transparent,#c9ad7d,transparent);}
+.opening-topline {flex:0 0 auto; display:flex; justify-content:center; align-items:center; gap:10px; color:rgba(226,207,173,.9); font:600 clamp(7px,.8vw,9px)/1.5 var(--sans); letter-spacing:.22em;}
+.opening-topline-star {color:#c7a77a; font-size:12px;}
+.opening-hijri {color:rgba(231,218,194,.66);}
+.opening .bismillah {flex:0 0 auto; margin:clamp(9px,1.7vh,17px) 0 5px; color:#e5d2ad; font:clamp(31px,4.8vh,43px)/1.2 var(--arabic); text-shadow:0 2px 18px rgba(0,0,0,.16);}
+.opening-name-label {flex:0 0 auto; margin:clamp(8px,1.6vh,16px) 0 0; color:rgba(238,226,205,.82); font:italic clamp(14px,1.8vh,18px)/1.35 var(--serif); letter-spacing:.025em;}
+.opening h1.opening-couple {flex:0 0 auto; display:flex; flex-wrap:nowrap; justify-content:center; align-items:baseline; gap:0 clamp(8px,1.5vw,17px); margin:clamp(7px,1.3vh,13px) 0 0; color:#f0e3cb; font:400 clamp(37px,6.3vw,66px)/1.08 var(--serif); letter-spacing:-.035em; text-shadow:0 3px 22px rgba(0,0,0,.2);}
+.opening-couple .person-name {white-space:nowrap;}
+.opening-couple .name-amp {color:#c9aa7b; font:italic 400 .78em/1 var(--script);}
+.opening-script {flex:0 0 auto; display:block; margin:clamp(7px,1.4vh,13px) auto 0; color:#e2d4bb; font:italic clamp(16px,2.2vw,22px)/1.3 var(--serif); letter-spacing:.01em;}
+.opening-divider {flex:0 0 auto; display:flex; align-items:center; gap:12px; width:min(170px,48%); margin:clamp(9px,1.7vh,17px) auto clamp(6px,1.1vh,10px); color:#c8a979;}
+.opening-divider::before,.opening-divider::after {content:""; flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(200,169,121,.68),transparent);}
+.opening-date {flex:0 0 auto; display:flex; justify-content:center; align-items:baseline; gap:9px; color:#f0e5d2; font:400 clamp(21px,3.2vw,28px)/1.15 var(--serif); letter-spacing:.035em;}
+.opening-date .date-day {color:#d9bd8e; font-size:1.16em;}
+.opening-date .date-month {color:#d9c8a9; font:600 8px var(--sans); letter-spacing:.24em;}
+.opening-date .date-year {color:#d9c8a9; font:400 13px var(--serif); letter-spacing:.1em;}
+.opening-card p.opening-invitation-copy {flex:0 0 auto; max-width:390px; margin:clamp(9px,1.6vh,15px) auto 0; color:rgba(249,245,236,.86); font:400 clamp(10px,1.25vw,11.5px)/1.65 var(--sans); letter-spacing:.012em;}
+.opening-action-row {flex:0 0 auto; display:flex; justify-content:center; margin:clamp(12px,2.1vh,20px) 0 0;}
+/* The clickable wax seal: organic edge and all embossed details stay inside its silhouette. */
+.opening .open-button {
+  position:relative; isolation:isolate; display:grid; place-items:center;
+  flex:0 0 clamp(86px,12vh,112px); width:clamp(86px,12vh,112px); height:clamp(86px,12vh,112px); min-width:0; min-height:0;
+  padding:12px; overflow:hidden; box-sizing:border-box;
+  border:1px solid rgba(92,63,36,.58);
+  border-radius:48% 52% 49% 51% / 51% 47% 53% 49%;
+  color:#4b3525; cursor:pointer;
+  background:
+    radial-gradient(ellipse at 32% 24%,rgba(255,250,224,.58),transparent 35%),
+    radial-gradient(ellipse at 72% 78%,rgba(91,58,31,.25),transparent 48%),
+    repeating-radial-gradient(ellipse at 45% 42%,rgba(255,255,255,.035) 0 1px,rgba(90,62,38,.025) 1px 2px,transparent 2px 4px),
+    linear-gradient(145deg,#d7bd91 0%,#b28b5d 48%,#c9aa7a 76%,#9f774d 100%);
+  box-shadow:inset 2px 3px 6px rgba(255,247,220,.56),inset -4px -6px 9px rgba(77,49,27,.35),inset 0 0 0 2px rgba(241,222,184,.16),0 7px 16px rgba(0,0,0,.22);
+  font:600 8px/1.35 var(--sans); letter-spacing:.13em; text-align:center; text-transform:uppercase;
+  text-shadow:0 1px 0 rgba(255,237,200,.45),0 -1px 0 rgba(74,48,28,.18);
+  transition:transform .28s ease,filter .28s ease,box-shadow .28s ease;
+  animation:sealReveal 1s .35s both;
 }
-.opening-topline{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;color:#d9c29c !important;font-size:8px !important;letter-spacing:.24em !important}
-.opening-topline-name{font-weight:600}.opening-topline-star{color:#c7a675;font-size:13px}.opening-hijri{color:rgba(236,224,201,.68)}
-.opening .bismillah{margin:clamp(17px,2.7vh,25px) 0 10px !important;color:#d9c39d !important;font-size:clamp(37px,5vw,47px) !important;text-shadow:none !important}
-.opening-eyebrow{color:rgba(232,216,188,.78) !important;font-size:8px !important;letter-spacing:.2em !important;line-height:1.8 !important}
-.opening-name-label{margin-top:clamp(19px,3vh,29px) !important;color:#d5c4a5 !important;font:italic clamp(15px,2.4vw,18px)/1.5 var(--serif) !important;letter-spacing:.045em !important}
-.opening h1.opening-couple{
-  display:flex !important;flex-wrap:wrap !important;justify-content:center !important;align-items:center !important;
-  gap:3px clamp(8px,1.6vw,17px) !important;margin:12px 0 0 !important;
-  color:#f0e4cf !important;font:400 clamp(40px,6.7vw,69px)/1.1 var(--serif) !important;
-  letter-spacing:-.025em !important;text-shadow:0 3px 20px rgba(0,0,0,.18) !important;
+.opening .open-button::before {
+  content:""; position:absolute; z-index:-1; inset:9px;
+  border:1px solid rgba(91,61,36,.45); border-radius:50%;
+  box-shadow:inset 0 1px 1px rgba(255,244,215,.48),0 1px 1px rgba(255,239,207,.2);
+  pointer-events:none;
 }
-.opening h1.opening-couple .person-name{white-space:nowrap}
-.opening h1.opening-couple .name-amp{color:#c9a979 !important;font:italic 400 .78em/1 var(--script) !important;padding:0 3px}
-.opening-script{display:block !important;max-width:450px !important;margin:13px auto 0 !important;color:#e4d6bc !important;font:italic clamp(18px,2.7vw,23px)/1.45 var(--serif) !important;letter-spacing:.01em !important}
-.opening-divider{width:min(220px,58%) !important;margin:clamp(17px,2.6vh,24px) auto 13px !important;color:#c9a979 !important;gap:13px !important}
-.opening-divider::before,.opening-divider::after{background:linear-gradient(90deg,transparent,rgba(201,169,121,.72),transparent) !important}
-.opening-date{display:flex;justify-content:center;align-items:baseline;gap:10px;color:#f0e5d2 !important;font:400 clamp(21px,3.3vw,28px)/1.2 var(--serif) !important;letter-spacing:.03em !important}
-.opening-date .date-day{font-size:1.22em;color:#d8bd8e}.opening-date .date-month{font:600 9px var(--sans);letter-spacing:.28em}.opening-date .date-year{font:400 14px var(--serif);letter-spacing:.13em;color:#d8c9af}
-.opening-date-caption{margin-top:8px;color:rgba(223,207,178,.58);font:600 7px var(--sans);letter-spacing:.22em}
-.opening-card p.opening-invitation-copy{max-width:410px !important;margin:clamp(15px,2.2vh,21px) auto 0 !important;color:rgba(249,244,234,.9) !important;font:400 clamp(11px,1.5vw,12px)/1.9 var(--sans) !important;letter-spacing:.015em}
-.opening-card p.opening-dua{max-width:430px !important;margin:9px auto 0 !important;color:rgba(221,205,176,.77) !important;font:italic clamp(10px,1.4vw,11px)/1.85 var(--serif) !important;letter-spacing:.01em}
-.opening-dua em{color:#e0c99f;font-style:italic}
-.opening-action-row{display:flex;justify-content:center;margin-top:clamp(16px,2.5vh,23px)}
-.opening .open-button{margin:0 !important}
-.opening-seal-wrap{margin:clamp(15px,2.2vh,21px) auto 0 !important;gap:7px !important}
-.opening-seal{width:48px !important;height:48px !important;border-color:rgba(211,184,137,.65) !important;background:rgba(11,54,57,.6) !important;box-shadow:none !important;animation:none !important}
-.opening-seal::before{inset:4px !important;border-color:rgba(211,184,137,.38) !important}.opening-seal::after{display:none !important}
-.opening-seal img{width:31px !important;height:31px !important;filter:brightness(0) invert(1) !important;opacity:.9 !important}
-.opening .seal-caption{color:#d7c19b !important;font:italic 13px var(--serif) !important;letter-spacing:.055em !important}
-.opening-note{margin-top:14px !important;color:rgba(222,207,181,.54) !important;font-size:7px !important;letter-spacing:.2em !important}
-.opening-ornament{width:260px !important;height:260px !important;border-color:rgba(212,187,145,.12) !important}
-.opening-ornament::before,.opening-ornament::after{border-color:rgba(212,187,145,.11) !important}
-@media(max-width:650px){
- .opening{padding:20px 16px !important}
- .opening-card{width:min(100%,470px) !important;max-height:calc(100svh - 66px) !important;padding:23px 21px 20px !important;outline-offset:5px !important}
- .opening-topline{gap:8px;font-size:7px !important;letter-spacing:.17em !important}
- .opening-name-label{margin-top:20px !important;font-size:15px !important}
- .opening h1.opening-couple{display:flex !important;flex-direction:column !important;gap:0 !important;font-size:clamp(43px,11.8vw,58px) !important;line-height:1.02 !important}
- .opening h1.opening-couple .name-amp{font-size:.65em !important;line-height:.9 !important;margin:2px 0 !important}
- .opening-script{margin-top:11px !important;font-size:18px !important}
- .opening-divider{margin:17px auto 11px !important}
- .opening-date{gap:8px !important;font-size:23px !important}.opening-date .date-month{font-size:8px !important;letter-spacing:.22em !important}
- .opening-date-caption{font-size:6px !important;letter-spacing:.16em !important}
- .opening-card p.opening-invitation-copy{font-size:11px !important;line-height:1.8 !important;margin-top:14px !important}
- .opening-card p.opening-dua{font-size:10px !important;line-height:1.75 !important}
- .opening-action-row{margin-top:15px !important}
- .opening .open-button{width:100px !important;height:100px !important;min-width:100px !important;min-height:100px !important;flex-basis:100px !important}
- .opening-seal-wrap{margin-top:13px !important}
- .opening-seal{width:43px !important;height:43px !important}.opening-seal img{width:28px !important;height:28px !important}
- .opening-note{font-size:6px !important;letter-spacing:.13em !important;margin-top:11px !important}
+.opening .open-button::after {
+  content:""; position:absolute; z-index:-1; inset:13px;
+  border:1px solid rgba(247,228,190,.28); border-radius:50%;
+  pointer-events:none;
 }
-@media(max-width:370px){
- .opening-card{padding:20px 17px 17px !important}
- .opening h1.opening-couple{font-size:clamp(39px,11.5vw,45px) !important}
- .opening-card p.opening-invitation-copy{font-size:10px !important}
- .opening-card p.opening-dua{font-size:9px !important}
+.opening .open-button .seal-action {position:relative; z-index:1; max-width:76px; color:#493522; font:700 8px/1.35 var(--sans); letter-spacing:.12em;}
+.opening .open-button:hover {transform:translateY(-2px) scale(1.025); filter:brightness(1.05); box-shadow:inset 2px 3px 6px rgba(255,247,220,.62),inset -4px -6px 9px rgba(77,49,27,.32),0 9px 20px rgba(0,0,0,.25);}
+.opening .open-button:focus-visible {outline:2px solid #ead9b9; outline-offset:4px;}
+.opening .open-button:disabled {cursor:default; opacity:.85;}
+.opening.opened .opening-card {animation:cardDisappear .65s ease forwards;}
+.opening-curtain,.opening-ornament,.bubbles,.opening-seal-wrap,.opening-note {display:none !important;}
+@media (max-width:650px) {
+  .opening {padding:max(12px,env(safe-area-inset-top)) max(13px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(13px,env(safe-area-inset-left));}
+  .opening-card {width:100%; max-width:450px; padding:clamp(9px,1.7vh,17px) 10px;}
+  .opening-topline {gap:7px; font-size:7px; letter-spacing:.14em;}
+  .opening .bismillah {margin:7px 0 3px; font-size:clamp(28px,7.7vw,37px);}
+  .opening-name-label {margin-top:7px; font-size:14px;}
+  .opening h1.opening-couple {flex-direction:column; align-items:center; gap:0; margin-top:5px; font-size:clamp(37px,10vw,49px); line-height:.99;}
+  .opening-couple .name-amp {font-size:.58em; line-height:.75; margin:1px 0;}
+  .opening-script {margin-top:6px; font-size:clamp(15px,4.1vw,18px);}
+  .opening-divider {margin:8px auto 6px;}
+  .opening-date {gap:7px; font-size:21px;}
+  .opening-date .date-month {font-size:7px; letter-spacing:.17em;}
+  .opening-date .date-year {font-size:12px;}
+  .opening-card p.opening-invitation-copy {max-width:310px; margin-top:7px; font-size:10px; line-height:1.5;}
+  .opening-action-row {margin-top:10px;}
+  .opening .open-button {flex-basis:clamp(82px,12vh,96px); width:clamp(82px,12vh,96px); height:clamp(82px,12vh,96px);}
 }
-@media(orientation:landscape) and (max-height:560px) and (min-width:651px){
- .opening-card{max-height:calc(100svh - 48px) !important;padding:15px 30px 13px !important}
- .opening .bismillah{margin:8px 0 4px !important;font-size:31px !important}
- .opening-name-label{margin-top:10px !important}
- .opening h1.opening-couple{flex-direction:row !important;font-size:clamp(34px,6vh,46px) !important}
- .opening-script{margin-top:5px !important;font-size:17px !important}
- .opening-divider{margin:10px auto 7px !important}
- .opening-card p.opening-invitation-copy{margin-top:8px !important}
- .opening-card p.opening-dua{margin-top:4px !important}
- .opening-action-row{margin-top:8px !important}
- .opening .open-button{width:82px !important;height:82px !important;min-width:82px !important;min-height:82px !important;flex-basis:82px !important}
- .opening-seal-wrap{display:none !important}
+@media (max-width:380px) {
+  .opening-card {padding-top:8px; padding-bottom:8px;}
+  .opening .bismillah {font-size:27px; margin-top:5px;}
+  .opening-name-label {font-size:13px; margin-top:5px;}
+  .opening h1.opening-couple {font-size:clamp(35px,9.5vw,42px);}
+  .opening-script {font-size:14px; margin-top:4px;}
+  .opening-card p.opening-invitation-copy {font-size:9px; line-height:1.4; margin-top:5px;}
+  .opening-action-row {margin-top:7px;}
+  .opening .open-button {flex-basis:78px; width:78px; height:78px;}
 }
-@media(prefers-reduced-motion:reduce){.opening-ornament{animation:none !important}}
+@media (max-height:740px) {
+  .opening-card {padding-top:9px; padding-bottom:9px;}
+  .opening .bismillah {margin-top:5px;}
+  .opening-name-label {margin-top:5px;}
+  .opening h1.opening-couple {margin-top:4px;}
+  .opening-script {margin-top:4px;}
+  .opening-divider {margin-top:6px; margin-bottom:5px;}
+  .opening-card p.opening-invitation-copy {margin-top:5px;}
+  .opening-action-row {margin-top:7px;}
+  .opening .open-button {flex-basis:76px; width:76px; height:76px;}
+}
+@media (orientation:landscape) and (max-height:560px) {
+  .opening-card {width:min(100%,720px); padding:6px 18px;}
+  .opening .bismillah {font-size:25px; margin:2px 0;}
+  .opening-name-label {margin-top:2px;}
+  .opening h1.opening-couple {flex-direction:row; gap:0 10px; margin-top:3px; font-size:clamp(29px,6vh,42px);}
+  .opening-couple .name-amp {font-size:.7em;}
+  .opening-script {margin-top:3px; font-size:15px;}
+  .opening-divider {margin:4px auto;}
+  .opening-card p.opening-invitation-copy {margin-top:4px; font-size:9px; line-height:1.35;}
+  .opening-action-row {margin-top:5px;}
+  .opening .open-button {flex-basis:60px; width:60px; height:60px; padding:7px;}
+  .opening .open-button .seal-action {font-size:6px;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .opening,.opening-card,.opening .open-button {animation:none !important; transition:none !important;}
+}
 </style>
 
 </head>
@@ -3769,10 +3810,7 @@ nav a { flex-shrink:0; }
 
 <!-- OPENING INVITATION -->
 
-<div class="opening" id="opening">
-  <div class="opening-ornament one" aria-hidden="true"></div>
-  <div class="opening-ornament two" aria-hidden="true"></div>
-
+<div class="opening" id="opening" aria-label="Wedding invitation opening screen">
   <div class="opening-card" id="openingCard">
     <div class="opening-topline">
       <span class="opening-topline-name">MEHFIL-E-NOOR</span>
@@ -3790,18 +3828,15 @@ nav a { flex-shrink:0; }
     </h1>
 
     <span class="opening-script">A beautiful beginning, by His grace.</span>
-
-    <div class="opening-divider"><span>✧</span></div>
+    <div class="opening-divider" aria-hidden="true"><span>✧</span></div>
     <div class="opening-date"><span class="date-day">16</span><span class="date-month">DECEMBER</span><span class="date-year">2026</span></div>
 
     <p class="opening-invitation-copy">
-      With hearts full of gratitude, our families invite you to celebrate
-      this blessed union.
+      With hearts full of gratitude, our families invite you to celebrate this blessed union.
     </p>
 
     <div class="opening-action-row">
-      <button class="open-button" id="openInvite" type="button" aria-label="Open wedding invitation">
-        <span class="seal-monogram">A&amp;D</span>
+      <button class="open-button" id="openInvite" type="button" aria-label="Open invitation">
         <span class="seal-action">OPEN INVITATION</span>
       </button>
     </div>
@@ -4899,357 +4934,4 @@ form.addEventListener("submit", event => {
 
 </style>
 
-<style id="opening-viewport-fit-final">
-/* Opening screen: one fixed viewport, no page or card scrolling, no collisions. */
-html, body { margin:0; }
-.opening {
-  position:fixed !important;
-  inset:0 !important;
-  width:100% !important;
-  height:100vh !important;
-  height:100svh !important;
-  height:100dvh !important;
-  min-height:0 !important;
-  box-sizing:border-box !important;
-  display:grid !important;
-  place-items:center !important;
-  padding: max(22px, env(safe-area-inset-top)) max(22px, env(safe-area-inset-right)) max(22px, env(safe-area-inset-bottom)) max(22px, env(safe-area-inset-left)) !important;
-  overflow:hidden !important;
-  overscroll-behavior:none !important;
-}
-.opening-card {
-  box-sizing:border-box !important;
-  width:min(100%, 570px) !important;
-  max-width:570px !important;
-  max-height:calc(100dvh - 52px) !important;
-  min-height:0 !important;
-  padding:clamp(13px, 2.25vh, 25px) clamp(18px, 4vw, 38px) clamp(11px, 1.9vh, 21px) !important;
-  overflow:hidden !important;
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:0 !important;
-}
-.opening-card::before { flex:0 0 1px; margin:0 auto clamp(7px,1.2vh,13px) !important; }
-.opening-topline { flex:0 0 auto; line-height:1.35 !important; gap:clamp(6px,1.5vw,12px) !important; }
-.opening .bismillah { flex:0 0 auto; margin:clamp(7px,1.35vh,13px) 0 3px !important; font-size:clamp(31px,5vh,43px) !important; line-height:1.15 !important; }
-.opening-eyebrow { flex:0 0 auto; font-size:clamp(6px,1.05vh,8px) !important; line-height:1.5 !important; }
-.opening-name-label { flex:0 0 auto; margin:clamp(7px,1.4vh,13px) 0 0 !important; font-size:clamp(13px,2vh,17px) !important; line-height:1.25 !important; }
-.opening h1.opening-couple {
-  flex:0 0 auto !important;
-  margin:clamp(5px,1vh,10px) 0 0 !important;
-  font-size:clamp(35px,6.2vw,62px) !important;
-  line-height:1.03 !important;
-  gap:2px clamp(8px,1.5vw,15px) !important;
-}
-.opening-script { flex:0 0 auto; margin:clamp(5px,1vh,10px) auto 0 !important; font-size:clamp(15px,2.35vw,21px) !important; line-height:1.25 !important; }
-.opening-divider { flex:0 0 auto; margin:clamp(8px,1.45vh,14px) auto clamp(6px,1vh,10px) !important; }
-.opening-date { flex:0 0 auto; line-height:1.1 !important; }
-.opening-date-caption { flex:0 0 auto; margin-top:4px !important; line-height:1.3 !important; }
-.opening-card p.opening-invitation-copy { flex:0 0 auto; margin:clamp(7px,1.25vh,12px) auto 0 !important; font-size:clamp(10px,1.35vw,11.5px) !important; line-height:1.55 !important; }
-.opening-card p.opening-dua { flex:0 0 auto; margin:clamp(4px,.8vh,8px) auto 0 !important; font-size:clamp(9px,1.25vw,10.5px) !important; line-height:1.5 !important; }
-.opening-action-row { flex:0 0 auto; margin:clamp(7px,1.2vh,12px) 0 0 !important; }
-.opening .open-button { flex:0 0 86px !important; width:86px !important; height:86px !important; min-width:86px !important; min-height:86px !important; }
-.opening-seal-wrap { flex:0 0 auto; margin:clamp(6px,1vh,10px) auto 0 !important; gap:4px !important; }
-.opening-seal { width:34px !important; height:34px !important; }
-.opening-seal img { width:23px !important; height:23px !important; }
-.opening .seal-caption { font-size:11px !important; line-height:1.15 !important; }
-.opening-note { flex:0 0 auto; margin:clamp(6px,1vh,10px) 0 0 !important; font-size:6px !important; line-height:1.2 !important; }
 
-@media (max-width:650px) {
-  .opening { padding:max(16px,env(safe-area-inset-top)) max(15px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(15px,env(safe-area-inset-left)) !important; }
-  .opening-card { width:100% !important; max-width:460px !important; max-height:calc(100dvh - 34px) !important; padding:clamp(10px,1.8vh,17px) clamp(13px,4vw,22px) !important; }
-  .opening-topline { font-size:7px !important; letter-spacing:.14em !important; }
-  .opening .bismillah { font-size:clamp(29px,8vw,38px) !important; margin:6px 0 2px !important; }
-  .opening-eyebrow { font-size:6.5px !important; letter-spacing:.14em !important; }
-  .opening-name-label { margin-top:7px !important; font-size:14px !important; }
-  .opening h1.opening-couple { flex-direction:column !important; gap:0 !important; font-size:clamp(36px,10.2vw,49px) !important; line-height:.98 !important; margin-top:5px !important; }
-  .opening h1.opening-couple .name-amp { font-size:.54em !important; line-height:.75 !important; margin:1px 0 !important; }
-  .opening-script { margin-top:6px !important; font-size:clamp(15px,4.2vw,18px) !important; }
-  .opening-divider { margin:8px auto 6px !important; }
-  .opening-date { gap:7px !important; font-size:21px !important; }
-  .opening-date .date-month { font-size:7px !important; letter-spacing:.18em !important; }
-  .opening-date .date-year { font-size:12px !important; }
-  .opening-date-caption { font-size:5.5px !important; letter-spacing:.12em !important; }
-  .opening-card p.opening-invitation-copy { margin-top:7px !important; font-size:10px !important; line-height:1.45 !important; }
-  .opening-card p.opening-dua { margin-top:4px !important; font-size:9px !important; line-height:1.4 !important; }
-  .opening-action-row { margin-top:7px !important; }
-  .opening .open-button { flex-basis:78px !important; width:78px !important; height:78px !important; min-width:78px !important; min-height:78px !important; }
-  .opening .open-button > span:first-child { font-size:7px !important; }
-  .opening-seal-wrap { margin-top:6px !important; }
-  .opening-seal { width:29px !important; height:29px !important; }
-  .opening-seal img { width:20px !important; height:20px !important; }
-  .opening .seal-caption { font-size:10px !important; }
-  .opening-note { margin-top:5px !important; font-size:5px !important; letter-spacing:.1em !important; }
-}
-
-/* Short phones and compact laptop windows: preserve hierarchy, remove only ornaments. */
-@media (max-height:740px) {
-  .opening-card { padding-top:10px !important; padding-bottom:9px !important; }
-  .opening .bismillah { margin-top:5px !important; }
-  .opening-name-label { margin-top:6px !important; }
-  .opening h1.opening-couple { margin-top:4px !important; }
-  .opening-script { margin-top:4px !important; }
-  .opening-divider { margin-top:6px !important; margin-bottom:5px !important; }
-  .opening-card p.opening-invitation-copy { margin-top:5px !important; }
-  .opening-card p.opening-dua { margin-top:3px !important; }
-  .opening-action-row { margin-top:5px !important; }
-  .opening .open-button { flex-basis:72px !important; width:72px !important; height:72px !important; min-width:72px !important; min-height:72px !important; }
-  .opening-seal-wrap { margin-top:4px !important; }
-  .opening-note { margin-top:4px !important; }
-}
-@media (max-height:650px) {
-  .opening-date-caption, .opening-note { display:none !important; }
-  .opening-seal-wrap { display:none !important; }
-  .opening-card p.opening-invitation-copy { max-width:390px !important; }
-  .opening .bismillah { font-size:30px !important; }
-  .opening h1.opening-couple { font-size:clamp(34px,5vw,48px) !important; }
-}
-@media (max-width:650px) and (max-height:760px) {
-  .opening h1.opening-couple { font-size:clamp(32px,8.8vw,42px) !important; }
-  .opening-script { font-size:15px !important; }
-  .opening-card p.opening-invitation-copy { font-size:9px !important; }
-  .opening-card p.opening-dua { font-size:8px !important; }
-}
-@media (orientation:landscape) and (max-height:560px) {
-  .opening-card { max-width:min(720px,calc(100vw - 54px)) !important; padding:8px 22px !important; }
-  .opening .bismillah { margin:3px 0 1px !important; font-size:27px !important; }
-  .opening-name-label { margin-top:3px !important; }
-  .opening h1.opening-couple { flex-direction:row !important; font-size:clamp(30px,6vh,43px) !important; gap:0 10px !important; }
-  .opening-script { margin-top:3px !important; }
-  .opening-divider { margin:4px auto !important; }
-  .opening-card p.opening-invitation-copy { margin-top:4px !important; line-height:1.3 !important; }
-  .opening-card p.opening-dua, .opening-seal-wrap, .opening-note, .opening-date-caption { display:none !important; }
-  .opening-action-row { margin-top:4px !important; }
-  .opening .open-button { flex-basis:62px !important; width:62px !important; height:62px !important; min-width:62px !important; min-height:62px !important; }
-}
-@media (prefers-reduced-motion:reduce) { .opening, .opening-card { scroll-behavior:auto !important; } }
-
-
-/* FINAL OPENING COVER — concise, balanced and viewport-fitted */
-.opening {
-  padding: max(14px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right))
-           max(14px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left)) !important;
-}
-.opening-card {
-  width:min(100%,590px) !important;
-  max-width:590px !important;
-  max-height:calc(100dvh - 34px) !important;
-  padding:clamp(15px,2.4vh,25px) clamp(20px,4vw,42px) !important;
-  gap:0 !important;
-  overflow:hidden !important;
-  justify-content:center !important;
-}
-.opening-card::before { inset:8px !important; }
-.opening-card::after { inset:14px !important; }
-.opening-topline {
-  font-size:clamp(6px,.75vw,8px) !important;
-  letter-spacing:.2em !important;
-  line-height:1.5 !important;
-}
-.opening .bismillah {
-  margin:clamp(8px,1.5vh,14px) 0 3px !important;
-  font-size:clamp(29px,4.6vh,39px) !important;
-  line-height:1.1 !important;
-}
-.opening-name-label {
-  margin:clamp(5px,1vh,10px) 0 0 !important;
-  font-size:clamp(13px,1.8vh,17px) !important;
-  line-height:1.25 !important;
-}
-.opening h1.opening-couple {
-  margin:clamp(5px,1vh,10px) 0 0 !important;
-  font-size:clamp(48px,6.5vw,76px) !important;
-  line-height:1 !important;
-  column-gap:clamp(8px,1.5vw,17px) !important;
-}
-.opening-couple .person-name { line-height:1 !important; }
-.opening-couple .name-amp {
-  font-size:clamp(34px,4.2vw,49px) !important;
-  line-height:1 !important;
-}
-.opening-script {
-  margin:clamp(5px,1vh,10px) auto 0 !important;
-  font-size:clamp(16px,2.3vh,21px) !important;
-  line-height:1.2 !important;
-}
-.opening-divider {
-  margin:clamp(7px,1.3vh,12px) auto 7px !important;
-}
-.opening-date {
-  padding:6px 13px !important;
-  font-size:clamp(20px,3.2vh,28px) !important;
-  line-height:1.1 !important;
-}
-.opening-date-caption,.opening-dua,.opening-eyebrow,
-.opening-seal-wrap,.opening-note { display:none !important; }
-.opening-card p.opening-invitation-copy {
-  max-width:390px !important;
-  margin:clamp(8px,1.35vh,13px) auto 0 !important;
-  font-size:clamp(10px,1.2vw,11px) !important;
-  line-height:1.55 !important;
-}
-.opening-action-row {
-  margin:clamp(12px,2vh,19px) 0 0 !important;
-  flex:0 0 auto !important;
-}
-
-/* Antique champagne wax seal — tactile edge, recessed rings and A&D monogram */
-.opening .open-button {
-  position:relative !important;
-  isolation:isolate !important;
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  justify-content:center !important;
-  gap:3px !important;
-  width:clamp(82px,10vh,94px) !important;
-  height:clamp(82px,10vh,94px) !important;
-  min-width:clamp(82px,10vh,94px) !important;
-  min-height:clamp(82px,10vh,94px) !important;
-  flex:0 0 auto !important;
-  padding:10px !important;
-  margin:0 auto !important;
-  overflow:visible !important;
-  border:1px solid rgba(245,222,177,.9) !important;
-  border-radius:46% 54% 49% 51% / 52% 46% 54% 48% !important;
-  outline:1px solid rgba(213,177,116,.65) !important;
-  outline-offset:4px !important;
-  background:
-    radial-gradient(ellipse at 32% 23%,rgba(255,248,225,.52),transparent 30%),
-    radial-gradient(ellipse at 72% 78%,rgba(105,68,35,.27),transparent 43%),
-    repeating-radial-gradient(circle at 48% 48%,rgba(255,255,255,.035) 0 1px,transparent 1px 3px),
-    linear-gradient(145deg,#e6c995 0%,#bd965d 43%,#a77c49 72%,#d8b77e 100%) !important;
-  box-shadow:
-    inset 0 0 0 3px rgba(255,246,220,.28),
-    inset 0 5px 12px rgba(255,255,255,.2),
-    inset 0 -7px 13px rgba(75,48,24,.2),
-    0 8px 22px rgba(0,0,0,.28) !important;
-  color:#173b3c !important;
-  animation:sealGlow 4.5s ease-in-out infinite !important;
-  transform:rotate(-2deg);
-}
-.opening .open-button::before {
-  content:"";
-  position:absolute;
-  z-index:-1;
-  inset:7px;
-  border:1px solid rgba(255,246,221,.68);
-  border-radius:inherit;
-  box-shadow:inset 0 0 0 1px rgba(110,76,40,.13);
-}
-.opening .open-button::after {
-  content:"";
-  position:absolute;
-  z-index:-1;
-  inset:-4px;
-  border:1px solid rgba(225,196,145,.28);
-  border-radius:48% 52% 46% 54% / 49% 53% 47% 51%;
-}
-.opening .open-button .seal-monogram {
-  display:block !important;
-  max-width:none !important;
-  color:#183b3b !important;
-  font:600 clamp(22px,3.2vh,29px)/1 var(--serif) !important;
-  letter-spacing:-.06em !important;
-  text-transform:none !important;
-  text-shadow:0 1px 0 rgba(255,246,221,.45);
-}
-.opening .open-button .seal-action {
-  display:block !important;
-  max-width:62px !important;
-  color:rgba(31,57,55,.88) !important;
-  font:700 5.5px/1.2 var(--sans) !important;
-  letter-spacing:.13em !important;
-  text-align:center !important;
-}
-.opening .open-button:hover {
-  transform:rotate(0) scale(1.045) !important;
-  box-shadow:
-    inset 0 0 0 3px rgba(255,246,220,.34),
-    inset 0 5px 12px rgba(255,255,255,.23),
-    inset 0 -7px 13px rgba(75,48,24,.18),
-    0 11px 28px rgba(0,0,0,.3) !important;
-}
-.opening .open-button .button-arrow {display:none !important;}
-
-@media (max-width:650px) {
-  .opening { padding:max(12px,env(safe-area-inset-top)) 13px max(12px,env(safe-area-inset-bottom)) 13px !important; }
-  .opening-card {
-    width:100% !important;
-    max-width:440px !important;
-    max-height:calc(100dvh - 26px) !important;
-    padding:clamp(12px,2vh,18px) 14px !important;
-  }
-  .opening-topline {font-size:6px !important;letter-spacing:.14em !important;}
-  .opening .bismillah {font-size:clamp(27px,7.5vw,34px) !important;margin:7px 0 2px !important;}
-  .opening-name-label {font-size:13px !important;margin-top:6px !important;}
-  .opening h1.opening-couple {
-    grid-template-columns:minmax(0,1fr) !important;
-    grid-template-rows:auto auto auto !important;
-    row-gap:0 !important;
-    margin-top:5px !important;
-    font-size:clamp(43px,11.5vw,57px) !important;
-    line-height:.91 !important;
-  }
-  .opening-couple .person-name {width:auto !important;line-height:.98 !important;}
-  .opening-couple .name-amp {font-size:clamp(27px,7vw,35px) !important;line-height:.76 !important;}
-  .opening-script {font-size:clamp(15px,4vw,18px) !important;margin-top:6px !important;}
-  .opening-divider {margin:8px auto 6px !important;}
-  .opening-date {font-size:clamp(19px,5.4vw,23px) !important;padding:5px 10px !important;gap:6px !important;}
-  .opening-date .date-month {font-size:7px !important;letter-spacing:.16em !important;}
-  .opening-date .date-year {font-size:11px !important;}
-  .opening-card p.opening-invitation-copy {
-    max-width:300px !important;
-    margin-top:7px !important;
-    font-size:9px !important;
-    line-height:1.45 !important;
-  }
-  .opening-action-row {margin-top:10px !important;}
-  .opening .open-button {
-    width:78px !important;height:78px !important;
-    min-width:78px !important;min-height:78px !important;
-  }
-  .opening .open-button .seal-monogram {font-size:24px !important;}
-  .opening .open-button .seal-action {font-size:5px !important;}
-}
-@media (max-height:740px) {
-  .opening-card {padding-top:9px !important;padding-bottom:9px !important;}
-  .opening .bismillah {margin-top:4px !important;}
-  .opening-name-label {margin-top:4px !important;}
-  .opening h1.opening-couple {margin-top:3px !important;}
-  .opening-script {margin-top:3px !important;}
-  .opening-divider {margin-top:5px !important;margin-bottom:4px !important;}
-  .opening-card p.opening-invitation-copy {margin-top:5px !important;}
-  .opening-action-row {margin-top:7px !important;}
-  .opening .open-button {width:70px !important;height:70px !important;min-width:70px !important;min-height:70px !important;}
-}
-@media (max-width:650px) and (max-height:700px) {
-  .opening .bismillah {font-size:25px !important;}
-  .opening h1.opening-couple {font-size:clamp(37px,9.5vw,46px) !important;}
-  .opening-script {font-size:14px !important;}
-  .opening-card p.opening-invitation-copy {font-size:8px !important;line-height:1.35 !important;}
-  .opening .open-button {width:64px !important;height:64px !important;min-width:64px !important;min-height:64px !important;}
-}
-@media (orientation:landscape) and (max-height:560px) {
-  .opening-card {max-width:680px !important;padding:8px 24px !important;}
-  .opening .bismillah {font-size:24px !important;margin:2px 0 !important;}
-  .opening-name-label {margin-top:2px !important;}
-  .opening h1.opening-couple {
-    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) !important;
-    grid-template-rows:auto !important;
-    font-size:clamp(35px,7vh,48px) !important;
-    line-height:1 !important;
-  }
-  .opening-script {margin-top:2px !important;font-size:15px !important;}
-  .opening-divider {margin:3px auto !important;}
-  .opening-card p.opening-invitation-copy {margin-top:3px !important;font-size:8px !important;}
-  .opening-action-row {margin-top:4px !important;}
-  .opening .open-button {width:58px !important;height:58px !important;min-width:58px !important;min-height:58px !important;}
-}
-@media (prefers-reduced-motion:reduce) {
-  .opening .open-button {animation:none !important;}
-}
-
-</style>
