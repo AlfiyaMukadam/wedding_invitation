@@ -3471,76 +3471,128 @@ nav a { flex-shrink:0; }
 }
 
 
-
-/* ROYAL DOOR REVEAL — layered Mughal palace doors */
-.doorway {
-  position:absolute; inset:0; z-index:5; pointer-events:none;
-  display:grid; grid-template-columns:1fr 1fr; perspective:1600px;
-  transition:opacity .45s ease .15s;
-}
-.door-arch {
-  position:absolute; inset:clamp(20px,4vh,42px) clamp(19px,4vw,42px);
-  border:1px solid rgba(222,190,132,.52); border-radius:48% 48% 0 0 / 17% 17% 0 0;
-  box-shadow:inset 0 0 35px rgba(211,173,109,.07),0 0 25px rgba(0,0,0,.22);
-}
-.invitation-door {
-  position:relative; overflow:hidden; transform-style:preserve-3d;
+/* =========================================
+   REFINED OPENING — COMPACT, SCREEN-FIT
+   Muted champagne gold with teal; no scrolling
+========================================= */
+.opening {
+  padding: max(16px, env(safe-area-inset-top)) 18px max(16px, env(safe-area-inset-bottom));
   background:
-    radial-gradient(ellipse at 50% 30%,rgba(27,103,105,.5),transparent 45%),
-    repeating-linear-gradient(90deg,rgba(220,190,135,.04) 0 2px,transparent 2px 9px),
-    linear-gradient(145deg,#0b5157,#032e36 45%,#06242d);
-  border:1px solid rgba(210,177,120,.56);
-  box-shadow:inset 0 0 35px rgba(0,0,0,.25);
-  transition:transform 1.9s cubic-bezier(.72,.04,.19,1),filter 1.3s ease;
-  transform-origin:center;
+    radial-gradient(ellipse at 50% 45%, rgba(211,185,143,.12), transparent 54%),
+    linear-gradient(135deg,rgba(3,31,36,.86),rgba(3,49,55,.78)),
+    url("./handpicture.jpg") center/cover no-repeat, var(--deep);
 }
-.door-left {margin:clamp(25px,5vh,48px) 0 clamp(20px,4vh,38px) clamp(20px,4vw,40px); border-right:0; transform-origin:left center;}
-.door-right {margin:clamp(25px,5vh,48px) clamp(20px,4vw,40px) clamp(20px,4vh,38px) 0; border-left:0; transform-origin:right center;}
-.door-panel-border {position:absolute;inset:12px;border:1px solid rgba(222,190,132,.55);outline:1px solid rgba(222,190,132,.14);outline-offset:5px;}
-.door-panel-border::before {content:"";position:absolute;inset:8% 10%;border:1px solid rgba(222,190,132,.26);border-radius:48% 48% 0 0 / 18% 18% 0 0;}
-.door-panel-border::after {content:"";position:absolute;inset:18% 16% 13%;border:1px solid rgba(222,190,132,.2);border-radius:48% 48% 0 0 / 15% 15% 0 0;}
-.door-medallion {position:absolute;top:24%;left:50%;transform:translateX(-50%);width:clamp(70px,10vw,130px);aspect-ratio:1;border:1px solid rgba(222,190,132,.55);border-radius:50%;display:grid;place-items:center;color:#ddc18d;font-size:clamp(22px,3vw,38px);box-shadow:0 0 28px rgba(218,187,130,.12),inset 0 0 18px rgba(218,187,130,.08);}
-.door-lattice {position:absolute;left:50%;top:48%;width:58%;height:30%;transform:translateX(-50%);border:1px solid rgba(222,190,132,.25);border-radius:50% 50% 0 0 / 18% 18% 0 0;}
-.door-lattice::before,.door-lattice::after {content:"";position:absolute;inset:12%;border:1px solid rgba(222,190,132,.22);border-radius:inherit;}
-.door-lattice::after {inset:24%;}
-.door-handle {position:absolute;top:52%;width:8px;height:8px;border-radius:50%;background:linear-gradient(145deg,#f2dfb6,#9d7442);box-shadow:0 0 10px rgba(229,195,139,.35);}
-.door-left .door-handle {right:13%;}.door-right .door-handle {left:13%;}
-.door-seal-action {position:absolute;z-index:7;left:50%;top:50%;transform:translate(-50%,-50%);transition:opacity .35s ease,transform .45s ease;}
-.door-open-button {border:0;background:transparent;padding:10px;display:flex;flex-direction:column;align-items:center;gap:11px;color:#ead8b5;cursor:pointer;text-align:center;}
-.seal-ring {width:clamp(76px,11vw,110px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#f0dcb3,#bd9456 45%,#78552e 100%);border:1px solid #f2dfb6;outline:1px solid rgba(238,216,174,.68);outline-offset:5px;box-shadow:0 0 25px rgba(235,205,150,.28),0 12px 35px rgba(0,0,0,.32);animation:sealGlow 3.5s ease-in-out infinite;}
-.seal-ring::before {content:"";position:absolute;width:calc(clamp(76px,11vw,110px) - 14px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,249,226,.72);}
-.seal-monogram {font:clamp(20px,3.4vw,31px) var(--serif);color:#153d40;text-shadow:0 1px rgba(255,255,255,.3);}
-.seal-monogram i {font:italic .65em var(--script);margin:0 2px;}
-.door-open-label {font-size:clamp(7px,1vw,10px);letter-spacing:.24em;text-shadow:0 2px 9px #001a1e;}
-.door-open-button:hover .seal-ring {transform:scale(1.06);box-shadow:0 0 40px rgba(235,205,150,.45),0 12px 35px rgba(0,0,0,.32);}
-.opening-card {z-index:4;transition:opacity .7s ease,transform .8s ease,filter .8s ease;}
-.opening.opened .door-left {transform:translateX(-103%) rotateY(-14deg);filter:brightness(.75);}
-.opening.opened .door-right {transform:translateX(103%) rotateY(14deg);filter:brightness(.75);}
-.opening.opened .door-seal-action {opacity:0;transform:translate(-50%,-50%) scale(.65);pointer-events:none;}
-.opening.opened .doorway {opacity:0;}
-.opening.opened .opening-card {opacity:0;transform:scale(1.04);filter:blur(5px);pointer-events:none;}
+.opening::before {border-color:rgba(215,190,151,.48);inset:12px}
+.opening::after {border-color:rgba(215,190,151,.18);inset:19px}
+.opening-curtain {background:linear-gradient(135deg,#0a4148,#052f36 72%,#092e32);}
+.opening-curtain.left {border-right-color:rgba(215,190,151,.32)}
+.opening-curtain.right {border-left-color:rgba(215,190,151,.32)}
+.opening-card {
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(5px,1.2vh,12px);
+  width:min(100%,560px);height:min(calc(100dvh - 52px),760px);max-height:none;
+  overflow:hidden;padding:clamp(14px,3.2vh,28px) clamp(16px,4vw,36px);
+  border-color:rgba(215,190,151,.5);outline-color:rgba(215,190,151,.18);
+  background:rgba(3,39,45,.56);box-shadow:0 18px 70px rgba(0,0,0,.2);
+}
+.opening-topline {color:#cdb58d;font-size:8px;letter-spacing:.2em}
+.bismillah {color:#d9c29b;font-size:clamp(23px,4.3vh,33px);margin:0;text-shadow:0 0 12px rgba(215,190,151,.18)}
+.opening-eyebrow {color:#cdb58d;font-size:8px;letter-spacing:.2em;line-height:1.5}
+.opening h1.opening-couple {margin:clamp(4px,1vh,10px) 0 0;color:#e1cba8;font-size:clamp(43px,8.4vh,68px);line-height:1.05;text-shadow:0 2px 15px rgba(215,190,151,.12)}
+.opening-script {margin:2px 0 0;color:#f0e8db;font-size:clamp(21px,4.5vh,31px);line-height:1.15}
+.opening-divider {margin:clamp(3px,1vh,8px) 0;color:#c9ae83}
+.opening-date {color:#e1cba8;font-size:clamp(14px,2.8vh,19px);letter-spacing:.12em}
+.opening-card p {max-width:360px;margin:clamp(5px,1vh,10px) auto;color:#e8e0d4;font-size:clamp(10px,1.8vh,12px);line-height:1.65}
+.open-button {margin-top:clamp(4px,1vh,10px);padding:12px 26px;border:1px solid rgba(230,211,176,.8);background:linear-gradient(115deg,#b99a6a,#e3d0ad 48%,#c3a477);color:#12383b;box-shadow:0 5px 20px rgba(198,169,122,.1);font-size:8px;letter-spacing:.2em;animation:none}
+.open-button:hover {transform:translateY(-1px);box-shadow:0 5px 20px rgba(215,190,151,.2)}
+.opening-seal-wrap {margin:clamp(5px,1.2vh,12px) auto 0;gap:5px}
+.opening-seal {width:clamp(38px,6vh,54px);height:clamp(38px,6vh,54px);border-color:#dfc59b;outline-color:rgba(215,190,151,.3);outline-offset:3px;animation:none;background:linear-gradient(145deg,#e2cfad,#b99663 55%,#c9ab7b);box-shadow:0 0 12px rgba(215,190,151,.12)}
+.opening-seal img {width:clamp(25px,4.5vh,38px);height:clamp(25px,4.5vh,38px)}
+.opening-seal::before {border-color:rgba(255,249,230,.55);inset:4px}
+.seal-caption {font-size:11px;color:#d2bc98}
+.opening-note {display:none}
 @media(max-width:650px) {
- .door-arch {inset:17px 15px;}
- .door-left {margin:22px 0 19px 16px;}
- .door-right {margin:22px 16px 19px 0;}
- .door-panel-border {inset:8px;}
- .door-medallion {top:22%;width:clamp(54px,16vw,80px);}
- .door-lattice {top:46%;height:33%;}
- .seal-ring {width:78px;}
- .seal-ring::before {width:64px;}
- .door-open-label {font-size:7px;letter-spacing:.18em;}
+ .opening {padding: max(18px,env(safe-area-inset-top)) 14px max(18px,env(safe-area-inset-bottom))}
+ .opening-card {height:calc(100dvh - 44px);width:min(100%,430px);padding:clamp(12px,2.5vh,22px) 15px;gap:clamp(4px,1vh,8px)}
+ .opening-topline {font-size:7px;letter-spacing:.15em}
+ .bismillah {font-size:clamp(22px,4vh,29px)}
+ .opening-eyebrow {font-size:7px;letter-spacing:.16em}
+ .opening h1.opening-couple {font-size:clamp(38px,10.5vw,55px);margin:4px 0 0}
+ .opening-script {font-size:clamp(20px,5.8vw,28px)}
+ .opening-date {font-size:15px}
+ .opening-card p {max-width:290px;font-size:10px;line-height:1.5;margin:5px auto}
+ .open-button {padding:11px 23px}
+ .opening-seal-wrap {margin-top:5px}
+ .opening-seal {width:42px;height:42px}
+ .opening-seal img {width:28px;height:28px}
+ .seal-caption {font-size:10px}
+}
+@media(max-width:380px) {
+ .opening-card {height:calc(100dvh - 38px);padding:10px 12px;gap:4px}
+ .opening h1.opening-couple {font-size:clamp(35px,10vw,46px)}
+ .opening-script {font-size:clamp(18px,5.4vw,24px)}
+ .opening-card p {font-size:9px;max-width:260px}
 }
 @media(orientation:landscape) and (max-height:520px) {
- .door-arch {inset:10px 20px;}
- .door-left {margin:13px 0 12px 20px;}
- .door-right {margin:13px 20px 12px 0;}
- .seal-ring {width:64px;}
- .seal-ring::before {width:50px;}
- .door-open-label {font-size:6px;}
+ .opening-card {width:min(94vw,850px);height:calc(100dvh - 30px);padding:8px 24px;gap:2px}
+ .opening h1.opening-couple {font-size:clamp(32px,8vh,45px);margin:2px 0}
+ .bismillah {font-size:19px}
+ .opening-script {font-size:clamp(19px,5vh,25px)}
+ .opening-card p {margin:3px auto;font-size:9px}
+ .opening-seal-wrap {margin:3px auto}
+ .opening-seal {width:32px;height:32px}
+ .opening-seal img {width:21px;height:21px}
+ .seal-caption {font-size:8px}
 }
-@media(prefers-reduced-motion:reduce) {
- .invitation-door,.door-seal-action,.doorway {transition:none!important;}
+
+
+/* FINAL OPENING: understated antique champagne wax seal */
+.opening-card {
+  overflow:hidden !important;
+  max-height:calc(100dvh - 40px) !important;
+  height:min(calc(100dvh - 40px),760px) !important;
+  scrollbar-width:none !important;
 }
+.opening-card::-webkit-scrollbar {display:none !important}
+.open-button.wax-seal {
+  position:relative; flex:0 0 auto; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;
+  width:clamp(88px,14vh,112px); height:clamp(88px,14vh,112px); min-height:0; padding:0; margin:clamp(7px,1.5vh,14px) auto 0;
+  border:0; border-radius:47% 53% 49% 51% / 51% 46% 54% 49%; cursor:pointer;
+  color:#4b351e; text-align:center; transform:rotate(-2deg);
+  background:
+    radial-gradient(circle at 27% 23%,rgba(255,247,225,.62),transparent 26%),
+    radial-gradient(circle at 72% 78%,rgba(103,67,31,.22),transparent 37%),
+    repeating-radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.04) 0 1px,rgba(105,71,34,.025) 2px 4px),
+    linear-gradient(145deg,#ddc49b 0%,#b58e5b 35%,#d4b58a 63%,#a77c4d 100%);
+  box-shadow:0 5px 12px rgba(0,0,0,.24), inset 2px 3px 6px rgba(255,250,230,.5), inset -4px -6px 10px rgba(87,54,24,.22), 0 0 0 1px rgba(228,204,164,.62);
+  animation:waxBreath 4.8s ease-in-out infinite; transition:transform .25s ease,filter .25s ease;
+}
+.open-button.wax-seal::before {content:"";position:absolute;inset:8%;border:1px solid rgba(92,61,29,.35);border-radius:inherit;box-shadow:inset 0 1px rgba(255,247,224,.45);pointer-events:none}
+.open-button.wax-seal::after {content:"";position:absolute;inset:15%;border:1px solid rgba(255,246,225,.32);border-radius:inherit;pointer-events:none}
+.wax-monogram {position:relative;z-index:1;display:block;font:clamp(24px,4.6vh,35px)/1 var(--serif);font-weight:500;letter-spacing:-.07em;color:#6b4927;text-shadow:0 1px rgba(255,239,210,.48),0 -1px rgba(92,61,30,.12)}
+.wax-amp {font:italic .55em var(--serif);margin:0 .05em;vertical-align:12%;}
+.wax-label {position:relative;z-index:1;font:600 clamp(6px,1.05vh,8px)/1.2 var(--sans);letter-spacing:.12em;color:#5b3d20;text-shadow:0 1px rgba(255,240,215,.35)}
+.open-button.wax-seal:hover {transform:rotate(0) scale(1.04);filter:brightness(1.04);box-shadow:0 8px 18px rgba(0,0,0,.23),inset 2px 3px 7px rgba(255,250,230,.55),inset -4px -6px 10px rgba(87,54,24,.2)}
+.open-button.wax-seal:focus-visible {outline:2px solid #ead8b5;outline-offset:6px}
+.open-button.wax-seal:disabled {opacity:.85}
+@keyframes waxBreath {0%,100%{filter:brightness(1)}50%{filter:brightness(1.035)}}
+@media(max-width:650px) {
+ .opening-card {height:calc(100dvh - max(32px,env(safe-area-inset-top) + env(safe-area-inset-bottom))) !important;max-height:calc(100dvh - 32px) !important;padding:clamp(9px,2.2vh,19px) 13px !important;gap:clamp(3px,.8vh,7px) !important}
+ .open-button.wax-seal {width:clamp(82px,13vh,100px);height:clamp(82px,13vh,100px);margin-top:clamp(5px,1vh,10px)}
+ .wax-monogram {font-size:clamp(23px,4.2vh,31px)}
+ .wax-label {font-size:clamp(6px,.95vh,7px)}
+}
+@media(max-width:380px) {
+ .opening-card {padding:8px 10px !important;gap:3px !important}
+ .open-button.wax-seal {width:78px;height:78px}
+ .wax-monogram {font-size:24px}
+}
+@media(orientation:landscape) and (max-height:520px) {
+ .opening-card {height:calc(100dvh - 24px) !important;max-height:calc(100dvh - 24px) !important;padding:5px 18px !important;gap:1px !important}
+ .open-button.wax-seal {width:62px;height:62px;margin:3px auto}
+ .wax-monogram {font-size:20px}
+ .wax-label {font-size:6px}
+}
+@media(prefers-reduced-motion:reduce){.open-button.wax-seal{animation:none}}
 
 </style>
 </head>
@@ -3554,36 +3606,12 @@ nav a { flex-shrink:0; }
   <div class="opening-ornament one"></div>
   <div class="opening-ornament two"></div>
 
-  <!-- ROYAL MUGHAL DOORWAY LAYER -->
-  <div class="doorway" aria-hidden="true">
-    <div class="door-arch"></div>
-    <div class="invitation-door door-left">
-      <div class="door-panel-border"></div>
-      <div class="door-medallion">✧</div>
-      <div class="door-lattice"></div>
-      <div class="door-handle"></div>
-    </div>
-    <div class="invitation-door door-right">
-      <div class="door-panel-border"></div>
-      <div class="door-medallion">✧</div>
-      <div class="door-lattice"></div>
-      <div class="door-handle"></div>
-    </div>
-  </div>
-  <div class="door-seal-action">
-    <button class="door-open-button" id="doorOpenInvite" type="button" aria-label="Open invitation">
-      <span class="seal-ring"><span class="seal-monogram">A <i>&amp;</i> D</span></span>
-      <span class="door-open-label">OPEN INVITATION</span>
-    </button>
-  </div>
-
   <div class="opening-card" id="openingCard">
     <div class="opening-topline">MEHFIL-E-NOOR <span>✦</span> 6 Rajab 1448 AH </div>
 
     <div class="bismillah" aria-label="Bismillah">﷽</div>
 
     <div class="opening-eyebrow">WITH THE BLESSINGS OF ALLAH</div>
-    <div class="opening-name-label">A celebration of</div>
 
     <h1 class="opening-couple">
   <span class="person-name">Er. Alfiya</span>
@@ -3591,28 +3619,17 @@ nav a { flex-shrink:0; }
   <span class="person-name">Er. Danish</span>
   </h1>
 
-    <span class="opening-script">Two hearts. One beautiful beginning.</span>
+    <span class="opening-script">A blessed beginning · A promise of forever</span>
 
     <div class="opening-divider"><span>✧</span></div>
     <div class="opening-date">16 <span>DECEMBER</span> 2026</div>
 
-    <p>
-      With grateful hearts and the blessings of Allah,
-      we invite you to be part of our wedding celebrations.
-    </p>
+    <p>With gratitude to Allah, our families invite you to celebrate our blessed union.</p>
 
-    <button class="open-button" id="openInvite" type="button">
-      <span>Open Invitation</span><span class="button-arrow" aria-hidden="true">↗</span>
+    <button class="open-button wax-seal" id="openInvite" type="button" aria-label="Open invitation">
+      <span class="wax-monogram">A<span class="wax-amp">&amp;</span>D</span>
+      <span class="wax-label">OPEN INVITATION</span>
     </button>
-
-    <div class="opening-seal-wrap">
-      <div class="opening-seal">
-        <img src="./AD-monogram.png" alt="Alfiya and Danish monogram">
-      </div>
-      <span class="seal-caption">With love &amp; duas</span>
-    </div>
-
-    <div class="opening-note">A GATHERING OF LOVE · FAITH · BLESSINGS</div>
   </div>
 
 </div>
@@ -4233,7 +4250,7 @@ nav a { flex-shrink:0; }
 =================================== */
 
 const opening = document.getElementById("opening");
-const openButton = document.getElementById("doorOpenInvite");
+const openButton = document.getElementById("openInvite");
 const music = document.getElementById("weddingMusic");
 const bubblesContainer = document.getElementById("openingBubbles");
 
@@ -4265,7 +4282,7 @@ openButton.addEventListener("click", async () => {
     console.warn("Music playback was prevented:", error);
   }
 
-  /* Let the palace doors complete their opening animation */
+  /* Let the curtains complete their animation */
 
   setTimeout(() => {
     opening.classList.add("hidden");
