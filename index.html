@@ -3661,6 +3661,83 @@ nav a { flex-shrink:0; }
   .couple-showcase .family-card{min-height:320px;padding-top:28px}
 }
 
+
+
+/* 2026 OPENING REVAMP — compact invitation + double-door reveal */
+.opening { background:linear-gradient(145deg,rgba(1,23,28,.68),rgba(2,37,43,.82)),url("./handpicture.jpg") center/cover no-repeat,#031f25 !important; }
+.opening-card { width:min(100%,650px) !important; max-width:650px !important; max-height:calc(100dvh - 48px) !important; overflow:hidden !important; padding:clamp(12px,2.6vh,25px) clamp(16px,3.8vw,38px) !important; gap:0 !important; background:rgba(3,34,40,.5) !important; backdrop-filter:blur(5px) !important; }
+.opening-topline { font-size:clamp(6px,1vw,8px) !important; letter-spacing:.18em !important; }
+.opening .bismillah { margin:clamp(5px,1.2vh,12px) 0 3px !important; font-size:clamp(28px,4.5vh,38px) !important; }
+.opening-eyebrow { font-size:7px !important; letter-spacing:.2em !important; }
+.opening-name-label { margin:clamp(5px,1.1vh,10px) 0 0 !important; font-size:clamp(12px,1.8vh,16px) !important; }
+.opening h1.opening-couple { margin:clamp(4px,1vh,9px) 0 0 !important; font-size:clamp(34px,5.7vw,58px) !important; line-height:1.02 !important; }
+.opening-script { margin:clamp(4px,1vh,9px) auto 0 !important; font-size:clamp(15px,2.3vw,21px) !important; }
+.opening-divider { margin:clamp(6px,1.2vh,12px) auto 7px !important; }
+.opening-date { padding:5px 13px !important; font-size:clamp(20px,3.1vh,28px) !important; }
+.opening-date-caption { margin-top:3px !important; font-size:6px !important; letter-spacing:.17em !important; }
+.opening-card p.opening-invitation-copy { max-width:400px !important; margin:clamp(6px,1.2vh,12px) auto 0 !important; font-size:clamp(9px,1.2vw,11px) !important; line-height:1.5 !important; }
+.opening-card p.opening-dua { max-width:390px !important; margin:4px auto 0 !important; font-size:clamp(8px,1.1vw,10px) !important; line-height:1.45 !important; }
+.opening-action-row { margin:clamp(8px,1.4vh,13px) 0 0 !important; }
+.opening .open-button { flex-basis:76px !important; width:76px !important; height:76px !important; min-width:76px !important; min-height:76px !important; border-radius:50% !important; flex-direction:column !important; gap:4px !important; padding:8px !important; background:rgba(218,190,143,.12) !important; color:#f1dfbd !important; }
+.opening .open-button > span:first-child { font-size:7px !important; line-height:1.3 !important; letter-spacing:.12em !important; }
+.opening .button-arrow { font-size:13px !important; transform:rotate(45deg); }
+.opening-seal-wrap { margin:7px auto 0 !important; gap:3px !important; }
+.opening-seal { width:30px !important; height:30px !important; }
+.opening-seal img { width:20px !important; height:20px !important; }
+.opening .seal-caption { font-size:10px !important; }
+.opening-note { display:none !important; }
+/* Ornate paired door panels */
+.invitation-door { position:absolute; inset:0 auto 0 0; width:50%; z-index:4; pointer-events:none; overflow:hidden; background:linear-gradient(145deg,#0b5159 0%,#073e48 42%,#032b33 100%); border-right:1px solid rgba(220,190,137,.65); box-shadow:inset -18px 0 35px rgba(0,0,0,.18); transition:transform 1.55s cubic-bezier(.72,0,.2,1),opacity .5s ease; }
+.invitation-door::before { content:""; position:absolute; inset:16px 12px 16px 18px; border:1px solid rgba(220,190,137,.58); outline:1px solid rgba(220,190,137,.16); outline-offset:5px; border-radius:48% 48% 3px 3px / 18% 18% 3px 3px; }
+.invitation-door::after { content:""; position:absolute; inset:clamp(30px,7vh,70px) 9% clamp(30px,7vh,70px); border:1px solid rgba(220,190,137,.25); border-radius:48% 48% 2px 2px / 18% 18% 2px 2px; background:repeating-linear-gradient(0deg,transparent 0 54px,rgba(220,190,137,.06) 55px 56px),radial-gradient(ellipse at 50% 30%,rgba(220,190,137,.08),transparent 60%); }
+.door-right { left:auto; right:0; border-right:0; border-left:1px solid rgba(220,190,137,.65); box-shadow:inset 18px 0 35px rgba(0,0,0,.18); }
+.door-right::before { inset:16px 18px 16px 12px; }
+.door-right::after { inset:clamp(30px,7vh,70px) 9% clamp(30px,7vh,70px); }
+.door-medallion { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:grid; place-items:center; width:clamp(34px,5vw,58px); height:clamp(34px,5vw,58px); color:#dfc18b; border:1px solid rgba(220,190,137,.62); border-radius:50%; background:rgba(2,35,40,.32); font-size:clamp(14px,2vw,24px); }
+.opening.opened .door-left { transform:translateX(-105%); }
+.opening.opened .door-right { transform:translateX(105%); }
+.opening.opened .opening-card { animation:cardDisappear .55s ease forwards !important; }
+@media(max-width:650px) {
+ .opening { padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left)) !important; }
+ .opening-card { width:min(100%,420px) !important; max-height:calc(100dvh - 26px) !important; padding:clamp(8px,1.5vh,14px) 13px !important; }
+ .opening-topline { font-size:6px !important; letter-spacing:.12em !important; }
+ .opening .bismillah { font-size:clamp(26px,7.5vw,34px) !important; margin:5px 0 1px !important; }
+ .opening-eyebrow { font-size:6px !important; letter-spacing:.12em !important; }
+ .opening-name-label { margin-top:5px !important; font-size:12px !important; }
+ .opening h1.opening-couple { flex-direction:column !important; gap:0 !important; font-size:clamp(34px,9.5vw,46px) !important; line-height:.97 !important; margin-top:4px !important; }
+ .opening h1.opening-couple .name-amp { font-size:.52em !important; line-height:.72 !important; margin:1px 0 !important; }
+ .opening-script { margin-top:5px !important; font-size:clamp(14px,4vw,17px) !important; }
+ .opening-divider { margin:6px auto 5px !important; }
+ .opening-date { font-size:20px !important; gap:6px !important; padding:4px 10px !important; }
+ .opening-date .date-month { font-size:6.5px !important; letter-spacing:.15em !important; }
+ .opening-date .date-year { font-size:11px !important; }
+ .opening-date-caption { font-size:5px !important; }
+ .opening-card p.opening-invitation-copy { margin-top:6px !important; font-size:9px !important; line-height:1.4 !important; max-width:280px !important; }
+ .opening-card p.opening-dua { margin-top:3px !important; font-size:8px !important; line-height:1.35 !important; }
+ .opening-action-row { margin-top:7px !important; }
+ .opening .open-button { width:68px !important; height:68px !important; min-width:68px !important; min-height:68px !important; flex-basis:68px !important; }
+ .opening-seal-wrap { margin-top:5px !important; }
+ .opening-seal { width:25px !important; height:25px !important; }
+ .opening-seal img { width:17px !important; height:17px !important; }
+ .opening .seal-caption { font-size:9px !important; }
+ .invitation-door::before { inset:10px 7px; }
+ .invitation-door::after { inset:38px 7% 38px; }
+ .door-right::before { inset:10px 7px; }
+}
+@media(max-height:650px) {
+ .opening-date-caption,.opening-seal-wrap { display:none !important; }
+ .opening-card p.opening-dua { display:none !important; }
+ .opening .bismillah { font-size:27px !important; }
+ .opening-action-row { margin-top:6px !important; }
+ .opening .open-button { width:60px !important;height:60px !important;min-width:60px !important;min-height:60px !important;flex-basis:60px !important; }
+}
+@media(orientation:landscape) and (max-height:560px) {
+ .opening-card { width:min(720px,calc(100vw - 48px)) !important; padding:8px 20px !important; }
+ .opening h1.opening-couple { flex-direction:row !important; font-size:clamp(30px,6vh,43px) !important; gap:0 9px !important; }
+ .opening-card p.opening-invitation-copy { max-width:440px !important; }
+}
+@media(prefers-reduced-motion:reduce) { .invitation-door { transition:none !important; } }
+
 </style>
 
 <style id="opening-page-editorial-revamp">
@@ -3772,6 +3849,8 @@ nav a { flex-shrink:0; }
 <div class="opening" id="opening">
   <div class="opening-ornament one" aria-hidden="true"></div>
   <div class="opening-ornament two" aria-hidden="true"></div>
+  <div class="invitation-door door-left" aria-hidden="true"><span class="door-medallion">✧</span></div>
+  <div class="invitation-door door-right" aria-hidden="true"><span class="door-medallion">✧</span></div>
 
   <div class="opening-card" id="openingCard">
     <div class="opening-topline">
@@ -3783,7 +3862,7 @@ nav a { flex-shrink:0; }
     <div class="bismillah" aria-label="Bismillah">﷽</div>
     <div class="opening-eyebrow">IN THE NAME OF ALLAH, THE MOST MERCIFUL</div>
 
-    <div class="opening-name-label">A gathering of duas · A promise of forever</div>
+    <div class="opening-name-label">A blessed beginning · A promise of forever</div>
 
     <h1 class="opening-couple">
       <span class="person-name">Er. Alfiya</span>
@@ -3791,19 +3870,18 @@ nav a { flex-shrink:0; }
       <span class="person-name">Er. Danish</span>
     </h1>
 
-    <span class="opening-script">A beautiful beginning, by His grace.</span>
+    <span class="opening-script">Two hearts. One beautiful beginning.</span>
 
     <div class="opening-divider"><span>✧</span></div>
     <div class="opening-date"><span class="date-day">16</span><span class="date-month">DECEMBER</span><span class="date-year">2026</span></div>
-    <div class="opening-date-caption">THE DAY TWO FAMILIES COME TOGETHER</div>
+    <div class="opening-date-caption">A DAY OF LOVE, FAITH & FAMILY</div>
 
     <p class="opening-invitation-copy">
-      With hearts full of gratitude and prayers, our families invite you
-      to share in the joy of this blessed union.
+      With gratitude to Allah, our families invite you
+      to witness and celebrate our blessed union.
     </p>
     <p class="opening-dua">
-      May Allah bless this union with <em>sakinah</em>, <em>mawaddah</em> and <em>rahmah</em> —
-      tranquility, love and mercy — today and always.
+      May Allah fill our journey with <em>sakinah</em>, love and mercy.
     </p>
 
     <div class="opening-action-row">
@@ -3818,8 +3896,6 @@ nav a { flex-shrink:0; }
       </div>
       <span class="seal-caption">With love, duas &amp; gratitude</span>
     </div>
-
-    <div class="opening-note">A BLESSED UNION · TWO FAMILIES · ONE JOURNEY</div>
   </div>
 </div>
 
@@ -4085,7 +4161,7 @@ nav a { flex-shrink:0; }
           <p class="event-tagline">In My Haldi Era</p>
 
           <p class="event-detail">
-            <strong>For: Bride Alfiya</strong>
+            <strong>For: Alfiya</strong>
           </p>
 
           <p class="event-detail">
@@ -4485,18 +4561,15 @@ openButton.addEventListener("click", async () => {
     console.warn("Music playback was prevented:", error);
   }
 
-  /* Let the curtains complete their animation */
-
+  /* Allow the paired doors to swing open, then reveal the invitation site. */
   setTimeout(() => {
     opening.classList.add("hidden");
     document.body.classList.remove("locked");
-  }, reduceMotion ? 100 : 1550);
-
-  /* Remove opening overlay from interaction */
+  }, reduceMotion ? 100 : 1650);
 
   setTimeout(() => {
     opening.style.display = "none";
-  }, reduceMotion ? 300 : 2600);
+  }, reduceMotion ? 300 : 2250);
 
 });
 
